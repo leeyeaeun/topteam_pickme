@@ -1,0 +1,30 @@
+@CHARSET "EUC-KR";
+body {
+	margin: 10px;
+}
+.mainmenu{
+	display: block;
+	background-size: cover;
+	background-attachment: fixed;
+}
+.mainmenu ul li a{
+	margin-bottom: 20px;
+	padding-top: 30px; /*안쪽 여백*/
+/* line-height: 30px;  줄간격 */
+	height: 80px;
+}
+.nav-justified li a:hover {
+	background-color: #337ab7;
+	color: #fff;
+}
+footer{
+	padding-top: 50px;
+}
+.navbar-fixed-bottom span{
+	color: #000000;
+}
+#section1 {padding-top:50px;height:500px;color: #fff; background-color: #1E88E5;}
+#section2 {padding-top:50px;height:500px;color: #fff; background-color: #673ab7;}
+#section3 {padding-top:50px;height:500px;color: #fff; background-color: #ff9800;}
+#section41 {padding-top:50px;height:500px;color: #fff; background-color: #00bcd4;}
+#section42 {padding-top:50px;height:500px;color: #fff; background-color: #009688;}
