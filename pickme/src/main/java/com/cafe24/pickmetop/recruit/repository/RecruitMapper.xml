@@ -1,1 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cafe24.pickmetop.recruit.repository.RecruitMapper">
+
+	<!-- <select resultType="java.util.Map" id="selectSurveyPerAnswer"> SELECT COUNT(CASE WHEN answer=1 THEN 1 END) as "1", COUNT(CASE WHEN answer=2 THEN 2 END) as "2", COUNT(CASE WHEN answer=3 THEN 3 END) as "3", COUNT(CASE WHEN answer=4 THEN 4 END) as "4" FROM survey </select>
+	
+	<select resultType="cafe.jjdev.survey.service.Survey" id="selectSurveyListAll"> SELECT name as name, answer as answer FROM survey </select>
+	 -->
+	<insert id="insertRecruit" 
+	parameterType="com.cafe24.pickmetop.recruit.model.RecruitCompany">
+		INSERT INTO recruit_company
+			(recruit_company_cd, company_cd, recruit_name, recruit_begindate, recruit_enddate, recruit_regdate, recruit_register, recruit_modidate, recruit_modify)
+		VALUES 
+			('1', '11', '1', NOW(), NOW(), NOW(), '1', NOW(),'1')
+	 </insert>
+
+</mapper>

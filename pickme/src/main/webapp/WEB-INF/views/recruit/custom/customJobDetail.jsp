@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+디테일이 필요한가?
 </body>
 </html>

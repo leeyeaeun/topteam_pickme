@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+채용상세
 </body>
 </html>
