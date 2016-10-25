@@ -1,5 +1,7 @@
 package com.cafe24.pickmetop.recruit.controller;
 
+import javax.annotation.Resource;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +18,7 @@ import com.cafe24.pickmetop.recruit.service.RecruitService;
 public class RecruitController {
 	final static Logger logger = LoggerFactory.getLogger(RecruitController.class);
 	@Autowired
+	@Resource
 	RecruitService recruitService;
 	
 	
