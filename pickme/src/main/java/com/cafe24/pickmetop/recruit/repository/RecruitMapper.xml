@@ -7,12 +7,24 @@
 	
 	<select resultType="cafe.jjdev.survey.service.Survey" id="selectSurveyListAll"> SELECT name as name, answer as answer FROM survey </select>
 	 -->
+	 
+	<select id="selectCompany" resultType="java.lang.String"> 
+		select company_name from tb_company_info
+	</select>
+	
 	<insert id="insertRecruit" 
 	parameterType="com.cafe24.pickmetop.recruit.model.RecruitCompany">
-		INSERT INTO recruit_company
+		INSERT INTO tb_recruit_company
 			(recruit_company_cd, company_cd, recruit_name, recruit_begindate, recruit_enddate, recruit_regdate, recruit_register, recruit_modidate, recruit_modify)
 		VALUES 
 			('1', '11', '1', NOW(), NOW(), NOW(), '1', NOW(),'1')
+	 </insert>
+	 
+	 <insert id="insertRecruitJob" 
+	parameterType="com.cafe24.pickmetop.recruit.model.RecruitCompanyJobVo">
+	INSERT INTO tb_recruit_company_job
+		(recruit_job_cd, recruit_company_cd, company_cd, job_midindex_cd, recruit_job_workstatus, recruit_job_jobdetail, recruit_job_education, recruit_job_file)
+	VALUES ('1', '1', '1', '1', '1', '1', '1', '1')
 	 </insert>
 
 </mapper>
