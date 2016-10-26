@@ -2,21 +2,12 @@
 body {
 	margin: 10px;
 }
-.mainmenu{
-	display: block;
-	background-size: cover;
-	background-attachment: fixed;
-}
-.mainmenu ul li a{
+/* .mainmenu ul li a{
 	margin-bottom: 20px;
-	padding-top: 30px; /*안쪽 여백*/
-/* line-height: 30px;  줄간격 */
+	padding-top: 30px; 안쪽 여백
+line-height: 30px;  줄간격
 	height: 80px;
-}
-.nav-justified li a:hover {
-	background-color: #337ab7;
-	color: #fff;
-}
+} */
 footer{
 	padding-top: 50px;
 }

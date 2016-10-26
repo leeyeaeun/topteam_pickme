@@ -21,6 +21,7 @@
     </script>
 </head>
 <body>
+<jsp:include page="./common/module/modHeader.jsp"/>
 <div class="container">
 	<div class="jumbotron text-center">
 		<h1>PICK ME</h1>
@@ -36,31 +37,22 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
             <div class="item active">
-
-                   <div id="section1" class="container-fluid">
-						<h1>채용달력 소개</h1>
-						<p>실시간 채용정보는 물론<br>나에게 딱 맞는 공고도 <br> 추천받을 수 있어요! </p>
-					</div>
-             
+                <div id="section1" class="container-fluid">
+					<h1>채용달력 소개</h1>
+					<p>실시간 채용정보는 물론<br>나에게 딱 맞는 공고도 <br> 추천받을 수 있어요! </p>
+				</div>
             </div>
             <div class="item">
-               
-                
-                   <div id="section2" class="container-fluid">
-						<h1>이력서</h1>
+            	<div id="section2" class="container-fluid">
+					<h1>이력서</h1>
 						<p>자기소개서 문항 찾으러 헤매지 마세요! <br> 빠르고 정확하게 알려드릴게요~ </p>
-					</div>
-               
+				</div>
             </div>
             <div class="item">
-              
-               
-                  <div id="section3" class="container-fluid">
-					  	<h1>자기소개서</h1>
-						<p>!!!!!!!!!!!!!!!!!!!!</p>
-					</div>
-               
-      
+            	<div id="section3" class="container-fluid">
+				  	<h1>자기소개서</h1>
+					<p>!!!!!!!!!!!!!!!!!!!!</p>
+				</div>
         	</div>
         </div>
         <!-- Controls -->
@@ -72,21 +64,6 @@
         </a>
     
     </header>
-	<!-- <section class="mainmenu">
-		<ul class="nav nav-pills nav-justified">
-			<li><a href="#section1">채용달력</a></li>
-			<li><a href="#section2">이력서</a></li>
-			<li><a href="#section3">자기소개서</a></li>
-			<li><a href="#">기업정보</a></li>
-			<li><a href="#">자유게시판</a></li>
-		</ul>
-	</section>
-	 -->
-	
-		
-		
-		
-
 	<footer>
 		<div class="text-center">
 	    	<a href="http://blog.anchoreer.com/220470732604" target="_blank">회사소개</a> | <a href="" ng-click="inquiry()">문의하기</a> | <a href="/privacy">개인정보취급방침</a> | <a href="" ng-click="partnership()">제휴/광고</a>

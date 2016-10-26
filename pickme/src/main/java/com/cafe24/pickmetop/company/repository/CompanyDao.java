@@ -1,5 +1,12 @@
 package com.cafe24.pickmetop.company.repository;
 
-public class CompanyDao {
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
 
+public class CompanyDao {
+	@Autowired
+	private SqlSessionTemplate sqlSession;
+	final String NS = "com.cafe24.pickmetop.company.repository.CompanyMapper";
+	
+	
 }
