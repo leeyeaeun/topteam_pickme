@@ -1,5 +1,8 @@
 package com.cafe24.pickmetop.company.model;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class CompanyInfoVo {
 	private String companyCd;
 	private String industryMidindexCd;

@@ -1,14 +1,19 @@
 package com.cafe24.pickmetop.recruit.controller;
 
+import java.util.List;
+
+
 import javax.annotation.Resource;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.multipart.MultipartFile;
+
 
 import com.cafe24.pickmetop.recruit.model.RecruitCompany;
 import com.cafe24.pickmetop.recruit.model.RecruitCompanyJobVo;
@@ -20,25 +25,30 @@ public class RecruitController {
 	@Autowired
 	@Resource
 	RecruitService recruitService;
+	final String imgDir = "D:\\LeeYeaEun\\imgs";
 	
 	
 	/* 채용 삭제*/
 	/* 채용 리스트 */
 	
-	
-	
 	/* 채용 입력 처리 */
 	@RequestMapping(value = "/recruitInsert", method = RequestMethod.POST)
 	public String recruitInsert(RecruitCompany recruitCompany, RecruitCompanyJobVo recruitCompanyJobVo) {
+		
 		logger.info("recruitCompany : {}",recruitCompany.toString());
 		logger.info("recruitCompanyJobVo : {}",recruitCompanyJobVo.toString());
-		recruitService.insertRecruitCompany( recruitCompany, recruitCompanyJobVo);
-		return "/index";
+		recruitService.insertRecruitCompany( recruitCompany);
+		recruitService.insertRecruitCompanyJob(recruitCompanyJobVo);
+		
+		return "index";
 	}
 	
 	/* 채용 입력 화면 */
 	@RequestMapping(value = "/recruit", method = RequestMethod.GET)
-	public String recruitInsert() {
+	public String recruitInsert(Model model) {
+		List<String> companyList = recruitService.selectCompany();
+		logger.info("companyList : {}",companyList);
+		model.addAttribute("companyList", companyList);
 		return "/recruit/company/companyRecruitInsert";
 	}
 }

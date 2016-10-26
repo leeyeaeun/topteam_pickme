@@ -1,5 +1,8 @@
 package com.cafe24.pickmetop.recruit.repository;
 
+import java.util.List;
+import java.util.Map;
+
 import javax.annotation.Resource;
 
 import org.mybatis.spring.SqlSessionTemplate;
@@ -17,7 +20,18 @@ public class RecruitDao {
 	private SqlSessionTemplate sqlSessionFactoryRecruit;	
 	
 	
-	public int insertRecruitCompany(RecruitCompany recruitCompany, RecruitCompanyJobVo recruitCompanyJobVo){
+	
+	public List<String> selectCompany(){
+		return sqlSessionFactoryRecruit.selectList(NS+".selectCompany");
+	}
+	//RecruitCompanyJob입력 
+	public int insertRecruitJob(RecruitCompanyJobVo recruitCompanyJobVo){
+		return sqlSessionFactoryRecruit.insert(NS+".insertRecruitJob",recruitCompanyJobVo);
+	}
+	
+	
+	//RecruitCompany입력
+	public int insertRecruitCompany(RecruitCompany recruitCompany){
 		return sqlSessionFactoryRecruit.insert(NS+".insertRecruit",recruitCompany);
 	}
 }

@@ -9,11 +9,11 @@ public class RecruitCompany {
 	String recruitCompanyCd;
 	String companyCd;
 	String recruitName;
-	Date recruitBegindate;
-	Date recruitEnddate;
-	Date recruitRegdate;
+	String recruitBegindate;
+	String recruitEnddate;
+	String recruitRegdate;
 	String recruitRegister;
-	Date recruitModidate;
+	String recruitModidate;
 	String recruitModify;
 	public String getRecruitCompanyCd() {
 		return recruitCompanyCd;
@@ -33,22 +33,22 @@ public class RecruitCompany {
 	public void setRecruitName(String recruitName) {
 		this.recruitName = recruitName;
 	}
-	public Date getRecruitBegindate() {
+	public String getRecruitBegindate() {
 		return recruitBegindate;
 	}
-	public void setRecruitBegindate(Date recruitBegindate) {
+	public void setRecruitBegindate(String recruitBegindate) {
 		this.recruitBegindate = recruitBegindate;
 	}
-	public Date getRecruitEnddate() {
+	public String getRecruitEnddate() {
 		return recruitEnddate;
 	}
-	public void setRecruitEnddate(Date recruitEnddate) {
+	public void setRecruitEnddate(String recruitEnddate) {
 		this.recruitEnddate = recruitEnddate;
 	}
-	public Date getRecruitRegdate() {
+	public String getRecruitRegdate() {
 		return recruitRegdate;
 	}
-	public void setRecruitRegdate(Date recruitRegdate) {
+	public void setRecruitRegdate(String recruitRegdate) {
 		this.recruitRegdate = recruitRegdate;
 	}
 	public String getRecruitRegister() {
@@ -57,10 +57,10 @@ public class RecruitCompany {
 	public void setRecruitRegister(String recruitRegister) {
 		this.recruitRegister = recruitRegister;
 	}
-	public Date getRecruitModidate() {
+	public String getRecruitModidate() {
 		return recruitModidate;
 	}
-	public void setRecruitModidate(Date recruitModidate) {
+	public void setRecruitModidate(String recruitModidate) {
 		this.recruitModidate = recruitModidate;
 	}
 	public String getRecruitModify() {

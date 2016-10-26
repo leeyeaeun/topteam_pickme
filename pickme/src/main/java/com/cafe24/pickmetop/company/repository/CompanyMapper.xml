@@ -2,4 +2,24 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.cafe24.pickmetop.company.repository.CompanyMapper">
+	<!-- 기업정보리스트 -->
+	<select id="selectCompanyInfoAllList" resultType="com.cafe24.pickmetop.company.model.CompanyInfoVo">
+		SELECT
+			company_name as companyName
+		FROM
+			tb_company_info
+		ORDER BY
+			company_cd
+	</select>
+	
+	<!-- 직무 중분류 리스트 -->
+	<select id="selectJobTopIndexAllList" resultType="com.cafe24.pickmetop.admin.model.JobTopIndexVo">
+		SELECT
+			job_topindex_cd as jobTopIndexCd,
+			job_topindex_name as jobTopIndexName
+		FROM
+			tb_job_topindex
+		ORDER BY
+			job_topindex_cd
+	</select>
 </mapper>
