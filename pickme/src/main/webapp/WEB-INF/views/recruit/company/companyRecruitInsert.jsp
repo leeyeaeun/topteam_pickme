@@ -158,8 +158,8 @@ $(document).ready(function(){
 <body>
 <div class="container">
 	<jsp:include page="${pageContext.request.contextPath}/WEB-INF/views/common/module/modHeader.jsp"/>
-	<form id="recruitInsertForm" action="/recruitInsert"  class="form-horizontal" method="post" >
-<!--enctype="multipart/form-data" 	 -->
+	<form id="recruitInsertForm" enctype="multipart/form-data" action="/recruitInsert"  class="form-horizontal" method="post" >
+<!-- 	 -->
 		<div class="form-group" id="the-basics">
 			채용기업<input class="typeahead" type="text"  class="form-control" placeholder="기업명을 입력하세요"><!-- name="recruitName" id="recruitName"  -->
 		</div>
@@ -175,10 +175,10 @@ $(document).ready(function(){
 			채용마감일<input type="date" name="recruitEnddate" id="recruitEnddate"class="form-control">
 		</div>
 
-	<!-- 	<div class="form-group">
+		<div class="form-group">
 			공고문(사진파일1장)
 			<input type="file" name="recruitJobFile" id="recruitJobFile" >
-		</div>  -->
+		</div> 
 		
 		<!-- 직무등록--하나 기본으로 보이고 추가누를시 추가됨 -->
 		<hr/>

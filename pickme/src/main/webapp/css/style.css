@@ -8,14 +8,32 @@ body {
 line-height: 30px;  줄간격
 	height: 80px;
 } */
+/* footer관련 css*/
 footer{
 	padding-top: 50px;
 }
 .navbar-fixed-bottom span{
 	color: #000000;
 }
+
+/*메인화면 section옵션*/
 #section1 {padding-top:50px;height:500px;color: #fff; background-color: #1E88E5;}
 #section2 {padding-top:50px;height:500px;color: #fff; background-color: #673ab7;}
 #section3 {padding-top:50px;height:500px;color: #fff; background-color: #ff9800;}
 #section41 {padding-top:50px;height:500px;color: #fff; background-color: #00bcd4;}
 #section42 {padding-top:50px;height:500px;color: #fff; background-color: #009688;}
+
+/*기업정보 Insert에서 기업이름 자동완성 부분*/
+.fixed-height {
+	width: 200px;
+	background-color: #fff;
+	padding: 1px;
+	max-height: 100px;
+	overflow: auto;
+}
+.ui-helper-hidden-accessible{
+	display: none;
+}
+#jobTopIndex{
+	width: 300px;
+}
