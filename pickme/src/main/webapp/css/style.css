@@ -17,11 +17,12 @@ footer{
 }
 
 /*메인화면 section옵션*/
-#section1 {padding-top:50px;height:500px;color: #fff; background-color: #1E88E5;}
+#section1 {padding-top:50px;height:500px;color: #fff; background-image: url("/img/main/calendar.jpg"); background-size: cover;}
 #section2 {padding-top:50px;height:500px;color: #fff; background-color: #673ab7;}
 #section3 {padding-top:50px;height:500px;color: #fff; background-color: #ff9800;}
 #section41 {padding-top:50px;height:500px;color: #fff; background-color: #00bcd4;}
 #section42 {padding-top:50px;height:500px;color: #fff; background-color: #009688;}
+/* 수정가능한것 color / background-color: */
 
 /*기업정보 Insert에서 기업이름 자동완성 부분*/
 .fixed-height {

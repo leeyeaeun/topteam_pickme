@@ -7,7 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.cafe24.pickmetop.recruit.controller.RecruitController;
 import com.cafe24.pickmetop.recruit.service.RecruitService;
 import com.cafe24.pickmetop.resume.model.ResumeAwardVo;
 import com.cafe24.pickmetop.resume.model.ResumeCareerVo;
@@ -51,10 +50,22 @@ public class ResumeController {
 		
 		return "/resume/resumeInsert";
 	}
+	//이력서 리스트
+	@RequestMapping(value="/resumeList", method = RequestMethod.POST)
+	public String resumeList(){
+		return "/resume/resumeList";
+	}
+	
 	//이력서 수정화면
 	//@RequestMapping(value="")
 	//이력서 수정처리
 	//@RequestMapping(value="")
 	//이력서 삭제
+	//@RequestMapping(value="")
 	
+	//자격증 및 어학 검색페이지
+	@RequestMapping(value="/resumeCertilangIndex", method = RequestMethod.GET)
+	public String resumeCertilangIndex(){
+		return "/resume/resumeCertilangIndex";
+	}
 }
