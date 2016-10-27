@@ -4,9 +4,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>이력서 리스트</title>
 </head>
 <body>
-
+	<jsp:include page="../common/module/modHeader.jsp"/>
+	<div class="container" >
+		
+	</div>
 </body>
 </html>
