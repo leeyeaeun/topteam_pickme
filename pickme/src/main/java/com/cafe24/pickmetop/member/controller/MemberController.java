@@ -36,4 +36,10 @@ public class MemberController {
 			return "/member/general/memberGeneralInsert";
 		}
 		
+		
+		@RequestMapping(value="/memberLinkedInsert", method = RequestMethod.GET)
+		public String memberLinkedInsert(){
+			return "/member/linked/memberLinkedInsert";
+			
+		}
 }
