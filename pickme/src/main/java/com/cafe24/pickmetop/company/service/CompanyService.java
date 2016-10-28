@@ -1,5 +1,7 @@
 package com.cafe24.pickmetop.company.service;
 
+import static org.junit.Assert.assertArrayEquals;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;
