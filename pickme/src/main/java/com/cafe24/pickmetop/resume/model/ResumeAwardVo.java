@@ -1,14 +1,12 @@
 package com.cafe24.pickmetop.resume.model;
 
-import java.util.Date;
-
 public class ResumeAwardVo {
-	String awardCd;
-	String resumeCd;
-	String awardName;
-	String awardContent;
-	String awardHost;
-	Date awardDate;
+	private String awardCd;
+	private String resumeCd;
+	private String awardName;
+	private String awardContent;
+	private String awardHost;
+	private String awardDate;
 	public String getAwardCd() {
 		return awardCd;
 	}
@@ -39,10 +37,10 @@ public class ResumeAwardVo {
 	public void setAwardHost(String awardHost) {
 		this.awardHost = awardHost;
 	}
-	public Date getAwardDate() {
+	public String getAwardDate() {
 		return awardDate;
 	}
-	public void setAwardDate(Date awardDate) {
+	public void setAwardDate(String awardDate) {
 		this.awardDate = awardDate;
 	}
 	@Override
@@ -50,5 +48,6 @@ public class ResumeAwardVo {
 		return "ResumeAwardVo [awardCd=" + awardCd + ", resumeCd=" + resumeCd + ", awardName=" + awardName
 				+ ", awardContent=" + awardContent + ", awardHost=" + awardHost + ", awardDate=" + awardDate + "]";
 	}
-
+	
+	
 }

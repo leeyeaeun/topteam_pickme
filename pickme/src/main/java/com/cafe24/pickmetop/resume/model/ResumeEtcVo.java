@@ -1,16 +1,15 @@
 package com.cafe24.pickmetop.resume.model;
 
-import java.io.File;
-import java.util.Date;
+import org.springframework.web.multipart.MultipartFile;
 
 public class ResumeEtcVo {
-	String etcCd;
-	String resumeCd;
-	String etcTitle;
-	String etcContent;
-	File etcFile;
-	Date etcBegindate;
-	Date etcEnddate;
+	private String etcCd;
+	private String resumeCd;
+	private String etcTitle;
+	private String etcContent;
+	private MultipartFile etcFile;
+	private String etcBegindate;
+	private String etcEnddate;
 	public String getEtcCd() {
 		return etcCd;
 	}
@@ -35,22 +34,22 @@ public class ResumeEtcVo {
 	public void setEtcContent(String etcContent) {
 		this.etcContent = etcContent;
 	}
-	public File getEtcFile() {
+	public MultipartFile getEtcFile() {
 		return etcFile;
 	}
-	public void setEtcFile(File etcFile) {
+	public void setEtcFile(MultipartFile etcFile) {
 		this.etcFile = etcFile;
 	}
-	public Date getEtcBegindate() {
+	public String getEtcBegindate() {
 		return etcBegindate;
 	}
-	public void setEtcBegindate(Date etcBegindate) {
+	public void setEtcBegindate(String etcBegindate) {
 		this.etcBegindate = etcBegindate;
 	}
-	public Date getEtcEnddate() {
+	public String getEtcEnddate() {
 		return etcEnddate;
 	}
-	public void setEtcEnddate(Date etcEnddate) {
+	public void setEtcEnddate(String etcEnddate) {
 		this.etcEnddate = etcEnddate;
 	}
 	@Override
@@ -59,6 +58,5 @@ public class ResumeEtcVo {
 				+ etcContent + ", etcFile=" + etcFile + ", etcBegindate=" + etcBegindate + ", etcEnddate=" + etcEnddate
 				+ "]";
 	}
-	
 	
 }

@@ -9,13 +9,14 @@ import org.springframework.stereotype.Repository;
 import com.cafe24.pickmetop.resume.model.ResumeAwardVo;
 import com.cafe24.pickmetop.resume.model.ResumeCareerVo;
 import com.cafe24.pickmetop.resume.model.ResumeCertificateVo;
-import com.cafe24.pickmetop.resume.model.ResumeEducationVo;
+import com.cafe24.pickmetop.resume.model.ResumeHighschoolVo;
 import com.cafe24.pickmetop.resume.model.ResumeEtcVo;
 import com.cafe24.pickmetop.resume.model.ResumeFamilyVo;
-import com.cafe24.pickmetop.resume.model.ResumeLangaugeVo;
+import com.cafe24.pickmetop.resume.model.ResumeLanguageVo;
 import com.cafe24.pickmetop.resume.model.ResumeMilitaryserviceVo;
 import com.cafe24.pickmetop.resume.model.ResumePersonalVo;
-import com.cafe24.pickmetop.resume.model.ResumeTrainningVo;
+import com.cafe24.pickmetop.resume.model.ResumeTrainingVo;
+import com.cafe24.pickmetop.resume.model.ResumeUniversityVo;
 import com.cafe24.pickmetop.resume.model.ResumeVo;
 
 @Repository
@@ -24,9 +25,18 @@ public class ResumeDao {
 	@Autowired
 	@Resource(name="sqlSessionResume")
 	private SqlSessionTemplate sqlSessionFactoryResume;
-	public int insertResume(ResumeVo resume, ResumeAwardVo award, ResumeCareerVo career, ResumeCertificateVo certif, 
-			ResumeEducationVo edu, ResumeEtcVo etc, ResumeFamilyVo family, ResumeLangaugeVo language, ResumeMilitaryserviceVo military,
-			ResumePersonalVo personal, ResumeTrainningVo trainning){
+	
+	//이력서 저장
+	public int insertResume(ResumeAwardVo award, ResumeCareerVo career, ResumeCertificateVo certificate, ResumeEtcVo etc, ResumeFamilyVo family, 
+			ResumeHighschoolVo highshool, ResumeMilitaryserviceVo militaryservice, ResumeLanguageVo language, ResumePersonalVo personal, ResumeTrainingVo training,
+			ResumeUniversityVo university, ResumeVo resume){
 		return sqlSessionFactoryResume.insert(NS+".insertResume", resume);
 	}
+	
+	//이력서 리스트
+	
+	//이력서 수정
+	
+	//이력서 삭제
+	
 }

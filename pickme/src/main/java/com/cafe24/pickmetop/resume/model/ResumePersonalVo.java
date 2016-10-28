@@ -1,24 +1,22 @@
 package com.cafe24.pickmetop.resume.model;
 
-import java.io.File;
-import java.util.Date;
+import org.springframework.web.multipart.MultipartFile;
 
 public class ResumePersonalVo {
-	//*보류 칼럼값 수정필요!!!!!!!!!!!!!!
-	String personalCd;
-	String resumeCd;
-	String personalKorname;
-	String personalEngname;
-	Date personalBirthdate;
-	String personalGender;
-	String personalPhone;
-	String personalCellphone;
-	String personalEmail;
-	String personalSns;
-	String personalAddr;
-	File personalPhoto;
-	Date personalRegdate;
-	Date personalModidate;
+	private String personalCd;
+	private String resumeCd;
+	private String personalKorname;
+	private String personalEngname;
+	private String personalBirthdate;
+	private String personalGender;
+	private String personalPhone;
+	private String personalCellphone;
+	private String personalEmail;
+	private String personalSns;
+	private String personalAddr;
+	private MultipartFile personalPhoto;
+	private String personalRegdate;
+	private String personalModidate;
 	public String getPersonalCd() {
 		return personalCd;
 	}
@@ -43,10 +41,10 @@ public class ResumePersonalVo {
 	public void setPersonalEngname(String personalEngname) {
 		this.personalEngname = personalEngname;
 	}
-	public Date getPersonalBirthdate() {
+	public String getPersonalBirthdate() {
 		return personalBirthdate;
 	}
-	public void setPersonalBirthdate(Date personalBirthdate) {
+	public void setPersonalBirthdate(String personalBirthdate) {
 		this.personalBirthdate = personalBirthdate;
 	}
 	public String getPersonalGender() {
@@ -85,22 +83,22 @@ public class ResumePersonalVo {
 	public void setPersonalAddr(String personalAddr) {
 		this.personalAddr = personalAddr;
 	}
-	public File getPersonalPhoto() {
+	public MultipartFile getPersonalPhoto() {
 		return personalPhoto;
 	}
-	public void setPersonalPhoto(File personalPhoto) {
+	public void setPersonalPhoto(MultipartFile personalPhoto) {
 		this.personalPhoto = personalPhoto;
 	}
-	public Date getPersonalRegdate() {
+	public String getPersonalRegdate() {
 		return personalRegdate;
 	}
-	public void setPersonalRegdate(Date personalRegdate) {
+	public void setPersonalRegdate(String personalRegdate) {
 		this.personalRegdate = personalRegdate;
 	}
-	public Date getPersonalModidate() {
+	public String getPersonalModidate() {
 		return personalModidate;
 	}
-	public void setPersonalModidate(Date personalModidate) {
+	public void setPersonalModidate(String personalModidate) {
 		this.personalModidate = personalModidate;
 	}
 	@Override

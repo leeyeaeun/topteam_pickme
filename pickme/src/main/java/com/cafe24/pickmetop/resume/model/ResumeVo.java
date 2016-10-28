@@ -1,13 +1,11 @@
 package com.cafe24.pickmetop.resume.model;
 
-import java.util.Date;
-
 public class ResumeVo {
-	String resumeCd;
-	String loginId;
-	String resumeName;
-	Date resumeRegdate;
-	Date resumeModidate;
+	private String resumeCd;
+	private String loginId;
+	private String resumeName;
+	private String resumeRegdate;
+	private String resumeModidate;
 	public String getResumeCd() {
 		return resumeCd;
 	}
@@ -26,16 +24,16 @@ public class ResumeVo {
 	public void setResumeName(String resumeName) {
 		this.resumeName = resumeName;
 	}
-	public Date getResumeRegdate() {
+	public String getResumeRegdate() {
 		return resumeRegdate;
 	}
-	public void setResumeRegdate(Date resumeRegdate) {
+	public void setResumeRegdate(String resumeRegdate) {
 		this.resumeRegdate = resumeRegdate;
 	}
-	public Date getResumeModidate() {
+	public String getResumeModidate() {
 		return resumeModidate;
 	}
-	public void setResumeModidate(Date resumeModidate) {
+	public void setResumeModidate(String resumeModidate) {
 		this.resumeModidate = resumeModidate;
 	}
 	@Override

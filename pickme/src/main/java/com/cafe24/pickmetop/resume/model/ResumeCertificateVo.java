@@ -1,16 +1,14 @@
 package com.cafe24.pickmetop.resume.model;
 
-import java.util.Date;
-
 public class ResumeCertificateVo {
-	String memberCertificateCd;
-	String resumeCd;
-	String certificateCd;
-	String certificateGrade;
-	String certificateHost;
-	Date certificateBegindate;
-	Date certificateEnddate;
-	String certificateRegnum;
+	private String memberCertificateCd;
+	private String resumeCd;
+	private String certificateCd;
+	private String certificateGrade;
+	private String certificateHost;
+	private String certificateBegindate;
+	private String certificateEnddate;
+	private String certificateRegnum;
 	public String getMemberCertificateCd() {
 		return memberCertificateCd;
 	}
@@ -41,16 +39,16 @@ public class ResumeCertificateVo {
 	public void setCertificateHost(String certificateHost) {
 		this.certificateHost = certificateHost;
 	}
-	public Date getCertificateBegindate() {
+	public String getCertificateBegindate() {
 		return certificateBegindate;
 	}
-	public void setCertificateBegindate(Date certificateBegindate) {
+	public void setCertificateBegindate(String certificateBegindate) {
 		this.certificateBegindate = certificateBegindate;
 	}
-	public Date getCertificateEnddate() {
+	public String getCertificateEnddate() {
 		return certificateEnddate;
 	}
-	public void setCertificateEnddate(Date certificateEnddate) {
+	public void setCertificateEnddate(String certificateEnddate) {
 		this.certificateEnddate = certificateEnddate;
 	}
 	public String getCertificateRegnum() {

@@ -1,18 +1,17 @@
 package com.cafe24.pickmetop.resume.model;
 
-import java.util.Date;
-
-public class ResumeLangaugeVo {
-	String languageCd;
-	String resumeCd;
-	String certificateCd;
-	String languageName;
-	String languageGrade;
-	String languageLevel;
-	Date languageBegindate;
-	Date languageEnddate;
-	String languageRegnum;
-	String languageHost;
+public class ResumeLanguageVo {
+	private String languageCd;
+	private String resumeCd;
+	private String certificateCd;
+	private String languageName;
+	private String languageTest;
+	private String languageGrade;
+	private String languageLevel;
+	private String languageBegindate;
+	private String languageEnddate;
+	private String languageRegnum;
+	private String languageHost;
 	public String getLanguageCd() {
 		return languageCd;
 	}
@@ -37,6 +36,12 @@ public class ResumeLangaugeVo {
 	public void setLanguageName(String languageName) {
 		this.languageName = languageName;
 	}
+	public String getLanguageTest() {
+		return languageTest;
+	}
+	public void setLanguageTest(String languageTest) {
+		this.languageTest = languageTest;
+	}
 	public String getLanguageGrade() {
 		return languageGrade;
 	}
@@ -49,16 +54,16 @@ public class ResumeLangaugeVo {
 	public void setLanguageLevel(String languageLevel) {
 		this.languageLevel = languageLevel;
 	}
-	public Date getLanguageBegindate() {
+	public String getLanguageBegindate() {
 		return languageBegindate;
 	}
-	public void setLanguageBegindate(Date languageBegindate) {
+	public void setLanguageBegindate(String languageBegindate) {
 		this.languageBegindate = languageBegindate;
 	}
-	public Date getLanguageEnddate() {
+	public String getLanguageEnddate() {
 		return languageEnddate;
 	}
-	public void setLanguageEnddate(Date languageEnddate) {
+	public void setLanguageEnddate(String languageEnddate) {
 		this.languageEnddate = languageEnddate;
 	}
 	public String getLanguageRegnum() {
@@ -76,9 +81,10 @@ public class ResumeLangaugeVo {
 	@Override
 	public String toString() {
 		return "ResumeLangaugeVo [languageCd=" + languageCd + ", resumeCd=" + resumeCd + ", certificateCd="
-				+ certificateCd + ", languageName=" + languageName + ", languageGrade=" + languageGrade
-				+ ", languageLevel=" + languageLevel + ", languageBegindate=" + languageBegindate + ", languageEnddate="
-				+ languageEnddate + ", languageRegnum=" + languageRegnum + ", languageHost=" + languageHost + "]";
+				+ certificateCd + ", languageName=" + languageName + ", languageTest=" + languageTest
+				+ ", languageGrade=" + languageGrade + ", languageLevel=" + languageLevel + ", languageBegindate="
+				+ languageBegindate + ", languageEnddate=" + languageEnddate + ", languageRegnum=" + languageRegnum
+				+ ", languageHost=" + languageHost + "]";
 	}
 	
 

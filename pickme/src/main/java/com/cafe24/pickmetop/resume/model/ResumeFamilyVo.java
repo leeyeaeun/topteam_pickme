@@ -1,16 +1,14 @@
 package com.cafe24.pickmetop.resume.model;
 
-import java.util.Date;
-
 public class ResumeFamilyVo {
-	String familyCd;
-	String resumeCd;
-	String familyRelation;
-	String familyName;
-	Date familyBirthdate;
-	String familyEducation;
-	String familyJob;
-	String familyCohabit;
+	private String familyCd;
+	private String resumeCd;
+	private String familyRelation;
+	private String familyName;
+	private String familyBirthdate;
+	private String familyEducation;
+	private String familyJob;
+	private String familyCohabit;
 	public String getFamilyCd() {
 		return familyCd;
 	}
@@ -35,10 +33,10 @@ public class ResumeFamilyVo {
 	public void setFamilyName(String familyName) {
 		this.familyName = familyName;
 	}
-	public Date getFamilyBirthdate() {
+	public String getFamilyBirthdate() {
 		return familyBirthdate;
 	}
-	public void setFamilyBirthdate(Date familyBirthdate) {
+	public void setFamilyBirthdate(String familyBirthdate) {
 		this.familyBirthdate = familyBirthdate;
 	}
 	public String getFamilyEducation() {
@@ -66,5 +64,4 @@ public class ResumeFamilyVo {
 				+ familyEducation + ", familyJob=" + familyJob + ", familyCohabit=" + familyCohabit + "]";
 	}
 	
-
 }

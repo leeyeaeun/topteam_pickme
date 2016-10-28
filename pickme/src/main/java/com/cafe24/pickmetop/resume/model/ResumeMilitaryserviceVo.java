@@ -1,16 +1,14 @@
 package com.cafe24.pickmetop.resume.model;
 
-import java.util.Date;
-
 public class ResumeMilitaryserviceVo {
-	String militaryserviceCd;
-	String resumeCd;
-	String militaryserviceState;
-	String militaryserviceGroup;
-	String militaryserviceLevel;
-	String militaryserviceBranch;
-	Date militaryserviceBegindate;
-	Date militaryserviceEnddate;
+	private String militaryserviceCd;
+	private String resumeCd;
+	private String militaryserviceState;
+	private String militaryserviceGroup;
+	private String militaryserviceLevel;
+	private String militaryserviceBranch;
+	private String militaryserviceBegindate;
+	private String militaryserviceEnddate;
 	public String getMilitaryserviceCd() {
 		return militaryserviceCd;
 	}
@@ -47,16 +45,16 @@ public class ResumeMilitaryserviceVo {
 	public void setMilitaryserviceBranch(String militaryserviceBranch) {
 		this.militaryserviceBranch = militaryserviceBranch;
 	}
-	public Date getMilitaryserviceBegindate() {
+	public String getMilitaryserviceBegindate() {
 		return militaryserviceBegindate;
 	}
-	public void setMilitaryserviceBegindate(Date militaryserviceBegindate) {
+	public void setMilitaryserviceBegindate(String militaryserviceBegindate) {
 		this.militaryserviceBegindate = militaryserviceBegindate;
 	}
-	public Date getMilitaryserviceEnddate() {
+	public String getMilitaryserviceEnddate() {
 		return militaryserviceEnddate;
 	}
-	public void setMilitaryserviceEnddate(Date militaryserviceEnddate) {
+	public void setMilitaryserviceEnddate(String militaryserviceEnddate) {
 		this.militaryserviceEnddate = militaryserviceEnddate;
 	}
 	@Override
@@ -68,5 +66,4 @@ public class ResumeMilitaryserviceVo {
 				+ militaryserviceEnddate + "]";
 	}
 	
-
 }

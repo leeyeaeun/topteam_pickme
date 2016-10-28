@@ -1,17 +1,16 @@
 package com.cafe24.pickmetop.resume.model;
 
-import java.util.Date;
 
 public class ResumeCareerVo {
-	String careerCd;
-	String resumeCd;
-	String careerCompany;
-	Date careerBegindate;
-	Date careerEnddate;
-	String careerPeriod;
-	String careerLevel;
-	String careerDepartment;
-	String careerTask;
+	private String careerCd;
+	private String resumeCd;
+	private String careerCompany;
+	private String careerBegindate;
+	private String careerEnddate;
+	private String careerPeriod;
+	private String careerLevel;
+	private String careerDepartment;
+	private String careerTask;
 	public String getCareerCd() {
 		return careerCd;
 	}
@@ -30,16 +29,16 @@ public class ResumeCareerVo {
 	public void setCareerCompany(String careerCompany) {
 		this.careerCompany = careerCompany;
 	}
-	public Date getCareerBegindate() {
+	public String getCareerBegindate() {
 		return careerBegindate;
 	}
-	public void setCareerBegindate(Date careerBegindate) {
+	public void setCareerBegindate(String careerBegindate) {
 		this.careerBegindate = careerBegindate;
 	}
-	public Date getCareerEnddate() {
+	public String getCareerEnddate() {
 		return careerEnddate;
 	}
-	public void setCareerEnddate(Date careerEnddate) {
+	public void setCareerEnddate(String careerEnddate) {
 		this.careerEnddate = careerEnddate;
 	}
 	public String getCareerPeriod() {
@@ -73,5 +72,5 @@ public class ResumeCareerVo {
 				+ careerPeriod + ", careerLevel=" + careerLevel + ", careerDepartment=" + careerDepartment
 				+ ", careerTask=" + careerTask + "]";
 	}
-
+	
 }

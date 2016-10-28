@@ -1,15 +1,13 @@
 package com.cafe24.pickmetop.resume.model;
 
-import java.util.Date;
-
-public class ResumeTrainningVo {
-	String trainingCd;
-	String resumeCd;
-	String trainingCountry;
-	String trainingAcademy;
-	Date trainingBegindate;
-	Date trainingEnddate;
-	String trainingContent;
+public class ResumeTrainingVo {
+	private String trainingCd;
+	private String resumeCd;
+	private String trainingCountry;
+	private String trainingAcademy;
+	private String trainingBegindate;
+	private String trainingEnddate;
+	private String trainingContent;
 	public String getTrainingCd() {
 		return trainingCd;
 	}
@@ -34,16 +32,16 @@ public class ResumeTrainningVo {
 	public void setTrainingAcademy(String trainingAcademy) {
 		this.trainingAcademy = trainingAcademy;
 	}
-	public Date getTrainingBegindate() {
+	public String getTrainingBegindate() {
 		return trainingBegindate;
 	}
-	public void setTrainingBegindate(Date trainingBegindate) {
+	public void setTrainingBegindate(String trainingBegindate) {
 		this.trainingBegindate = trainingBegindate;
 	}
-	public Date getTrainingEnddate() {
+	public String getTrainingEnddate() {
 		return trainingEnddate;
 	}
-	public void setTrainingEnddate(Date trainingEnddate) {
+	public void setTrainingEnddate(String trainingEnddate) {
 		this.trainingEnddate = trainingEnddate;
 	}
 	public String getTrainingContent() {
@@ -58,5 +56,6 @@ public class ResumeTrainningVo {
 				+ trainingCountry + ", trainingAcademy=" + trainingAcademy + ", trainingBegindate=" + trainingBegindate
 				+ ", trainingEnddate=" + trainingEnddate + ", trainingContent=" + trainingContent + "]";
 	}
+	
 	
 }
