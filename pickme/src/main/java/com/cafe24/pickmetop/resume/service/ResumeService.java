@@ -22,7 +22,7 @@ public class ResumeService {
 	ResumeDao resumeDao;
 	public void addResume(ResumeVo resumeVo){
 		resumeVo.setResumeCd("resume_cd_5");
-		resumeVo.setLoginId("À±»ó¼·");
+		resumeVo.setLoginId("À±»ó¼·1");
 		ResumePersonalVo resumePersonalVo = new ResumePersonalVo();
 		resumePersonalVo.setResumeCd(resumeVo.getResumeCd());
 		resumePersonalVo.setPersonalKorname(resumeVo.getPersonalKorname());
