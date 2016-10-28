@@ -20,7 +20,7 @@
       					<li><a href="#">자기소개서</a></li>
       					<li><a href="/resumeInsert">이력서</a></li>
       					<li><a href="/companyInfo">기업정보</a></li>
-      					<li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      					<li><a href="/memberGeneralInsert"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
       					<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
     				</ul>
   				</div>
