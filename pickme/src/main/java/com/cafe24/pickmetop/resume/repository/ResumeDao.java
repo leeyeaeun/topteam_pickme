@@ -27,10 +27,16 @@ public class ResumeDao {
 	private SqlSessionTemplate sqlSessionFactoryResume;
 	
 	//이력서 저장
-	public int insertResume(ResumeAwardVo award, ResumeCareerVo career, ResumeCertificateVo certificate, ResumeEtcVo etc, ResumeFamilyVo family, 
+	/*public int insertResume(ResumeAwardVo award, ResumeCareerVo career, ResumeCertificateVo certificate, ResumeEtcVo etc, ResumeFamilyVo family, 
 			ResumeHighschoolVo highshool, ResumeMilitaryserviceVo militaryservice, ResumeLanguageVo language, ResumePersonalVo personal, ResumeTrainingVo training,
 			ResumeUniversityVo university, ResumeVo resume){
 		return sqlSessionFactoryResume.insert(NS+".insertResume", resume);
+	}*/
+	public int insertResume(ResumeVo resumeVo){
+		return sqlSessionFactoryResume.insert(NS +".insertResume",resumeVo);
+	}
+	public int insertResumePersonal(ResumePersonalVo resumePersonalVo){
+		return sqlSessionFactoryResume.insert(NS + ".insertResumePersonal", resumePersonalVo);
 	}
 	
 	//이력서 리스트

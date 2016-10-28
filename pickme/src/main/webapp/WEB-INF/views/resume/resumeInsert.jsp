@@ -22,7 +22,8 @@
 		<h1>이력서</h1>
 		<p><strong>Pick Me</strong>는 절대 사용자 동의 없이 입력하신 정보를 외부로 유출,공개하지 않습니다.</p>
 		</div>
-			<form id="resumeInsert" action="/resumeList" method="post" enctype="multipart/form-data">	
+			<form id="resumeInsert" action="/resumeInsert" method="post">	
+			<!-- <form id="resumeInsert" action="/resumeList" method="post" enctype="multipart/form-data"> -->	
 				<div class="row">
 						<div class="col-sm-2">
 							<table class="table">
@@ -56,16 +57,16 @@
 							<tbody>
 								<tr>
 									<td class="col-sm-1">한글 이름</td>
-									<td class="col-sm-3"><input type="text" class="form-control" id="personalKorName" name="personalKorName" placeholder="한글이름 입력"></td>
+									<td class="col-sm-3"><input type="text" class="form-control" id="personalKorName" name="personalKorname" placeholder="한글이름 입력"></td>
 									<td class="col-sm-1">영문 이름</td>
-									<td class="col-sm-3"><input type="text" class="form-control" id="personalEngName" name="" placeholder="영문이름 입력"></td>
+									<td class="col-sm-3"><input type="text" class="form-control" id="personalEngName" name="personalEngname" placeholder="영문이름 입력"></td>
 								</tr>
 								<tr>	
 									<td class="col-sm-1">생년월일</td>
-									<td class="col-sm-3"><input type="date" class="form-control" id="personlBirthdate" name="" placeholder="생년월일 8자리 입력"></td>
+									<td class="col-sm-3"><input type="date" class="form-control" id="personlBirthdate" name="personalBirthdate" placeholder="생년월일 8자리 입력"></td>
 									<td class="col-sm-1">성별</td>
 									<td class="col-sm-3">
-										<select class="form-control" id="personlGender" name="">
+										<select class="form-control" id="personlGender" name="personalGender">
 											<option value="">::선택::</option>
 											<option value="male">남자</option>
 											<option value="female">여자</option>
@@ -74,19 +75,19 @@
 								</tr>
 								<tr>
 									<td class="col-sm-1">일반전화</td>
-									<td class="col-sm-3"><input type="text" class="form-control" id="personlPhone" name="" placeholder="일반전화번호 입력"></td>
+									<td class="col-sm-3"><input type="text" class="form-control" id="personlPhone" name="personalPhone" placeholder="일반전화번호 입력"></td>
 									<td class="col-sm-1">휴대전화</td>
-									<td class="col-sm-3"><input type="text" class="form-control" id="personlCellphone" name="" placeholder="휴대전화번호 입력"></td>
+									<td class="col-sm-3"><input type="text" class="form-control" id="personlCellphone" name="personalCellphone" placeholder="휴대전화번호 입력"></td>
 								</tr>
 								<tr>
 									<td class="col-sm-1">이메일</td>
-									<td class="col-sm-3"><input type="text" class="form-control" id="personlEmail" name="" placeholder="이메일주소 입력"></td>
+									<td class="col-sm-3"><input type="text" class="form-control" id="personlEmail" name="personalEmail" placeholder="이메일주소 입력"></td>
 									<td class="col-sm-1">SNS</td>
-									<td class="col-sm-3"><input type="text" class="form-control" id="personlSns" name="" placeholder="sns계정 또는 url 입력"></td>
+									<td class="col-sm-3"><input type="text" class="form-control" id="personlSns" name="personalSns" placeholder="sns계정 또는 url 입력"></td>
 								</tr>
 								<tr>
 									<td class="col-sm-1">주소</td>
-									<td colspan="5"><input type="text" class="form-control" id="personlAddr" name="" placeholder="주소 입력"></td>
+									<td colspan="5"><input type="text" class="form-control" id="personlAddr" name="personalAddr" placeholder="주소 입력"></td>
 								</tr>
 							</tbody>
 						</table>

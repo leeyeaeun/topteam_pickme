@@ -20,6 +20,21 @@ import com.cafe24.pickmetop.resume.repository.ResumeDao;
 public class ResumeService {
 	@Autowired
 	ResumeDao resumeDao;
-	public void insertResume(){
+	public void addResume(ResumeVo resumeVo){
+		resumeVo.setResumeCd("resume_cd_5");
+		resumeVo.setLoginId("À±»ó¼·");
+		ResumePersonalVo resumePersonalVo = new ResumePersonalVo();
+		resumePersonalVo.setResumeCd(resumeVo.getResumeCd());
+		resumePersonalVo.setPersonalKorname(resumeVo.getPersonalKorname());
+		resumePersonalVo.setPersonalEngname(resumeVo.getPersonalEngname());
+		resumePersonalVo.setPersonalBirthdate(resumeVo.getPersonalBirthdate());
+		resumePersonalVo.setPersonalPhone(resumeVo.getPersonalPhone());
+		resumePersonalVo.setPersonalCellphone(resumeVo.getPersonalCellphone());
+		resumePersonalVo.setPersonalEmail(resumeVo.getPersonalEmail());
+		resumePersonalVo.setPersonalSns(resumeVo.getPersonalSns());
+		resumePersonalVo.setPersonalAddr(resumeVo.getPersonalAddr());
+		
+		resumeDao.insertResume(resumeVo);
+		resumeDao.insertResumePersonal(resumePersonalVo);
 	}
 }

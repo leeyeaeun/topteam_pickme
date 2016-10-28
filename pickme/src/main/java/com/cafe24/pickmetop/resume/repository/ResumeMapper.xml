@@ -2,4 +2,48 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.cafe24.pickmetop.resume.repository.ResumeMapper">
+	<insert id="insertResume" parameterType="com.cafe24.pickmetop.resume.model.ResumeVo">
+		INSERT INTO tb_resume(
+			resume_cd,
+			login_id,
+			resume_name,
+			resume_regdate,
+			resume_modidate
+		)VALUES(
+			#{resumeCd},
+			#{loginId},
+			#{resumeName},
+			now(),
+			now()
+		)		
+	</insert>
+	<insert id="insertResumePersonal" parameterType="com.cafe24.pickmetop.resume.model.ResumePersonalVo">
+		INSERT INTO tb_resume_personal(
+			resume_cd,
+			personal_korname,
+			personal_engname,
+			personal_birthdate,
+			personal_gender,
+			personal_phone,
+			personal_cellphone,
+			personal_email,
+			personal_sns,
+			personal_addr,
+			personal_regdate,
+			personal_modidate
+		) VALUES (
+			#{resumeCd},
+			#{personalKorname},
+			#{personalEngname},
+			#{personalBirthdate},
+			#{personalGender},
+			#{personalPhone},
+			#{personalCellphone},
+			#{personalEmail},
+			#{personalSns},
+			#{personalAddr},
+			now(),
+			now()
+		)
+	</insert>
 </mapper>

@@ -37,11 +37,9 @@ public class ResumeController {
 	}
 	//이력서 입력처리
 	@RequestMapping(value="/resumeInsert", method = RequestMethod.POST)
-	public String resumeInsert(Model model, ResumeAwardVo award, ResumeCareerVo career, ResumeCertificateVo certificate, ResumeEtcVo etc, ResumeFamilyVo family, 
-			ResumeHighschoolVo highshool, ResumeMilitaryserviceVo militaryservice, ResumeLanguageVo language, ResumePersonalVo personal, ResumeTrainingVo training,
-			ResumeUniversityVo university, ResumeVo resume){
+	public String resumeInsert(ResumeVo resumeVo){
 		
-		Logger.info("award 매개변수 확인 {}", award.toString());
+	/*	Logger.info("award 매개변수 확인 {}", award.toString());
 		Logger.info("career 매개변수 확인 {}", career.toString());
 		Logger.info("certificate 매개변수 확인 {}", certificate.toString());
 		Logger.info("etc 매개변수 확인 {}", etc.toString());
@@ -53,7 +51,8 @@ public class ResumeController {
 		Logger.info("training 매개변수 확인 {}", training.toString());
 		Logger.info("university 매개변수 확인 {}", university.toString());
 		Logger.info("resume 매개변수 확인 {}", resume.toString());
-		
+		*/
+		resumeService.addResume(resumeVo);
 		return "/resume/resumeInsert";
 	}
 	//이력서 리스트
