@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 
 import com.cafe24.pickmetop.admin.model.JobTopIndexVo;
 import com.cafe24.pickmetop.company.model.CompanyInfoVo;
+import com.cafe24.pickmetop.company.model.CompanyReviewVo;
 
 @Repository
 public class CompanyDao {
@@ -17,6 +18,15 @@ public class CompanyDao {
 	@Autowired
 	@Resource(name = "sqlSessionCompany")
 	private SqlSessionTemplate sqlSessionFactoryCompany;
+	
+	//기업리뷰등록(사용자) 메서드
+	public int insertCompanyReview(CompanyReviewVo companyReviewVo){
+		return sqlSessionFactoryCompany.insert(NS + ".insertCompanyReview", companyReviewVo);
+	}
+	//기업코드검색
+	public String selectCompanyInfoByCompanyCd(String companyName){
+		return sqlSessionFactoryCompany.selectOne(NS + ".selectCompanyInfoByCompanyCd", companyName);
+	}
 	
 	//기업정보 테이블에서 기업이름 리스트 전체
 	public List<CompanyInfoVo> selectCompanyInfoAllList(){

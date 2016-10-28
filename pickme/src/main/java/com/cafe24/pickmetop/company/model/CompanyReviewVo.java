@@ -1,7 +1,7 @@
 package com.cafe24.pickmetop.company.model;
 
 public class CompanyReviewVo {
-	private String companyReviewCd;
+	private int companyReviewCd;
 	private String companyCd;
 	private String loginId;
 	private String jobTopIndexCd;
@@ -25,10 +25,10 @@ public class CompanyReviewVo {
 	private int reviewAllow;
 	private String reviewGrantor;
 	
-	public String getCompanyReviewCd() {
+	public int getCompanyReviewCd() {
 		return companyReviewCd;
 	}
-	public void setCompanyReviewCd(String companyReviewCd) {
+	public void setCompanyReviewCd(int companyReviewCd) {
 		this.companyReviewCd = companyReviewCd;
 	}
 	public String getCompanyCd() {
@@ -163,6 +163,7 @@ public class CompanyReviewVo {
 	public void setReviewGrantor(String reviewGrantor) {
 		this.reviewGrantor = reviewGrantor;
 	}
+	
 	@Override
 	public String toString() {
 		return "CompanyReviewVo [companyReviewCd=" + companyReviewCd + ", companyCd=" + companyCd + ", loginId="
@@ -175,8 +176,6 @@ public class CompanyReviewVo {
 				+ ", reviewModiDate=" + reviewModiDate + ", reviewAllowDate=" + reviewAllowDate + ", reviewAllow="
 				+ reviewAllow + ", reviewGrantor=" + reviewGrantor + "]";
 	}
-	
-	
 	
 	
 }
