@@ -20,26 +20,14 @@ public class MemberController {
 	private MemberService memberService;
 	
 	//로그인 입력화면
-	@RequestMapping(value="/memberGeneralInsert", method = RequestMethod.GET)
+	@RequestMapping(value="/memberGeneralInsert")
 	public String memberInsert(){
 		return "/member/general/memberGeneralInsert";
 	}
-	//로그인 입력처리
-		@RequestMapping(value="/memberGeneralInsert", method = RequestMethod.POST)
-		public String memberInsert(MemberGeneralVo genner, MemberLinkedVo linked, MemberWithdrawVo withdraw, 
-				MemberWorkstateVo workstate){
-			Logger.info("MemberGeneralVo :{}", genner.toString());
-			Logger.info("MemberLinkedVo :{}", linked.toString());
-			Logger.info("MemberWithdrawVo :{}", withdraw.toString());
-			Logger.info("MemberWorkstateVo :{}", workstate.toString());
-			
-			return "/member/general/memberGeneralInsert";
-		}
 		
-		
-		@RequestMapping(value="/memberLinkedInsert", method = RequestMethod.GET)
-		public String memberLinkedInsert(){
-			return "/member/linked/memberLinkedInsert";
+	@RequestMapping(value="/memberLinkedInsert", method = RequestMethod.GET)
+	public String memberLinkedInsert(){
+		return "/member/linked/memberLinkedInsert";
 			
 		}
 }
