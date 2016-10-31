@@ -19,17 +19,10 @@ $(document).ready(function(){
 			<div class="row">
 				<div id="reviewRate" class="col-xs-5">
 					<h1>기업총평점</h1>
-						<span class="star-rating">
-	
-							<span style="width:${reviewDetail.reviewRate * 20}%"></span>
-			
-						</span>		
-					<%-- <div class="progress">	
-						<div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow=" ${reviewDetail.reviewRate}"
-					 		 aria-valuemin="0" aria-valuemax="5" style="width:${reviewDetail.reviewRate * 20}%">
-					   		 ${reviewDetail.reviewRate * 1.0} / 5.0
-						</div>
-					</div> --%>
+					<h2>${reviewDetail.reviewRate * 1.0}</h2>
+					<span class="star-rating">
+						<span style="width:${reviewDetail.reviewRate * 20}%"></span>
+					</span>
 				</div>
 				
 				<div id="etc">
