@@ -1,17 +1,17 @@
 package com.cafe24.pickmetop.resume.model;
 
 public class ResumeHighschoolVo {
-	private String highshoolCd;
+	private String highschoolCd;
 	private String resumeCd;
-	private String highshoolName;
-	private String highshoolCategory;
-	private String highshoolBegindate;
-	private String highshoolEnddate;
-	public String getHighshoolCd() {
-		return highshoolCd;
+	private String highschoolName;
+	private String highschoolCategory;
+	private String highschoolBegindate;
+	private String highschoolEnddate;
+	public String getHighschoolCd() {
+		return highschoolCd;
 	}
-	public void setHighshoolCd(String highshoolCd) {
-		this.highshoolCd = highshoolCd;
+	public void setHighschoolCd(String highschoolCd) {
+		this.highschoolCd = highschoolCd;
 	}
 	public String getResumeCd() {
 		return resumeCd;
@@ -19,35 +19,35 @@ public class ResumeHighschoolVo {
 	public void setResumeCd(String resumeCd) {
 		this.resumeCd = resumeCd;
 	}
-	public String getHighshoolName() {
-		return highshoolName;
+	public String getHighschoolName() {
+		return highschoolName;
 	}
-	public void setHighshoolName(String highshoolName) {
-		this.highshoolName = highshoolName;
+	public void setHighschoolName(String highschoolName) {
+		this.highschoolName = highschoolName;
 	}
-	public String getHighshoolCategory() {
-		return highshoolCategory;
+	public String getHighschoolCategory() {
+		return highschoolCategory;
 	}
-	public void setHighshoolCategory(String highshoolCategory) {
-		this.highshoolCategory = highshoolCategory;
+	public void setHighschoolCategory(String highschoolCategory) {
+		this.highschoolCategory = highschoolCategory;
 	}
-	public String getHighshoolBegindate() {
-		return highshoolBegindate;
+	public String getHighschoolBegindate() {
+		return highschoolBegindate;
 	}
-	public void setHighshoolBegindate(String highshoolBegindate) {
-		this.highshoolBegindate = highshoolBegindate;
+	public void setHighschoolBegindate(String highschoolBegindate) {
+		this.highschoolBegindate = highschoolBegindate;
 	}
-	public String getHighshoolEnddate() {
-		return highshoolEnddate;
+	public String getHighschoolEnddate() {
+		return highschoolEnddate;
 	}
-	public void setHighshoolEnddate(String highshoolEnddate) {
-		this.highshoolEnddate = highshoolEnddate;
+	public void setHighschoolEnddate(String highschoolEnddate) {
+		this.highschoolEnddate = highschoolEnddate;
 	}
 	@Override
 	public String toString() {
-		return "ResumeHighschoolVo [highshoolCd=" + highshoolCd + ", resumeCd=" + resumeCd + ", highshoolName="
-				+ highshoolName + ", highshoolCategory=" + highshoolCategory + ", highshoolBegindate="
-				+ highshoolBegindate + ", highshoolEnddate=" + highshoolEnddate + "]";
+		return "ResumeHighschoolVo [highschoolCd=" + highschoolCd + ", resumeCd=" + resumeCd + ", highschoolName="
+				+ highschoolName + ", highschoolCategory=" + highschoolCategory + ", highschoolBegindate="
+				+ highschoolBegindate + ", highschoolEnddate=" + highschoolEnddate + "]";
 	}
 	
 }

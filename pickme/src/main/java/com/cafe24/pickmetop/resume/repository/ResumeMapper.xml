@@ -28,9 +28,7 @@
 			personal_cellphone,
 			personal_email,
 			personal_sns,
-			personal_addr,
-			personal_regdate,
-			personal_modidate
+			personal_addr
 		) VALUES (
 			#{resumeCd},
 			#{personalKorname},
@@ -41,9 +39,68 @@
 			#{personalCellphone},
 			#{personalEmail},
 			#{personalSns},
-			#{personalAddr},
-			now(),
-			now()
+			#{personalAddr}
 		)
 	</insert>
+	<insert id="insertResumeHighschool" parameterType="com.cafe24.pickmetop.resume.model.ResumeHighschoolVo">
+		INSERT INTO tb_resume_highschool(
+			resume_cd,
+			highschool_name,
+			highschool_category,
+			highschool_begindate,
+			highschool_enddate
+		) VALUES (
+			#{resumeCd},
+			#{highschoolName},
+			#{highschoolCategory},
+			#{highschoolBegindate},
+			#{highschoolEnddate},
+		)
+	</insert>
+	<insert id="insertResumeUniversity" parameterType="com.cafe24.pickmetop.resume.model.ResumeUniversityVo">
+		INSERT INTO tb_resume_university(
+			resume_cd,
+			university_name,
+			university_category,
+			university_begindate,
+			university_enddate,
+			university_major,
+			university_dmajorminor,
+			university_dmajorminorName,
+			university_credit
+		) VALUES (
+			#{resumeCd},
+			#{universityName},
+			#{universityCategory},
+			#{universityBegindate},
+			#{universityEnddate},
+			#{universityMajor},
+			#{universityDmajorminor},
+			#{universityDmajorminorName},
+			#{universityCredit}
+		)
+	</insert>
+	<!-- <insert id="insertResumeFamily" parameterType="com.cafe24.pickmetop.resume.model.ResumeFamilyVo">
+		INSERT INTO tb_resume_(
+			
+		) VALUES (
+			#{resumeCd},
+			#{familyRelation},
+			#{familyName},
+			#{familyBirthdate},
+			#{familyEducation},
+			#{familyJob},
+			#{familyCohabit)
+			
+			
+		)
+	</insert> -->
+	<!-- <insert id="insertResumeMilitaryservice" parameterType="com.cafe24.pickmetop.resume.model.ResumeMilitaryserviceVo">
+		INSERT INTO tb_resume_(
+			
+		) VALUES (
+			#{resumeCd}
+			
+		)
+	</insert> -->
 </mapper>

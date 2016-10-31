@@ -23,7 +23,12 @@
 		<p><strong>Pick Me</strong>는 절대 사용자 동의 없이 입력하신 정보를 외부로 유출,공개하지 않습니다.</p>
 		</div>
 			<form id="resumeInsert" action="/resumeInsert" method="post">	
-			<!-- <form id="resumeInsert" action="/resumeList" method="post" enctype="multipart/form-data"> -->	
+				<div class="row">
+					<div class="col-sm-4">
+						<h3>나의 이력서</h3>
+						<input type="text" class="form-control" id="resumeName" name="resumeName" placeholder="이력서명 입력">
+					</div>
+				</div>
 				<div class="row">
 						<div class="col-sm-2">
 							<table class="table">
@@ -162,24 +167,24 @@
 								<tr>
 									<td class="col-sm-1">주전공</td>
 									<td class="col-sm-2">
-										<input type="text" class="form-control" id="uiniversityMajor" name="uiniversityMajor" placeholder="ex)영어영문학과">
+										<input type="text" class="form-control" id="universityMajor" name="universityMajor" placeholder="ex)영어영문학과">
 									</td>
 									<td class="col-sm-2">복수전공/부전공</td>
 									<td class="col-sm-1">
-										<select class="form-control" id="uiniversityDmajorminor" name="uiniversityDmajorminor">
+										<select class="form-control" id="universityDmajorminor" name="universityDmajorminor">
 											<option value="">::선택::</option>
 											<option value="복수전공">복수전공</option>
 											<option value="부전공">부전공</option>
 										</select>
 									</td>
 									<td class="col-sm-2">
-										<input type="text" class="form-control" id="uiniversityDmajorminorName" name="uiniversityDmajorminorName" placeholder="ex)경영학과">
+										<input type="text" class="form-control" id="universityDmajorminorName" name="universityDmajorminorName" placeholder="ex)경영학과">
 									</td>
 								</tr>
 								<tr>
 									<td class="col-sm-1">학점</td>
 									<td class="col-sm-2">
-										<input type="text" class="form-control" id="uiniversityCredit" name="uiniversityCredit" placeholder="ex) 3.1/4.5">
+										<input type="text" class="form-control" id="universityCredit" name="universityCredit" placeholder="ex) 3.1/4.5">
 									</td>
 								</tr>
 							</tbody>
