@@ -71,4 +71,43 @@
 		ORDER BY
 			job_topindex_cd
 	</select>
+	
+	<!-- 기업리뷰 비승인 리스트 -->
+	<select id="selectCompanyListByReviewAllow" resultType="com.cafe24.pickmetop.company.model.CompanyReviewVo">
+		SELECT
+			company_review_cd as companyReviewCd,
+			company_cd as companyCd,
+			login_id as loginId,
+			review_comment as reviewComment,
+			review_regdate as reviewRegDate
+		FROM
+			tb_company_review
+		WHERE
+			review_allow = 0
+		ORDER BY
+			review_regdate desc
+	</select>
+	<select id="selectCompanyListByReviewCd" parameterType="int" resultType="com.cafe24.pickmetop.company.model.CompanyReviewVo">
+		SELECT
+			company_review_cd as companyReviewCd,
+			company_cd as companyCd,
+			login_id as loginId,
+			review_workyear as reviewWorkYear,
+			review_rate as reviewRate,
+			review_comment as reviewComment,
+			review_strength as reviewStrength,
+			review_weak as reviewWeak,
+			review_wish as reviewWish,
+			review_promotion as reviewPromotion,
+			review_welfare as reviewWelfare,
+			review_culture as reviewCulture,
+			review_balance as reviewBalance,
+			review_ceorate as reviewCeorate,
+			review_ceosupport as reviewCeosupport,
+			review_regdate as reviewRegDate
+		FROM
+			tb_company_review
+		WHERE
+			company_review_cd = #{companyReviewCd}
+	</select>
 </mapper>

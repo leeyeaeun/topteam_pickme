@@ -1,9 +1,6 @@
 package com.cafe24.pickmetop.company.service;
 
-import static org.junit.Assert.assertArrayEquals;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -12,8 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.cafe24.pickmetop.admin.model.JobTopIndexVo;
-import com.cafe24.pickmetop.company.model.CompanyInfoVo;
-import com.cafe24.pickmetop.company.model.CompanyReviewVo;
+import com.cafe24.pickmetop.company.model.*;
 import com.cafe24.pickmetop.company.repository.CompanyDao;
 
 @Service
@@ -22,6 +18,15 @@ public class CompanyService {
 	
 	@Autowired
 	CompanyDao companyDao;
+	//기업리뷰 상세보기
+	public CompanyReviewVo getCompanyReviewDetail(int companyReviewCd){
+		return companyDao.selectCompanyListByReviewCd(companyReviewCd);
+	}
+	
+	//기업리뷰목록(비승인)
+	public List<CompanyReviewVo> getCompanyReviewUnreceivedList(){
+		return companyDao.selectCompanyListByReviewAllow();
+	}
 	
 	//기업리뷰등록(사용자) 메서드
 	public int addCompanyReview(CompanyReviewVo companyReviewVo, String companyName){

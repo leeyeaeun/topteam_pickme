@@ -26,6 +26,18 @@ public class CompanyController {
 		return "/companyinfo/companymain";
 	}
 	
+	@RequestMapping(value = "/review/companyReviewDetail", method = RequestMethod.GET)
+	public String companyReviewDetail(Model model, @RequestParam(value="companyReviewCd") int companyReviewCd) {
+		model.addAttribute("reviewDetail", companyService.getCompanyReviewDetail(companyReviewCd));
+		return "/companyinfo/review/companyReviewDetail";
+	}
+	
+	@RequestMapping(value = "/review/companyReviewUnreceivedList", method = RequestMethod.GET)
+	public String companyReviewUnreceivedList(Model model) {
+		model.addAttribute("reviewUnreceivedList", companyService.getCompanyReviewUnreceivedList());
+		return "/companyinfo/review/companyReviewList";
+	}
+	
 	@RequestMapping(value = "/review/companyReviewInsert", method = RequestMethod.POST)
 	public String companyReviewInsert(CompanyReviewVo companyReviewVo, @RequestParam(value="companyName") String companyName){
 		logger.info("command param companyReview:{}", companyReviewVo.toString());

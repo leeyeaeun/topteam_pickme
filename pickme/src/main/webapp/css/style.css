@@ -15,7 +15,39 @@ footer{
 .navbar-fixed-bottom span{
 	color: #000000;
 }
+/*기업리뷰 미승인리스트 관련*/
+.tablehover:hover{
+	background-color: rgba(213,213,213,0.5);
+}
+/*기업리뷰 상세보기 관련*/
+#reviewRate{
+	/* margin: 40px 25px 60px 25px;
+	margin-left: 25px;
+	margin-top: 40px;
+	margin-bottom: 60px; */
+	padding: 50px 35px 50px 35px;
+	background-color: #fff;
+}
+#etc{	
+}
+.star-rating { 
+	width:205px; 
+} 
 
+.star-rating, .star-rating span { 
+	display:inline-block; height:39px; overflow:hidden; background:url("/img/star.png"); 
+} 
+
+.star-rating span{ 
+	background-position:left bottom; line-height:0; vertical-align:top; 
+} 
+
+.companyReviewDetail{
+	padding-top: 20px;
+	padding-left: 50px;
+	text-align: center;
+	background-color: rgba(213,213,213,0.5);
+} 
 /*메인화면 section옵션*/
 #section1 {padding-top:50px;height:500px;color: #fff; background-image: url("/img/main/calendar.jpg"); background-size: cover;}
 #section2 {padding-top:50px;height:500px;color: #fff; background-image: url("/img/main/resume.png"); background-size: cover;}

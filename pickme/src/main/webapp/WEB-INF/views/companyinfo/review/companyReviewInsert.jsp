@@ -39,11 +39,13 @@
 		
 		//등록버튼클릭 이벤트
 		$('#companyReviewInsertBtn').click(function(){
+			$('#reviewWorkYear').val($('#reviewWorkYear1').val()+'~'+$('#reviewWorkYear2').val())
+			console.log($('#reviewWorkYear').val());
 			$('#companyReviewInsertForm').submit();
 		});
 	});
 </script>
-<title>Insert title here</title>
+<title>기업리뷰 등록페이지</title>
 </head>
 <body>
 	<jsp:include page="${pageContext.request.contextPath}/WEB-INF/views/common/module/modHeader.jsp"/>
@@ -55,7 +57,7 @@
 							<label for="companyName">기업명 : </label> 
 						</div>
 						<div class="col-xs-3">
-							<input type="text" id="companyName" name="companyName" autocomplete="on"/>
+							<input class="form-control" type="text" id="companyName" name="companyName" autocomplete="on"/>
 						</div>
 					</div>
 				</div>
@@ -76,11 +78,16 @@
 				<div class="form-group">
 					<div class="row">
 						<div class="col-xs-2">
-							<label for="companyName"> 근무년도 : </label> 
+							<label for="companyName"> 근무기간 : </label> 
 						</div>
 						<div class="col-xs-3">
-							<input type="month" id="reviewWorkYear" name="reviewWorkYear"/>
+							<input class="form-control" type="month" id="reviewWorkYear1"/>
 						</div>
+						
+						<div class="col-xs-3">
+							<input class="form-control" type="month" id="reviewWorkYear2"/>
+						</div>
+							<input type="hidden" id="reviewWorkYear" name="reviewWorkYear">
 					</div>
 				</div>
 				<div class="form-group">  

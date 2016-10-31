@@ -9,8 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.cafe24.pickmetop.admin.model.JobTopIndexVo;
-import com.cafe24.pickmetop.company.model.CompanyInfoVo;
-import com.cafe24.pickmetop.company.model.CompanyReviewVo;
+import com.cafe24.pickmetop.company.model.*;
 
 @Repository
 public class CompanyDao {
@@ -35,5 +34,13 @@ public class CompanyDao {
 	//직무중분류 테이블에서 리스트 전체
 	public List<JobTopIndexVo> selectJobTopIndexAllList(){
 		return sqlSessionFactoryCompany.selectList(NS + ".selectJobTopIndexAllList");
+	}
+	//기업리뷰목록(비승인)
+	public List<CompanyReviewVo> selectCompanyListByReviewAllow(){
+		return sqlSessionFactoryCompany.selectList(NS + ".selectCompanyListByReviewAllow");
+	}
+	//기업리뷰상세보기
+	public CompanyReviewVo selectCompanyListByReviewCd(int companyReviewCd){
+		return sqlSessionFactoryCompany.selectOne(NS + ".selectCompanyListByReviewCd", companyReviewCd);
 	}
 }
