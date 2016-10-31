@@ -19,7 +19,7 @@
 	</insert>
 	<insert id="insertResumePersonal" parameterType="com.cafe24.pickmetop.resume.model.ResumePersonalVo">
 		INSERT INTO tb_resume_personal(
-			resume_cd,
+			resume_cd,    
 			personal_korname,
 			personal_engname,
 			personal_birthdate,
