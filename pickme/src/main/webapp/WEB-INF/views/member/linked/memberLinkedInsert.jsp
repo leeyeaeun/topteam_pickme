@@ -4,7 +4,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>http://www.blueb.co.kr</title>
+	<title></title>
 	
 <style>
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
@@ -67,7 +67,7 @@ input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgb
 
 </style>
 
-</head>
+
 <body>
 
 
@@ -77,8 +77,12 @@ input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgb
     	<input type="text" name="u" placeholder="Username" required="required" />
         <input type="password" name="p" placeholder="Password" required="required" />
         <button type="submit" class="btn btn-primary btn-block btn-large">Let me in.</button>
+        <div class="with-naver js-sign-with-naver">
+       <img class="social-media-icon" src="../naverlogi.png" />
+    <p class="social-media-name">네이버로 로그인</p>
+    </div>
     </form>
 </div>
-
+</head>
 </body>
 </html>
