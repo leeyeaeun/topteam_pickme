@@ -1,5 +1,7 @@
 package com.cafe24.pickmetop.resume.model;
 
+import java.util.List;
+
 public class ResumeVo {
 	//00 이력서 입력
 	private String resumeCd;
@@ -33,12 +35,12 @@ public class ResumeVo {
 	private String universityDmajorminorName;
 	private String universityCredit;
 	//04 가족
-	private String familyRelation;
-	private String familyName;
-	private String familyBirthdate;
-	private String familyEducation;
-	private String familyJob;
-	private String familyCohabit;
+	private List<String> familyRelation;
+	private List<String> familyName;
+	private List<String> familyBirthdate;
+	private List<String> familyEducation;
+	private List<String> familyJob;
+	private List<String> familyCohabit;
 	//병역
 	private String militaryserviceState;
 	private String militaryserviceGroup;
@@ -48,6 +50,7 @@ public class ResumeVo {
 	private String militaryserviceEnddate;
 	//자격면허
 	private String certificateCd;
+	private String certificateName;
 	private String certificateGrade;
 	private String certificateHost;
 	private String certificateBegindate;
@@ -59,9 +62,11 @@ public class ResumeVo {
 	private String careerEnddate;
 	private String careerPeriod;
 	private String careerLevel;
+	private String careerResign;
 	private String careerDepartment;
 	private String careerTask;
 	//어학
+	private String languageCd;
 	private String languageName;
 	private String languageTest;
 	private String languageGrade;
@@ -249,7 +254,7 @@ public class ResumeVo {
 	public void setUniversityCredit(String universityCredit) {
 		this.universityCredit = universityCredit;
 	}
-	public String getFamilyRelation() {
+	/*public String getFamilyRelation() {
 		return familyRelation;
 	}
 	public void setFamilyRelation(String familyRelation) {
@@ -284,10 +289,48 @@ public class ResumeVo {
 	}
 	public void setFamilyCohabit(String familyCohabit) {
 		this.familyCohabit = familyCohabit;
-	}
+	}*/
+	
 	public String getMilitaryserviceState() {
 		return militaryserviceState;
 	}
+	public List<String> getFamilyRelation() {
+		return familyRelation;
+	}
+	public void setFamilyRelation(List<String> familyRelation) {
+		this.familyRelation = familyRelation;
+	}
+	public List<String> getFamilyName() {
+		return familyName;
+	}
+	public void setFamilyName(List<String> familyName) {
+		this.familyName = familyName;
+	}
+	public List<String> getFamilyBirthdate() {
+		return familyBirthdate;
+	}
+	public void setFamilyBirthdate(List<String> familyBirthdate) {
+		this.familyBirthdate = familyBirthdate;
+	}
+	public List<String> getFamilyEducation() {
+		return familyEducation;
+	}
+	public void setFamilyEducation(List<String> familyEducation) {
+		this.familyEducation = familyEducation;
+	}
+	public List<String> getFamilyJob() {
+		return familyJob;
+	}
+	public void setFamilyJob(List<String> familyJob) {
+		this.familyJob = familyJob;
+	}
+	public List<String> getFamilyCohabit() {
+		return familyCohabit;
+	}
+	public void setFamilyCohabit(List<String> familyCohabit) {
+		this.familyCohabit = familyCohabit;
+	}
+	
 	public void setMilitaryserviceState(String militaryserviceState) {
 		this.militaryserviceState = militaryserviceState;
 	}
@@ -326,6 +369,12 @@ public class ResumeVo {
 	}
 	public void setCertificateCd(String certificateCd) {
 		this.certificateCd = certificateCd;
+	}
+	public String getCertificateName() {
+		return certificateName;
+	}
+	public void setCertificateName(String certificateName) {
+		this.certificateName = certificateName;
 	}
 	public String getCertificateGrade() {
 		return certificateGrade;
@@ -387,6 +436,12 @@ public class ResumeVo {
 	public void setCareerLevel(String careerLevel) {
 		this.careerLevel = careerLevel;
 	}
+	public String getCareerResign() {
+		return careerResign;
+	}
+	public void setCareerResign(String careerResign) {
+		this.careerResign = careerResign;
+	}
 	public String getCareerDepartment() {
 		return careerDepartment;
 	}
@@ -398,6 +453,12 @@ public class ResumeVo {
 	}
 	public void setCareerTask(String careerTask) {
 		this.careerTask = careerTask;
+	}
+	public String getLanguageCd() {
+		return languageCd;
+	}
+	public void setLanguageCd(String languageCd) {
+		this.languageCd = languageCd;
 	}
 	public String getLanguageName() {
 		return languageName;
@@ -574,12 +635,13 @@ public class ResumeVo {
 				+ militaryserviceState + ", militaryserviceGroup=" + militaryserviceGroup + ", militaryserviceLevel="
 				+ militaryserviceLevel + ", militaryserviceBranch=" + militaryserviceBranch
 				+ ", militaryserviceBegindate=" + militaryserviceBegindate + ", militaryserviceEnddate="
-				+ militaryserviceEnddate + ", certificateCd=" + certificateCd + ", certificateGrade=" + certificateGrade
-				+ ", certificateHost=" + certificateHost + ", certificateBegindate=" + certificateBegindate
-				+ ", certificateEnddate=" + certificateEnddate + ", certificateRegnum=" + certificateRegnum
-				+ ", careerCompany=" + careerCompany + ", careerBegindate=" + careerBegindate + ", careerEnddate="
-				+ careerEnddate + ", careerPeriod=" + careerPeriod + ", careerLevel=" + careerLevel
-				+ ", careerDepartment=" + careerDepartment + ", careerTask=" + careerTask + ", languageName="
+				+ militaryserviceEnddate + ", certificateCd=" + certificateCd + ", certificateName=" + certificateName
+				+ ", certificateGrade=" + certificateGrade + ", certificateHost=" + certificateHost
+				+ ", certificateBegindate=" + certificateBegindate + ", certificateEnddate=" + certificateEnddate
+				+ ", certificateRegnum=" + certificateRegnum + ", careerCompany=" + careerCompany + ", careerBegindate="
+				+ careerBegindate + ", careerEnddate=" + careerEnddate + ", careerPeriod=" + careerPeriod
+				+ ", careerLevel=" + careerLevel + ", careerResign=" + careerResign + ", careerDepartment="
+				+ careerDepartment + ", careerTask=" + careerTask + ", languageCd=" + languageCd + ", languageName="
 				+ languageName + ", languageTest=" + languageTest + ", languageGrade=" + languageGrade
 				+ ", languageLevel=" + languageLevel + ", languageBegindate=" + languageBegindate + ", languageEnddate="
 				+ languageEnddate + ", languageRegnum=" + languageRegnum + ", languageHost=" + languageHost

@@ -8,11 +8,52 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css">
 <script src="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/js/jasny-bootstrap.min.js"></script>
+
 <script>
 	//자격증 및 어학 검색 버튼 클릭시 팝업창띄우기
 	function openPop() { 
 	    window.open("/resumeCertilangIndex", "CertifiLang", "top=0, left=0, width=500, height=300, scrollbars=no, resizable=no ,status=no ,toolbar=no"); 
-		}
+	}
+	$('#familyAddBtn').click(function(){
+		$('#family').append(
+				'<div class="col-sm-10" id="family">'+
+				'<table class="table">'+
+				'<thead>'+
+					'<tr>'+
+						'<td><h4>가족사항</h4><td>'+
+					'</tr>'+
+				'</thead>'+
+				'<tbody>'+
+					'<tr>'+
+						'<td class="col-sm-1">관계</td>'+
+						'<td class="col-sm-3"><input type="text" class="form-control" id="familyRelation" name="familyRelation" placeholder="가족관계 입력 : ex) 부, 모, 남동생, 여동생"></td>'+
+						'<td class="col-sm-1">이름</td>'+
+						'<td class="col-sm-3"><input type="text" class="form-control" id="familyName" name="familyName" placeholder="이름 입력"></td>'+
+					'</tr>'+
+					'<tr>'+
+						'<td class="col-sm-1">생년월일</td>'+
+						'<td class="col-sm-3"><input type="date" class="form-control" id="familyBirthdate" name="familyBirthdate" placeholder="생년월일 8자리 입력"></td>'+
+						'<td class="col-sm-1">학력</td>'+
+						'<td class="col-sm-3"><input type="text" class="form-control" id="familyEducation" name="familyEducation" placeholder="학력 입력 : ex) 고졸, 대졸, 대재"></td>'+
+					'</tr>'+
+					'<tr>'+
+						'<td class="col-sm-1">직업</td>'+
+						'<td class="col-sm-3"><input type="text" class="form-control" id="familyJob" name="familyJob" placeholder="직업 입력 : ex) 자영업, 회사원, 가사"></td>'+
+						'<td class="col-sm-1">동거여부</td>'+
+						'<td class="col-sm-3">'+
+							'<select class="form-control" id="familyCohabit" name="familyCohabit">'+
+								'<option value="">::선택::</option>'+
+								'<option value="예">예</option>'+
+								'<option value="아니요">아니요</option>'+
+							'</select>'+
+						'</td>'+
+					'</tr>'+
+				'</tbody>'+
+			'</table>'+
+			'</div>'
+		);
+	}
+	
 </script>
 </head>
 <body>
@@ -73,16 +114,20 @@
 									<td class="col-sm-3">
 										<select class="form-control" id="personlGender" name="personalGender">
 											<option value="">::선택::</option>
-											<option value="male">남자</option>
-											<option value="female">여자</option>
+											<option value="남자">남자</option>
+											<option value="여자">여자</option>
 										</select>
 									</td>
 								</tr>
 								<tr>
 									<td class="col-sm-1">일반전화</td>
-									<td class="col-sm-3"><input type="text" class="form-control" id="personlPhone" name="personalPhone" placeholder="일반전화번호 입력"></td>
+									<td class="col-sm-3">
+										<input type="text" class="form-control" id="personlPhone" name="personalPhone" data-mask="999-9999-9999" placeholder="일반전화번호 입력">
+									</td>
 									<td class="col-sm-1">휴대전화</td>
-									<td class="col-sm-3"><input type="text" class="form-control" id="personlCellphone" name="personalCellphone" placeholder="휴대전화번호 입력"></td>
+									<td class="col-sm-3">
+										<input type="text" class="form-control" id="personlCellphone" name="personalCellphone" data-mask="999-9999-9999" placeholder="휴대전화번호 입력">
+									</td>
 								</tr>
 								<tr>
 									<td class="col-sm-1">이메일</td>
@@ -123,9 +168,9 @@
 								</tr>
 								<tr>
 									<td class="col-sm-1">입학일자</td>
-									<td class="col-sm-5"><input type="date" class="form-control" id="highschoolBegindate" name="" placeholder="입학일자 8자리입력"></td>
+									<td class="col-sm-5"><input type="date" class="form-control" id="highschoolBegindate" name="highschoolBegindate" placeholder="입학일자 8자리입력"></td>
 									<td class="col-sm-1">졸업일자</td>
-									<td class="col-sm-3"><input type="date" class="form-control" id="highschoolEnddate" name="" placeholder="졸업일자 8자리입력"></td>
+									<td class="col-sm-3"><input type="date" class="form-control" id="highschoolEnddate" name="highschoolEnddate" placeholder="졸업일자 8자리입력"></td>
 								</tr>	
 							</tbody>
 						</table>
@@ -192,7 +237,7 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-sm-10">
+					<div class="col-sm-10" id="family">
 						<table class="table">
 							<thead>
 								<tr>
@@ -219,15 +264,18 @@
 									<td class="col-sm-3">
 										<select class="form-control" id="familyCohabit" name="familyCohabit">
 											<option value="">::선택::</option>
-											<option value="y">예</option>
-											<option value="n">아니요</option>
+											<option value="예">예</option>
+											<option value="아니요">아니요</option>
 										</select>
 									</td>	
 								</tr>
 							</tbody>
 						</table>
+						<div class="form-group">
+							<input type="button" id="familyAddBtn" value="가족추가" > 
+						</div>
 					</div>
-				</div>
+				</div>	
 				<div class="row">
 					<div class="col-sm-10">
 						<table class="table">
@@ -289,7 +337,7 @@
 									</td>
 									<td class="col-sm-1">병과</td>
 									<td class="col-sm-3">
-										<input type="text" class="form-control" id="militaryserviceBranch" name="militaryserviceLevel" placeholder="ex) 소총수, 공병, 통신병">
+										<input type="text" class="form-control" id="militaryserviceBranch" name="militaryserviceBranch" placeholder="ex) 소총수, 공병, 통신병">
 									</td>
 								</tr>
 								<tr>
@@ -352,16 +400,16 @@
 								<tr>
 									<td class="col-sm-1">입사일자</td>
 									<td class="col-sm-3">
-										<input type="date" class="form-control" id="careerBegindate" name="careerBegindate" placeholder="근무시작일자 8자리 입력">
+										<input type="date" class="form-control" id="careerBegindate" name="careerBegindate">
 									</td>
 									<td class="col-sm-1">퇴사일자</td>
 									<td class="col-sm-3">
-										<input type="date" class="form-control" id="careerEnddate" name="careerEnddate" placeholder="근무종료일자 8자리 입력">
+										<input type="date" class="form-control" id="careerEnddate" name="careerEnddate">
 									</td>
 								</tr>
 								<tr>
 									<td class="col-sm-1">근무기간</td>
-									<td class="col-sm-3"><input type="text" class="form-control" id="careerPeriod" name="careerPeriod" placeholder="퇴사사유 입력"></td>
+									<td class="col-sm-3"><input type="text" class="form-control" id="careerPeriod" name="careerPeriod" placeholder="근무기간"></td>
 									<td class="col-sm-1">퇴사사유</td>
 									<td class="col-sm-3"><input type="text" class="form-control" id="careerResign" name="careerResign" placeholder="퇴사사유 입력"></td>
 								</tr>

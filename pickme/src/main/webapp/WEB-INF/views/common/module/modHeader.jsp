@@ -18,7 +18,7 @@
     				<ul class="nav navbar-nav navbar-right">
     					<li><a href="#">채용공고</a></li>
       					<li><a href="#">자기소개서</a></li>
-      					<li><a href="/resumeInsert">이력서</a></li>
+      					<li><a href="/resumeList">이력서</a></li>
       					<li><a href="/freeboardInsert">자유게시판</a></li>
       					<li><a href="/companyInfo">기업정보</a></li>
       					<li><a href="/memberGeneralInsert"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>

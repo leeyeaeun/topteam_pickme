@@ -8,6 +8,7 @@ public class ResumeCareerVo {
 	private String careerBegindate;
 	private String careerEnddate;
 	private String careerPeriod;
+	private String careerResign;
 	private String careerLevel;
 	private String careerDepartment;
 	private String careerTask;
@@ -47,6 +48,12 @@ public class ResumeCareerVo {
 	public void setCareerPeriod(String careerPeriod) {
 		this.careerPeriod = careerPeriod;
 	}
+	public String getCareerResign() {
+		return careerResign;
+	}
+	public void setCareerResign(String careerResign) {
+		this.careerResign = careerResign;
+	}
 	public String getCareerLevel() {
 		return careerLevel;
 	}
@@ -69,8 +76,9 @@ public class ResumeCareerVo {
 	public String toString() {
 		return "ResumeCareerVo [careerCd=" + careerCd + ", resumeCd=" + resumeCd + ", careerCompany=" + careerCompany
 				+ ", careerBegindate=" + careerBegindate + ", careerEnddate=" + careerEnddate + ", careerPeriod="
-				+ careerPeriod + ", careerLevel=" + careerLevel + ", careerDepartment=" + careerDepartment
-				+ ", careerTask=" + careerTask + "]";
+				+ careerPeriod + ", careerResign=" + careerResign + ", careerLevel=" + careerLevel
+				+ ", careerDepartment=" + careerDepartment + ", careerTask=" + careerTask + "]";
 	}
+	
 	
 }

@@ -4,6 +4,7 @@ public class ResumeCertificateVo {
 	private String memberCertificateCd;
 	private String resumeCd;
 	private String certificateCd;
+	private String certificateName;
 	private String certificateGrade;
 	private String certificateHost;
 	private String certificateBegindate;
@@ -26,6 +27,12 @@ public class ResumeCertificateVo {
 	}
 	public void setCertificateCd(String certificateCd) {
 		this.certificateCd = certificateCd;
+	}
+	public String getCertificateName() {
+		return certificateName;
+	}
+	public void setCertificateName(String certificateName) {
+		this.certificateName = certificateName;
 	}
 	public String getCertificateGrade() {
 		return certificateGrade;
@@ -60,10 +67,10 @@ public class ResumeCertificateVo {
 	@Override
 	public String toString() {
 		return "ResumeCertificateVo [memberCertificateCd=" + memberCertificateCd + ", resumeCd=" + resumeCd
-				+ ", certificateCd=" + certificateCd + ", certificateGrade=" + certificateGrade + ", certificateHost="
-				+ certificateHost + ", certificateBegindate=" + certificateBegindate + ", certificateEnddate="
-				+ certificateEnddate + ", certificateRegnum=" + certificateRegnum + "]";
+				+ ", certificateCd=" + certificateCd + ", certificateName=" + certificateName + ", certificateGrade="
+				+ certificateGrade + ", certificateHost=" + certificateHost + ", certificateBegindate="
+				+ certificateBegindate + ", certificateEnddate=" + certificateEnddate + ", certificateRegnum="
+				+ certificateRegnum + "]";
 	}
 	
-
 }
