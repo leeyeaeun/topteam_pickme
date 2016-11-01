@@ -24,6 +24,8 @@ public class CompanyReviewVo {
 	private String reviewAllowDate;
 	private int reviewAllow;
 	private String reviewGrantor;
+	private String generalNick;
+	private String linkedNick;
 	
 	public int getCompanyReviewCd() {
 		return companyReviewCd;
@@ -163,7 +165,18 @@ public class CompanyReviewVo {
 	public void setReviewGrantor(String reviewGrantor) {
 		this.reviewGrantor = reviewGrantor;
 	}
-	
+	public String getGeneralNick() {
+		return generalNick;
+	}
+	public void setGeneralNick(String generalNick) {
+		this.generalNick = generalNick;
+	}
+	public String getLinkedNick() {
+		return linkedNick;
+	}
+	public void setLinkedNick(String linkedNick) {
+		this.linkedNick = linkedNick;
+	}
 	@Override
 	public String toString() {
 		return "CompanyReviewVo [companyReviewCd=" + companyReviewCd + ", companyCd=" + companyCd + ", loginId="
@@ -174,8 +187,8 @@ public class CompanyReviewVo {
 				+ reviewBalance + ", reviewCeorate=" + reviewCeorate + ", reviewCeosupport=" + reviewCeosupport
 				+ ", reviewLike=" + reviewLike + ", reviewDislike=" + reviewDislike + ", reviewRegDate=" + reviewRegDate
 				+ ", reviewModiDate=" + reviewModiDate + ", reviewAllowDate=" + reviewAllowDate + ", reviewAllow="
-				+ reviewAllow + ", reviewGrantor=" + reviewGrantor + "]";
+				+ reviewAllow + ", reviewGrantor=" + reviewGrantor + ", generalNick=" + generalNick + ", linkedNick="
+				+ linkedNick + "]";
 	}
-	
 	
 }

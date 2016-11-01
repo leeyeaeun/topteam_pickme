@@ -1,7 +1,9 @@
 package com.cafe24.pickmetop.company.service;
 
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,6 +20,18 @@ public class CompanyService {
 	
 	@Autowired
 	CompanyDao companyDao;
+	//기업리뷰 삭제처리
+	public int deleteCompanyReview(int companyReviewCd){
+		return companyDao.deleteCompanyReview(companyReviewCd);
+	}
+	
+	//기업리뷰 승인처리
+	public int updateCompanyReviewAllow(int companyReviewCd){
+		Map<String, Object> allow = new HashMap<String, Object>();
+		allow.put("loginId", "admin");
+		allow.put("companyReviewCd", companyReviewCd);
+		return companyDao.updateCompanyReviewAllow(allow);
+	}
 	//기업리뷰 상세보기
 	public CompanyReviewVo getCompanyReviewDetail(int companyReviewCd){
 		return companyDao.selectCompanyListByReviewCd(companyReviewCd);

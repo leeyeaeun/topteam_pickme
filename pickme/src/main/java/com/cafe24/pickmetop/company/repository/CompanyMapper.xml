@@ -87,11 +87,15 @@
 		ORDER BY
 			review_regdate desc
 	</select>
+	
+	<!-- 기업리뷰 디테일 -->
 	<select id="selectCompanyListByReviewCd" parameterType="int" resultType="com.cafe24.pickmetop.company.model.CompanyReviewVo">
 		SELECT
 			company_review_cd as companyReviewCd,
 			company_cd as companyCd,
 			login_id as loginId,
+			(SELECT general_nick FROM tb_member_general WHERE general_id=loginId)as generalNick,
+			(SELECT linked_nick FROM tb_member_linked WHERE linked_id=loginId)as linkedNick,
 			review_workyear as reviewWorkYear,
 			review_rate as reviewRate,
 			review_comment as reviewComment,
@@ -105,9 +109,28 @@
 			review_ceorate as reviewCeorate,
 			review_ceosupport as reviewCeosupport,
 			review_regdate as reviewRegDate
-		FROM
+		FROM 
+			  tb_company_review review
+		WHERE
+			company_review_cd = #{companyReviewCd}	
+	</select>
+	
+	<!-- 기업리뷰 승인처리 update -->
+	<update id="updateCompanyReviewAllow" parameterType="java.util.Map">
+		UPDATE
+			tb_company_review
+		SET
+			review_allow = 1,
+			review_allowdate = now(),
+			review_grantor = #{loginId}
+		WHERE
+			company_review_cd = #{companyReviewCd}
+	</update>
+	<!-- 기업리뷰 삭제처리 -->
+	<delete id="deleteCompanyReview" parameterType="int">
+		DELETE FROM
 			tb_company_review
 		WHERE
 			company_review_cd = #{companyReviewCd}
-	</select>
+	</delete>
 </mapper>

@@ -1,6 +1,7 @@
 package com.cafe24.pickmetop.company.repository;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Resource;
 
@@ -17,6 +18,7 @@ public class CompanyDao {
 	@Autowired
 	@Resource(name = "sqlSessionCompany")
 	private SqlSessionTemplate sqlSessionFactoryCompany;
+	
 	
 	//기업리뷰등록(사용자) 메서드
 	public int insertCompanyReview(CompanyReviewVo companyReviewVo){
@@ -42,5 +44,13 @@ public class CompanyDao {
 	//기업리뷰상세보기
 	public CompanyReviewVo selectCompanyListByReviewCd(int companyReviewCd){
 		return sqlSessionFactoryCompany.selectOne(NS + ".selectCompanyListByReviewCd", companyReviewCd);
+	}
+	//기업리뷰승인 업데이트
+	public int updateCompanyReviewAllow(Map<String, Object> allow){
+		return sqlSessionFactoryCompany.update(NS + ".updateCompanyReviewAllow", allow);
+	}
+	//기업리뷰삭제
+	public int deleteCompanyReview(int companyReviewCd){
+		return sqlSessionFactoryCompany.delete(NS + ".deleteCompanyReview", companyReviewCd);
 	}
 }

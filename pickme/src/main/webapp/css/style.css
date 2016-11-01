@@ -8,9 +8,13 @@ body {
 line-height: 30px;  줄간격
 	height: 80px;
 } */
+
 /* footer관련 css*/
-footer{
-	padding-top: 50px;
+.footer .text-center{
+	margin-top: 10px;
+	padding-top: 10px;
+	background-color: #222222;
+	color: #76919d;	
 }
 .navbar-fixed-bottom span{
 	color: #000000;
@@ -19,36 +23,32 @@ footer{
 .tablehover:hover{
 	background-color: rgba(213,213,213,0.5);
 }
+
 /*기업리뷰 상세보기 관련*/
 #reviewRate{
-	/* margin: 40px 25px 60px 25px;
-	margin-left: 25px;
-	margin-top: 40px;
-	margin-bottom: 60px; */
-	padding: 30px 35px 30px 35px;
+	margin-left: 15px;
+	padding: 30px 0px 30px 0px;
 	background-color: #fff;
-}
-#etc{	
 }
 .star-rating { 
 	width:205px; 
 } 
-
 .star-rating, .star-rating span { 
 	text-align: left;
 	display:inline-block; height:39px; overflow:hidden; background:url("/img/star.png"); 
 } 
-
 .star-rating span{ 
 	background-position:left bottom; line-height:0; vertical-align:top; 
 } 
-
-.companyReviewDetail{
-	padding-top: 20px;
-	padding-left: 50px;
+#reviewRate, #etc{
 	text-align: center;
+}
+.companyReviewDetail{
+	padding: 25px 30px 25px 50px;
+	
 	background-color: rgba(213,213,213,0.5);
 } 
+
 /*메인화면 section옵션*/
 #section1 {padding-top:50px;height:500px;color: #fff; background-image: url("/img/main/calendar.jpg"); background-size: cover;}
 #section2 {padding-top:50px;height:500px;color: #fff; background-image: url("/img/main/resume.png"); background-size: cover;}

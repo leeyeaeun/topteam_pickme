@@ -20,10 +20,22 @@ public class CompanyController {
 	
 	@Autowired
 	CompanyService companyService;
-
+	
 	@RequestMapping(value = "/companyInfo", method = RequestMethod.GET)
 	public String companyMain(Locale locale, Model model) {
 		return "/companyinfo/companymain";
+	}
+	
+	@RequestMapping(value = "/review/companyReviewDelete", method = RequestMethod.GET)
+	public String companyRevieDelete(@RequestParam(value="companyReviewCd") int companyReviewCd) {
+		companyService.deleteCompanyReview(companyReviewCd);
+		return "redirect:/review/companyReviewUnreceivedList";
+	}
+	
+	@RequestMapping(value = "/review/companyReviewAllow", method = RequestMethod.GET)
+	public String companyReviewAllow(@RequestParam(value="companyReviewCd") int companyReviewCd) {
+		companyService.updateCompanyReviewAllow(companyReviewCd);
+		return "redirect:/review/companyReviewUnreceivedList";
 	}
 	
 	@RequestMapping(value = "/review/companyReviewDetail", method = RequestMethod.GET)

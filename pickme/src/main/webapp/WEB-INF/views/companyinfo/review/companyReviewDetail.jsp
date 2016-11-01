@@ -7,8 +7,17 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <link rel="stylesheet" href="/css/style.css">
 <script>
-$(document).ready(function(){
-});
+	$(document).ready(function(){
+		const $btnSuccess = $('.btn-success');
+		const $btnDanger = $('.btn-danger');
+		
+		$btnSuccess.click(function(){
+			location.href = "/review/companyReviewAllow?companyReviewCd=${reviewDetail.companyReviewCd}";
+		});
+		$btnDanger.click(function(){
+			location.href = "/review/companyReviewDelete?companyReviewCd=${reviewDetail.companyReviewCd}";
+		});
+	});
 </script>
 <title>Insert title here</title>
 </head>
@@ -26,7 +35,6 @@ $(document).ready(function(){
 				</div>
 				
 				<div id="etc">
-				
 					<div class="col-xs-3">
 						<label>승진기회 가능성</label>
 					</div>
@@ -37,8 +45,7 @@ $(document).ready(function(){
 						   		 ${reviewDetail.reviewPromotion * 1.0} / 5.0
 							</div>
 						</div>
-					</div>
-					 
+					</div>	 
 					<div class="col-xs-3">
 						<label>복지 및 급여</label>
 					</div>
@@ -49,8 +56,7 @@ $(document).ready(function(){
 						   		 ${reviewDetail.reviewWelfare * 1.0} / 5.0
 							</div>
 						</div>
-					</div>
-					
+					</div>	
 					<div class="col-xs-3">
 						<label>사내문화</label>
 					</div>
@@ -61,8 +67,7 @@ $(document).ready(function(){
 						   		 ${reviewDetail.reviewCulture * 1.0} / 5.0
 							</div>
 						</div>
-					</div>
-					
+					</div>	
 					<div class="col-xs-3">
 						<label>업무와 삶의균형</label>
 					</div>
@@ -74,7 +79,6 @@ $(document).ready(function(){
 							</div>
 						</div>
 					</div>
-					
 					<div class="col-xs-3">
 						<label>경영진</label>
 					</div>
@@ -86,7 +90,6 @@ $(document).ready(function(){
 							</div>
 						</div>
 					</div>
-					
 					<div class="col-xs-3">
 						<label>CEO에대한견해</label>
 					</div>
@@ -97,11 +100,70 @@ $(document).ready(function(){
 						   		 ${reviewDetail.reviewCeosupport * 1.0} / 5.0
 							</div>
 						</div>
+					</div>		
+				</div>	<!-- etc -->	
+			</div>	<!-- row -->	
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="panel panel-defult">
+						<div class="panel-heading">
+							<label>닉네임 : </label>
+							<c:if test="${reviewDetail.generalNick != null}">
+								${reviewDetail.generalNick } |
+							</c:if>
+							<c:if test="${reviewDetail.linkedNick != null}">
+								${reviewDetail.linkedNick }	|
+							</c:if>
+							<label>근무기간 : </label>
+								${reviewDetail.reviewWorkYear } |
+							<label>등록일 : </label>
+								${reviewDetail.reviewRegDate }
+						</div>
 					</div>
-						
 				</div>
-			</div>		
-		</div>
+			</div>	<!-- row -->
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="panel panel-info">
+      					<div class="panel-heading"><label>한줄평 :</label></div>
+      					<div class="panel-body">"${reviewDetail.reviewComment }"</div>
+    				</div>
+				</div>
+			</div><!-- row -->
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="panel panel-success">
+      					<div class="panel-heading"><label>기업의 장점 :</label></div>
+      					<div class="panel-body">"${reviewDetail.reviewStrength }"</div>
+    				</div>
+				</div>
+			</div>	<!-- row -->	
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="panel panel-danger">
+      					<div class="panel-heading"><label>기업의 단점 :</label></div>
+      					<div class="panel-body">"${reviewDetail.reviewWeak }"</div>
+    				</div>
+				</div>
+			</div>	<!-- row -->
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="panel panel-primary">
+      					<div class="panel-heading"><label>경영진에게 바라는점 :</label></div>
+      					<div class="panel-body">"${reviewDetail.reviewWish }"</div>
+    				</div>
+				</div>
+			</div>	<!-- row -->
+			<div class="row">
+				<div class="col-xs-6">
+					<button type="button" class="btn btn-primary btn-block btn-success">승인</button>
+				</div>
+				<div class="col-xs-6">
+					<button type="button" class="btn btn-primary btn-block btn-danger">삭제</button>
+				</div>
+			</div>	<!-- row -->		
+		</div><!-- companyReviewDetail -->
 	</div>
+<jsp:include page="${pageContext.request.contextPath}/WEB-INF/views/common/module/modFooter.jsp"/>	
 </body>
 </html>
