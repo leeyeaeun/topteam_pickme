@@ -1,88 +1,177 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!doctype html>
-<html>
-<head>
+<html lang="kr">
+	<head>
 	<meta charset="UTF-8">
-	<title></title>
-	
-<style>
-@import url(http://fonts.googleapis.com/css?family=Open+Sans);
-.btn { display: inline-block; *display: inline; *zoom: 1; padding: 4px 10px 4px; margin-bottom: 0; font-size: 13px; line-height: 18px; color: #333333; text-align: center;text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75); vertical-align: middle; background-color: #f5f5f5; background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6); background-image: -ms-linear-gradient(top, #ffffff, #e6e6e6); background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6)); background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6); background-image: -o-linear-gradient(top, #ffffff, #e6e6e6); background-image: linear-gradient(top, #ffffff, #e6e6e6); background-repeat: repeat-x; filter: progid:dximagetransform.microsoft.gradient(startColorstr=#ffffff, endColorstr=#e6e6e6, GradientType=0); border-color: #e6e6e6 #e6e6e6 #e6e6e6; border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25); border: 1px solid #e6e6e6; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05); -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05); cursor: pointer; *margin-left: .3em; }
-.btn:hover, .btn:active, .btn.active, .btn.disabled, .btn[disabled] { background-color: #e6e6e6; }
-.btn-large { padding: 9px 14px; font-size: 15px; line-height: normal; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; }
-.btn:hover { color: #333333; text-decoration: none; background-color: #e6e6e6; background-position: 0 -15px; -webkit-transition: background-position 0.1s linear; -moz-transition: background-position 0.1s linear; -ms-transition: background-position 0.1s linear; -o-transition: background-position 0.1s linear; transition: background-position 0.1s linear; }
-.btn-primary, .btn-primary:hover { text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25); color: #ffffff; }
-.btn-primary.active { color: rgba(255, 255, 255, 0.75); }
-.btn-primary { background-color: #4a77d4; background-image: -moz-linear-gradient(top, #6eb6de, #4a77d4); background-image: -ms-linear-gradient(top, #6eb6de, #4a77d4); background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#6eb6de), to(#4a77d4)); background-image: -webkit-linear-gradient(top, #6eb6de, #4a77d4); background-image: -o-linear-gradient(top, #6eb6de, #4a77d4); background-image: linear-gradient(top, #6eb6de, #4a77d4); background-repeat: repeat-x; filter: progid:dximagetransform.microsoft.gradient(startColorstr=#6eb6de, endColorstr=#4a77d4, GradientType=0);  border: 1px solid #3762bc; text-shadow: 1px 1px 1px rgba(0,0,0,0.4); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.5); }
-.btn-primary:hover, .btn-primary:active, .btn-primary.active, .btn-primary.disabled, .btn-primary[disabled] { filter: none; background-color: #4a77d4; }
-.btn-block { width: 100%; display:block; }
+	<title>로그인</title>
 
-* { -webkit-box-sizing:border-box; -moz-box-sizing:border-box; -ms-box-sizing:border-box; -o-box-sizing:border-box; box-sizing:border-box; }
-
-html { width: 100%; height:100%; overflow:hidden; }
-
-body { 
-	width: 100%;
-	height:100%;
-	font-family: 'Open Sans', sans-serif;
-	background: #092756;
-	background: -moz-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%),-moz-linear-gradient(top,  rgba(57,173,219,.25) 0%, rgba(42,60,87,.4) 100%), -moz-linear-gradient(-45deg,  #670d10 0%, #092756 100%);
-	background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), -webkit-linear-gradient(top,  rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -webkit-linear-gradient(-45deg,  #670d10 0%,#092756 100%);
-	background: -o-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), -o-linear-gradient(top,  rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -o-linear-gradient(-45deg,  #670d10 0%,#092756 100%);
-	background: -ms-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), -ms-linear-gradient(top,  rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -ms-linear-gradient(-45deg,  #670d10 0%,#092756 100%);
-	background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), linear-gradient(to bottom,  rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), linear-gradient(135deg,  #670d10 0%,#092756 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3E1D6D', endColorstr='#092756',GradientType=1 );
+<style rel="stylesheet">
+body {
+   font: 13px/20px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+   color: #333333;
+   background: #596778;
 }
-.login { 
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	margin: -150px 0 0 -150px;
-	width:300px;
-	height:300px;
-}
-.login h1 { color: #fff; text-shadow: 0 0 10px rgba(0,0,0,0.3); letter-spacing:1px; text-align:center; }
 
-input { 
-	width: 100%; 
-	margin-bottom: 10px; 
-	background: rgba(0,0,0,0.3);
-	border: none;
-	outline: none;
-	padding: 10px;
-	font-size: 13px;
-	color: #fff;
-	text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
-	border: 1px solid rgba(0,0,0,0.3);
-	border-radius: 4px;
-	box-shadow: inset 0 -5px 45px rgba(100,100,100,0.2), 0 1px 1px rgba(255,255,255,0.2);
-	-webkit-transition: box-shadow .5s ease;
-	-moz-transition: box-shadow .5s ease;
-	-o-transition: box-shadow .5s ease;
-	-ms-transition: box-shadow .5s ease;
-	transition: box-shadow .5s ease;
+.signUp {
+   position: relative;
+   margin: 50px auto;
+   width: 280px;
+   padding: 33px 25px 29px;
+   background: #FFFFFF;
+   border-bottom: 1px solid #C4C4C4;
+   border-radius: 5px;
+   -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
 }
-input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgba(255,255,255,0.2); }
 
+.signUp:before,
+.signUp:after {
+   content: '';
+   position: absolute;
+   bottom: 1px;
+   left: 0;
+   right: 0;
+   height: 10px;
+   background: inherit;
+   border-bottom: 1px solid #D2D2D2;
+   border-radius: 4px;
+}
+
+.signUp:after {
+   bottom: 3px;
+   border-color: #DCDCDC;
+}
+
+.signUpTitle {
+   margin: -25px -25px 25px;
+   padding: 15px 25px;
+   line-height: 35px;
+   font-size: 26px;
+   font-weight: 300;
+   color: #777;
+   text-align: center;
+   text-shadow: 0 1px rgba(255, 255, 255, 0.75);
+   background: #F7F7F7;
+}
+
+.signUpTitle:before {
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   height: 8px;
+   background: #C4E17F;
+   border-radius: 5px 5px 0 0;
+   background-image: -webkit-linear-gradient(left, #C4E17F, #C4E17F 12.5%, #F7FDCA 12.5%, #F7FDCA 25%, #FECF71 25%, #FECF71 37.5%, #F0776C 37.5%, #F0776C 50%, #DB9DBE 50%, #db9CBE 62.5%, #C49CDE 62.5%, #C49CDE 75%, #669AE1 75%, #669AE1 87.5%, #62C2E4 87.5%, #62C2E4);
+   background-image: -moz-linear-gradient(left, #c4e17f, #C4E17F 12.5%, #F7FDCA 12.5%, #F7FDCA 25%, #FECF71 25%, #FECF71 37.5%, #F0776C 37.5%, #F0776C 50%, #DB9DBE 50%, #DB9CBE 62.5%, #C49CDE 62.5%, #C49CDE 75%, #669AE1 75%, #669AE1 87.5%, #62C2E4 87.5%, #62C2E4);
+   background-image: -o-linear-gradient(left, #C4E17F, #C4E17F 12.5%, #F7FDCC 12.5%, #F7FDCA 25%, #FECF71 25%, #FECF71 37.5%, #F0776C 37.5%, #F0776C 50%, #DB9DBE 50%, #DB9DBE 62.5%, #C49CDE 62.5%, #C49CDE 75%, #669AE1 75%, #669AE1 87.5%, #62C2E4 87.5%, #62C2E4);
+   background-image: linear-gradient(to right, #C4E17F, #C4E17F 12.5%, #F7FDCA 12.5%, #F7FDCA 25%, #FECF71 25%, #FECF71 37.5%, #F0776C 37.5%, #F0776C 50%, #DB9DBE 50%, #DB9CBE 62.5%, #c49cde 62.5%, #C49CDE 75%, #669AE1 75%, #669AE1 87.5%, #62c2e4 87.5%, #62C2E4);
+}
+
+input {
+   font-family: inherit;
+   color: inherit;
+   -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+   box-sizing: border-box;
+}
+
+.signUpInput {
+   width: 100%;
+   height: 50px;
+   margin-bottom: 25px;
+   padding: 0 15px 2px;
+   font-size: 17px;
+   background: white;
+   border: 2px solid #EBEBEB;
+   border-radius: 4px;
+   -webkit-box-shadow: inset 0 -2px #EBEBEB;
+   box-shadow: inset 0 -2px #EBEBEB;
+}
+
+.signUpInput:focus {
+   border-color: #62C2E4;
+   outline: none;
+   -webkit-box-shadow: inset 0 -2px #62C2E4;
+   box-shadow: inset 0 -2px #62C2E4;
+}
+
+.lt-ie9 .signUpInput {
+   line-height: 48px;
+}
+
+.signUpButton {
+   position: relative;
+   vertical-align: top;
+   width: 100%;
+   height: 54px;
+   padding: 0;
+   font-size: 22px;
+   color: white;
+   text-align: center;
+   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+   background: #F0776C;
+   border: 0;
+   border-bottom: 2px solid #D76B60;
+   border-radius: 5px;
+   cursor: pointer;
+   -webkit-box-shadow: inset 0 -2px #D76B60;
+   box-shadow: inset 0 -2px #D76B60;
+}
+
+.signUpButton:active {
+   top: 1px;
+   outline: none;
+   -webkit-box-shadow: none;
+   box-shadow: none;
+}
+
+:-moz-placeholder {
+   color: #AAAAAA;
+   font-weight: 300;
+}
+
+::-moz-placeholder {
+   color: #AAAAAA;
+   opacity: 1;
+   font-weight: 300;
+}
+
+::-webkit-input-placeholder {
+   color: #AAAAAA;
+   font-weight: 300;
+}
+
+:-ms-input-placeholder {
+   color: #AAAAAA;
+   font-weight: 300;
+}
+
+::-moz-focus-inner {
+   border: 0;
+   padding: 0;
+}
 </style>
-
-
+</head>
 <body>
 
+<form class="signUp" id="signupForm">
+   <h1 class="signUpTitle">로그인</h1>
+   <input type="text" class="signUpInput" placeholder="이메일" autofocus required>
+   <input type="password" class="signUpInput" placeholder="비밀번호" required>
+  
+    <input type="checkbox" id="remember" class="checkbox" checked>
+    
+    <label for="remember">자동 로그인</label>
+    <br></br>
+   <input type="submit" value="로그인" class="signUpButton">
+   <br>
+	<input type="submit" value="비밀번호찾기" class="signUpButton">
+	<br>
+   <input type="image" class="signUpButton" src="/img/naver.jpg" width="100%" height="px" >
+</form>
 
-<div class="login">
-	<h1>Login</h1>
-    <form method="post">
-    	<input type="text" name="u" placeholder="Username" required="required" />
-        <input type="password" name="p" placeholder="Password" required="required" />
-        <button type="submit" class="btn btn-primary btn-block btn-large">Let me in.</button>
-        <div class="with-naver js-sign-with-naver">
-       <img class="social-media-icon" src="../naverlogi.png" />
-    <p class="social-media-name">네이버로 로그인</p>
-    </div>
-    </form>
-</div>
-</head>
 </body>
 </html>

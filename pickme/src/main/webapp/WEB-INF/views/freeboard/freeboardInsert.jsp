@@ -12,7 +12,7 @@
 <jsp:include page="${pageContext.request.contextPath}/WEB-INF/views/common/module/modHeader.jsp"/>
 <div class="container">
   <h2>Table</h2>
-  <p>The .table-responsive class creates a responsive table which will scroll horizontally on small devices (under 768px). When viewing on anything larger than 768px wide, there is no difference:</p>
+  
   <div class="table-responsive">
   <table class="table">
     <thead>
@@ -23,7 +23,7 @@
         <th>게시글제목</th>
         <th>게시글 내용</th>
         <th>닉네임</th>
-        <th>글카테고리키워드</th>
+        <th>카테고리</th>
       </tr>
     </thead>
     <tbody>
@@ -53,4 +53,20 @@
 </div>
 
 </body>
+	<body id="page-top" class="index">
+		<div class="container">
+			<input type="hidden" name="group_id" value=""/>
+			<input type="hidden" name="depth" value=""/>
+		 	<input type="hidden" name="board_id" value="" />
+		 	<input type="hidden" name="mode" value=""/>
+		 	<input type="hidden" name="comment_userid" value=""/>
+			<input type="hidden" name="classify" value=""/>
+			<input type="hidden" name="subclass" value=""/>
+			<tr align="right">
+                <td colspan="5">
+                <input type="button" value="글쓰기">
+			</tr>
+		</div>	
+		
+	
 </html>
