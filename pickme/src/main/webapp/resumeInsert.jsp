@@ -16,11 +16,19 @@
 	function openPop() { 
 	    window.open("/resumeCertilangIndex", "CertifiLang", "top=0, left=0, width=500, height=300, scrollbars=no, resizable=no ,status=no ,toolbar=no"); 
 	}
-	
+	function add_div(){
+	    var div = document.createElement('div');
+
+	    div.innerHTML = document.getElementById('family').innerHTML;
+	    document.getElementById('field').appendChild(div);
+	}
+
+	function remove_div(obj){
+	document.getElementById('field').removeChild(obj.parentNode);
+	}
 </script>
 </head>
 <body>
-	<jsp:include page="../common/module/modHeader.jsp"/>
 	<div class="container">
 		<div class="jumbotron">
 			<h2>이력서</h2>
@@ -195,15 +203,12 @@
 						</table>
 					</div>
 				</div>
-				<div class="row">
+				<div class="row" >
 					<div class="col-sm-12">
+					<h4>가족사항</h4>
+					<input type="button" class="btn btn-default btn-xs btn-block" value="추가" onclick="add_div()">
+						<div id="family">
 						<table class="table">
-							<thead>
-								<tr>
-									<td><h4>가족사항</h4><td>
-								</tr>
-							</thead>
-							<tbody>
 								<tr>
 									<td class="col-sm-1">관계</td>
 									<td class="col-sm-2"><input type="text" class="form-control" id="familyRelation" name="familyRelation" placeholder="ex) 부, 모, 남동생, 여동생"></td>
@@ -226,8 +231,11 @@
 										</select>
 									</td>	
 								</tr>
-							</tbody>
 						</table>
+						<input type="button" class="btn btn-default btn-xs btn-block" value="삭제" onclick="remove_div(this)">
+						</div>
+						<div id="field"></div>
+						
 					</div>
 				</div>	
 				<div class="row">
@@ -555,7 +563,6 @@
 			<input type="submit" class="btn btn-primary btn" id="insertBtn" value="이력서 저장"/>
 		</form>	
 	</div>
-	<jsp:include page="../common/module/modFooter.jsp"/>
 </body>
 </html>
 

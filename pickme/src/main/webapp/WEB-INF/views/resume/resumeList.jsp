@@ -13,9 +13,11 @@
 <body>
 	<jsp:include page="../common/module/modHeader.jsp"/>
 	<div class="container">
-		<div class="jumbotron" align="center">
+		<div class="jumbotron">
 		<h1>나의 이력서</h1>
-		<p><strong>Pick Me</strong>는 절대 사용자 동의 없이 입력하신 정보를 외부로 유출,공개하지 않습니다.</p>
+			<p><strong>Pick Me</strong>는 절대 사용자 동의 없이 입력하신 정보를 외부로 유출,공개하지 않습니다.</p>
+			<p>언제 어디서나 작성한 나의 이력서를 확인하고, 새로 작성하실 수 있습니다.</p>
+			<a class="btn btn-primary btn-lg" href="/resumeInsert" role="button">이력서 작성하러가기</a>
 		</div>
 		<div class="table">
 			<table class="table table-bordered">
