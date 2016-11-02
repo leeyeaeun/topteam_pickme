@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<% if(session.getAttribute("ValidMem") !=null){ %>
+	<jsp:forward page="main.jsp"></jsp:forward>  
+<%} %>  
 <!doctype html>
 <html lang="kr">
 	<head>
@@ -157,28 +160,37 @@ input {
 
 <script>
 $(document).ready(function(){
-    $('[data-toggle="tooltip"]').tooltip();
+   $('[data-toggle="tooltip"]').tooltip();
 });
+	
+	
+
+
+
+
 
 </script>
 </head>
+
 <body>
 
-<form action="memberGeneralInsert" class="signUp" id="signupForm" method="post" >
+<form action="/memberGeneralInsert" class="signUp" id="signupForm" method="post" >
 	<div class="container">
 	<div class="User">
 		<h1 class="signUpTitle">회 원 가 입</h1>
- 		<input type="text" class="signUpInput" placeholder="이메일" value="<%if(session.getAttribute("email")!=null) %>" autofocus required>
-		<input type="password" id="email" class="signUpInput" placeholder="비밀번호" required>
- 		<input type="password" class="signUpInput" placeholder="비밀번호 재입력" required>
+		<input type="text" id="email" name="general_id"  class="signUpInput" placeholder="이메일" required>
+
+		<input type="password" id="password" name="general_pw"  class="signUpInput" placeholder="비밀번호" required>
+ 		<input type="password" name="general_nick" class="signUpInput" placeholder="비밀번호 재입력" required>
    	 	  회원가입시<a href="/terms" data-toggle="tooltip" title="Hooray!">이용약관</a>에 동의하게 됩니다.
 	</div>
 	</div>
 
 			
-	<input type="submit" value="로그인" class="signUpButton">
+	<input type="submit" value="회원가입" class="signUpButton">
 	
-	<input type="image" class="signUpButton" src="/img/naver.jpg" width="100%" height="px" >
+	<input type="image" class="signUpButton" value="회원가입" onclick="javascript:wondow.location='memberGeneralInsert'" src="/img/naver.jpg" width="100%" height="px" >
     </form>
+    
 </body>
 </html>

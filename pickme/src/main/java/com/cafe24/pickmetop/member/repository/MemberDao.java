@@ -8,8 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import com.cafe24.pickmetop.member.model.MemberGeneralVo;
 import com.cafe24.pickmetop.member.model.MemberLinkedVo;
-import com.cafe24.pickmetop.member.model.MemberWithdrawVo;
-import com.cafe24.pickmetop.member.model.MemberWorkstateVo;
+import com.cafe24.pickmetop.member.model.*;
 
 @Repository
 public class MemberDao {
@@ -18,9 +17,21 @@ public class MemberDao {
 	@Resource(name="sqlSessionMember")
 	private SqlSessionTemplate sqlSessionFactoryMember;
 	
-	public int insertMember(MemberGeneralVo genner, MemberLinkedVo 
-			linked, MemberWithdrawVo withdraw, MemberWorkstateVo workstate){
+	public int Memberjoin(MemberGeneralVo genner){
 		return sqlSessionFactoryMember.insert(NS+".insertMember", genner);
 	
 	}
+	public int insertMemberLinkedVo(MemberLinkedVo linke){
+		return sqlSessionFactoryMember.insert(NS+".insertMember", linke);
+	}
+	public int insertMemberWithdrawVo(MemberWithdrawVo withdraw){
+		return sqlSessionFactoryMember.insert(NS+".insertMember",  withdraw);
+		
+	}
+	public int insertMemberWorkstateVo(MemberWorkstateVo workstat){
+		return sqlSessionFactoryMember.insert(NS+".insertMember", workstat);	
+		
+		
+	}	
+		
 }
