@@ -19,6 +19,6 @@
 			now(),
 			now(),
 			#{generalState}
-		)	
+		) 	
 	</insert>
 </mapper>
