@@ -5,12 +5,13 @@
 <head>
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="/css/style.css">
 <title>Insert title here</title>
 </head>
 <body>
 	<div class="container">
 		<section class="mainmenu">
-			<nav class="navbar navbar-inverse">
+			<nav class="navbar navbar-inverse navbar-fixed-top">
   				<div class="container-fluid">
     				<div class="navbar-header">
       					<a class="navbar-brand" href="/">PICK ME</a>
