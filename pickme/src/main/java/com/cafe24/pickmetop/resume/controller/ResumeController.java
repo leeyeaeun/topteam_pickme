@@ -4,9 +4,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.cafe24.pickmetop.resume.model.ResumeVo;
 import com.cafe24.pickmetop.resume.service.ResumeService;
@@ -30,13 +31,20 @@ public class ResumeController {
 		return "/resume/resumeInsert";
 	}
 	//03 이력서 리스트
-	@RequestMapping(value="/resumeList", method = RequestMethod.POST)
-	public String resumeList(){
+	@RequestMapping(value="/resumeList", method = RequestMethod.GET)
+	public String resumeList(Model model){
+		model.addAttribute("resumeList", resumeService.getResumeList());
 		return "/resume/resumeList";
 	}
 	
-	//04 이력서 수정화면
-	//@RequestMapping(value="")
+	//04 이력서 상세보기
+	@RequestMapping(value="/resumeDetail", method = RequestMethod.GET)
+	public String resumeDetail(Model model, @RequestParam(value="resumeCd") String resumeCd){
+		model.addAttribute("resumeDetail", resumeService.getResumeDetail(resumeCd));
+		return "/resume/resumeDetail";
+	}
+	
+	
 	//05 이력서 수정처리
 	//@RequestMapping(value="")
 	//06 이력서 삭제

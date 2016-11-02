@@ -73,7 +73,7 @@
 	</select>
 	
 	<!-- 기업리뷰 비승인 리스트 -->
-	<select id="selectCompanyListByReviewAllow" resultType="com.cafe24.pickmetop.company.model.CompanyReviewVo">
+	<select id="selectCompanyReviewListByReviewUnreceived" resultType="com.cafe24.pickmetop.company.model.CompanyReviewVo">
 		SELECT
 			company_review_cd as companyReviewCd,
 			company_cd as companyCd,
@@ -85,11 +85,40 @@
 		WHERE
 			review_allow = 0
 		ORDER BY
-			review_regdate desc
+			review_regdate DESC
 	</select>
 	
+	<!-- 기업리뷰 승인 리스트 -->
+	<select id="selectCompanyReviewListByReviewAllow" parameterType="com.cafe24.pickmetop.commons.PageHelper" resultType="com.cafe24.pickmetop.company.model.CompanyReviewVo">
+		SELECT
+			company_review_cd as companyReviewCd,
+			(SELECT company_name FROM tb_company_info WHERE company_cd = review.company_cd) as companyName,
+			(SELECT job_topindex_name FROM tb_job_topindex WHERE job_topindex_cd=review.job_topindex_cd) as jobTopIndexName,
+			review_comment as reviewComment,
+			review_strength as reviewStrength,
+			review_weak as reviewWeak,
+			DATE_FORMAT(review_regdate, '%Y-%m-%d %H:%i') as reviewRegDate
+		FROM
+			tb_company_review review
+		WHERE
+			review_allow = 1
+		ORDER BY
+			review_regdate DESC
+        LIMIT #{startRow}, #{linePerPage}
+	</select>
+	
+	<!-- 기업리뷰 리스트 수 -->
+	<select id="selectAllowTotalCount" parameterType="Integer" resultType="Integer">
+        SELECT
+            COUNT(*)
+        FROM 
+        	tb_company_review
+        WHERE
+        	review_allow = #{reviewAllow}
+    </select>
+    
 	<!-- 기업리뷰 디테일 -->
-	<select id="selectCompanyListByReviewCd" parameterType="int" resultType="com.cafe24.pickmetop.company.model.CompanyReviewVo">
+	<select id="selectCompanyListByReviewCd" parameterType="Integer" resultType="com.cafe24.pickmetop.company.model.CompanyReviewVo">
 		SELECT
 			company_review_cd as companyReviewCd,
 			company_cd as companyCd,
@@ -127,7 +156,7 @@
 			company_review_cd = #{companyReviewCd}
 	</update>
 	<!-- 기업리뷰 삭제처리 -->
-	<delete id="deleteCompanyReview" parameterType="int">
+	<delete id="deleteCompanyReview" parameterType="Integer">
 		DELETE FROM
 			tb_company_review
 		WHERE

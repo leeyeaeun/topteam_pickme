@@ -24,8 +24,11 @@ public class CompanyReviewVo {
 	private String reviewAllowDate;
 	private int reviewAllow;
 	private String reviewGrantor;
+	
+	private String companyName;
 	private String generalNick;
 	private String linkedNick;
+	private String jobTopIndexName;
 	
 	public int getCompanyReviewCd() {
 		return companyReviewCd;
@@ -177,6 +180,19 @@ public class CompanyReviewVo {
 	public void setLinkedNick(String linkedNick) {
 		this.linkedNick = linkedNick;
 	}
+	public String getJobTopIndexName() {
+		return jobTopIndexName;
+	}
+	public void setJobTopIndexName(String jobTopIndexName) {
+		this.jobTopIndexName = jobTopIndexName;
+	}
+	public String getCompanyName() {
+		return companyName;
+	}
+	public void setCompanyName(String companyName) {
+		this.companyName = companyName;
+	}
+	
 	@Override
 	public String toString() {
 		return "CompanyReviewVo [companyReviewCd=" + companyReviewCd + ", companyCd=" + companyCd + ", loginId="

@@ -14,6 +14,7 @@
 		<ul>
 			<li><a href="/review/companyReviewInsertForm">기업리뷰 등록</a></li>
 			<li><a href="/review/companyReviewUnreceivedList">기업리뷰 미승인 목록</a></li>			
+			<li><a href="/review/companyReviewListAllow">기업리뷰 승인 목록</a></li>			
 		</ul>
 	</div>
 </body>

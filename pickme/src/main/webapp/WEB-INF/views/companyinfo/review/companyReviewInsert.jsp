@@ -14,7 +14,7 @@
 <script>
 	$(document).ready(function(){
 		//자동완성기능 관련
-		var availableTags = new Array();
+		var availableTags = [];
 		<c:forEach var="companyInfoList" items="${companyInfoList}" >
 			availableTags.push("${companyInfoList.companyName}");
 		</c:forEach>

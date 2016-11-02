@@ -2,12 +2,9 @@
 body {
 	margin: 10px;
 }
-/* .mainmenu ul li a{
-	margin-bottom: 20px;
-	padding-top: 30px; 안쪽 여백
-line-height: 30px;  줄간격
-	height: 80px;
-} */
+.mainmenu{
+	margin-bottom: 80px;
+} 
 
 /* footer관련 css*/
 .footer .text-center{
@@ -19,9 +16,25 @@ line-height: 30px;  줄간격
 .navbar-fixed-bottom span{
 	color: #000000;
 }
+/*기업리뷰 승인리스트 관련*/
+.companyReviewList{
+	
+	background-color: rgba(213,213,213,0.5);
+	padding: 30px 40px 30px 40px;
+}
+.review{
+	border-radius: 20px;
+	padding: 10px 20px 10px 20px;
+	margin-bottom: 10px;
+	background-color: #fff;
+}
+.glyphicon-user{
+	width: 60px;
+}
 /*기업리뷰 미승인리스트 관련*/
 .tablehover:hover{
 	background-color: rgba(213,213,213,0.5);
+	cursor:pointer;
 }
 
 /*기업리뷰 상세보기 관련*/

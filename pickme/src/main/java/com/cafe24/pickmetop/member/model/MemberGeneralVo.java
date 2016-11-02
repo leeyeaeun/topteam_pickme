@@ -2,61 +2,61 @@ package com.cafe24.pickmetop.member.model;
 
 public class MemberGeneralVo {
 	
-	private String general_id;
-	private String general_pw;
-	private String general_nick;
-	private int general_level;
-	private String general_date;
-	private String general_logdate;
-	private int general_state;
-	public String getGeneral_id() {
-		return general_id;
+	private String generalId;
+	private String generalPw;
+	private String generalNick;
+	private int generalLevel;
+	private String generalDate;
+	private String generalLogdate;
+	private int generalState;
+	public String getGeneralId() {
+		return generalId;
 	}
-	public void setGeneral_id(String general_id) {
-		this.general_id = general_id;
+	public void setGeneralId(String generalId) {
+		this.generalId = generalId;
 	}
-	public String getGeneral_pw() {
-		return general_pw;
+	public String getGeneralPw() {
+		return generalPw;
 	}
-	public void setGeneral_pw(String general_pw) {
-		this.general_pw = general_pw;
+	public void setGeneralPw(String generalPw) {
+		this.generalPw = generalPw;
 	}
-	public String getGeneral_nick() {
-		return general_nick;
+	public String getGeneralNick() {
+		return generalNick;
 	}
-	public void setGeneral_nick(String general_nick) {
-		this.general_nick = general_nick;
+	public void setGeneralNick(String generalNick) {
+		this.generalNick = generalNick;
 	}
-	public int getGeneral_level() {
-		return general_level;
+	public int getGeneralLevel() {
+		return generalLevel;
 	}
-	public void setGeneral_level(int general_level) {
-		this.general_level = general_level;
+	public void setGeneralLevel(int generalLevel) {
+		this.generalLevel = generalLevel;
 	}
-	public String getGeneral_date() {
-		return general_date;
+	public String getGeneralDate() {
+		return generalDate;
 	}
-	public void setGeneral_date(String general_date) {
-		this.general_date = general_date;
+	public void setGeneralDate(String generalDate) {
+		this.generalDate = generalDate;
 	}
-	public String getGeneral_logdate() {
-		return general_logdate;
+	public String getGeneralLogdate() {
+		return generalLogdate;
 	}
-	public void setGeneral_logdate(String general_logdate) {
-		this.general_logdate = general_logdate;
+	public void setGeneralLogdate(String generalLogdate) {
+		this.generalLogdate = generalLogdate;
 	}
-	public int getGeneral_state() {
-		return general_state;
+	public int getGeneralState() {
+		return generalState;
 	}
-	public void setGeneral_state(int general_state) {
-		this.general_state = general_state;
+	public void setGeneralState(int generalState) {
+		this.generalState = generalState;
 	}
 	@Override
 	public String toString() {
-		return "MemberGeneralVo [general_id=" + general_id + ", general_pw=" + general_pw + ", general_nick="
-				+ general_nick + ", general_level=" + general_level + ", general_date=" + general_date
-				+ ", general_logdate=" + general_logdate + ", general_state=" + general_state + "]";
+		return "MemberGeneralVo [generalId=" + generalId + ", generalPw=" + generalPw + ", generalNick=" + generalNick
+				+ ", generalLevel=" + generalLevel + ", generalDate=" + generalDate + ", generalLogdate="
+				+ generalLogdate + ", generalState=" + generalState + "]";
 	}
 	
-
+		
 }

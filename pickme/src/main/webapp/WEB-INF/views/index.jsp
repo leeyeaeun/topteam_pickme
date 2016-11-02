@@ -68,7 +68,7 @@
     
     </header>
 	<hr>
-	<jsp:include page="${pageContext.request.contextPath}/WEB-INF/views/common/module/modFooter.jsp"/>
 </div>
+<jsp:include page="${pageContext.request.contextPath}/WEB-INF/views/common/module/modFooter.jsp"/>
 </body>
 </html>

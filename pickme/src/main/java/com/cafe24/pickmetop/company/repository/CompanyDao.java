@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.cafe24.pickmetop.admin.model.JobTopIndexVo;
+import com.cafe24.pickmetop.commons.PageHelper;
 import com.cafe24.pickmetop.company.model.*;
 
 @Repository
@@ -19,7 +20,10 @@ public class CompanyDao {
 	@Resource(name = "sqlSessionCompany")
 	private SqlSessionTemplate sqlSessionFactoryCompany;
 	
-	
+	//기업리뷰 목록(승인)
+	public List<CompanyReviewVo> selectCompanyReviewListByReviewAllow(PageHelper pageHelper){
+		return sqlSessionFactoryCompany.selectList(NS +".selectCompanyReviewListByReviewAllow", pageHelper);
+	}
 	//기업리뷰등록(사용자) 메서드
 	public int insertCompanyReview(CompanyReviewVo companyReviewVo){
 		return sqlSessionFactoryCompany.insert(NS + ".insertCompanyReview", companyReviewVo);
@@ -38,8 +42,8 @@ public class CompanyDao {
 		return sqlSessionFactoryCompany.selectList(NS + ".selectJobTopIndexAllList");
 	}
 	//기업리뷰목록(비승인)
-	public List<CompanyReviewVo> selectCompanyListByReviewAllow(){
-		return sqlSessionFactoryCompany.selectList(NS + ".selectCompanyListByReviewAllow");
+	public List<CompanyReviewVo> selectCompanyReviewListByReviewUnreceived(){
+		return sqlSessionFactoryCompany.selectList(NS + ".selectCompanyReviewListByReviewUnreceived");
 	}
 	//기업리뷰상세보기
 	public CompanyReviewVo selectCompanyListByReviewCd(int companyReviewCd){
@@ -52,5 +56,9 @@ public class CompanyDao {
 	//기업리뷰삭제
 	public int deleteCompanyReview(int companyReviewCd){
 		return sqlSessionFactoryCompany.delete(NS + ".deleteCompanyReview", companyReviewCd);
+	}
+	//기업리뷰 목록 카운트
+	public int selectAllowTotalCount(int reviewAllow){
+		return sqlSessionFactoryCompany.selectOne(NS + ".selectAllowTotalCount", reviewAllow);
 	}
 }

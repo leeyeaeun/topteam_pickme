@@ -1,6 +1,7 @@
 package com.cafe24.pickmetop.company.controller;
 
 import java.util.Locale;
+import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,35 +22,50 @@ public class CompanyController {
 	@Autowired
 	CompanyService companyService;
 	
+	//기업메인 맵핑
 	@RequestMapping(value = "/companyInfo", method = RequestMethod.GET)
 	public String companyMain(Locale locale, Model model) {
 		return "/companyinfo/companymain";
 	}
 	
+	//기업리뷰 사용자리스트 맵핑
+	@RequestMapping(value = "/review/companyReviewListAllow", method = RequestMethod.GET)
+	public String companyReviewListAllow(Model model, @RequestParam(value="page", defaultValue="1") int page) {
+		Map<String, Object> companyReviewMap = companyService.getCompanyReviewAllowList(page);
+		model.addAttribute("reviewListAllow", companyReviewMap.get("reviewListAllow"));
+		model.addAttribute("startPage", companyReviewMap.get("startPage"));
+		model.addAttribute("endPage", companyReviewMap.get("endPage"));		
+		return "/companyinfo/review/companyReviewList";
+	}
+	//기업리뷰 삭제처리 맵핑
 	@RequestMapping(value = "/review/companyReviewDelete", method = RequestMethod.GET)
-	public String companyRevieDelete(@RequestParam(value="companyReviewCd") int companyReviewCd) {
+	public String companyReviewDelete(@RequestParam(value="companyReviewCd") int companyReviewCd) {
 		companyService.deleteCompanyReview(companyReviewCd);
 		return "redirect:/review/companyReviewUnreceivedList";
 	}
 	
+	//기업리뷰 승인처리 맵핑
 	@RequestMapping(value = "/review/companyReviewAllow", method = RequestMethod.GET)
 	public String companyReviewAllow(@RequestParam(value="companyReviewCd") int companyReviewCd) {
 		companyService.updateCompanyReviewAllow(companyReviewCd);
 		return "redirect:/review/companyReviewUnreceivedList";
 	}
 	
+	//기업리뷰 상세보기(관리자)
 	@RequestMapping(value = "/review/companyReviewDetail", method = RequestMethod.GET)
 	public String companyReviewDetail(Model model, @RequestParam(value="companyReviewCd") int companyReviewCd) {
 		model.addAttribute("reviewDetail", companyService.getCompanyReviewDetail(companyReviewCd));
 		return "/companyinfo/review/companyReviewDetail";
 	}
 	
+	//기업리뷰 비승인리스트(관리자)
 	@RequestMapping(value = "/review/companyReviewUnreceivedList", method = RequestMethod.GET)
 	public String companyReviewUnreceivedList(Model model) {
 		model.addAttribute("reviewUnreceivedList", companyService.getCompanyReviewUnreceivedList());
-		return "/companyinfo/review/companyReviewList";
+		return "/companyinfo/review/companyReviewAllowList";
 	}
 	
+	//기업리뷰 등록처리 맵핑
 	@RequestMapping(value = "/review/companyReviewInsert", method = RequestMethod.POST)
 	public String companyReviewInsert(CompanyReviewVo companyReviewVo, @RequestParam(value="companyName") String companyName){
 		logger.info("command param companyReview:{}", companyReviewVo.toString());
@@ -57,6 +73,7 @@ public class CompanyController {
 		return "/companyinfo/companymain";
 	}
 	
+	//기업리뷰 등록화면 맵핑
 	@RequestMapping(value = "/review/companyReviewInsertForm", method = RequestMethod.GET)
 	public String companyReviewInsertForm(Model model) {
 		model.addAttribute("companyInfoList", companyService.getCompanyInfoList());

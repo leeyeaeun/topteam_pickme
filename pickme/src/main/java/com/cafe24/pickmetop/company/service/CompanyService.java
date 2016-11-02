@@ -11,15 +11,33 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.cafe24.pickmetop.admin.model.JobTopIndexVo;
+import com.cafe24.pickmetop.commons.PageHelper;
 import com.cafe24.pickmetop.company.model.*;
 import com.cafe24.pickmetop.company.repository.CompanyDao;
+
 
 @Service
 public class CompanyService {
 	private static final Logger logger = LoggerFactory.getLogger(CompanyService.class);
-	
+	private final int MAX_LINE_COUNT = 5; //보여질 글의 수
+    private final int MAX_PAGE_COUNT = 5; //보여질 최대 페이지 수
+    
 	@Autowired
 	CompanyDao companyDao;
+	
+	//기업리뷰목록(승인)
+	public Map<String, Object> getCompanyReviewAllowList(int page){
+		//승인목록 페이지 처리
+		PageHelper pageHelper = new PageHelper(page,MAX_LINE_COUNT);
+		//승인상태값 1로 승인상태인것만 갯수를 얻어와서 마지막페이지 SET
+		pageHelper.setLastPage(companyDao.selectAllowTotalCount(1),MAX_LINE_COUNT);
+		Map<String, Object> reviewAllowMap = new HashMap<String, Object>();
+		reviewAllowMap.put("startPage", pageHelper.startPage(page, MAX_PAGE_COUNT));
+		reviewAllowMap.put("endPage", pageHelper.endPage());
+		reviewAllowMap.put("reviewListAllow", companyDao.selectCompanyReviewListByReviewAllow(pageHelper));
+		return reviewAllowMap;
+	}
+	
 	//기업리뷰 삭제처리
 	public int deleteCompanyReview(int companyReviewCd){
 		return companyDao.deleteCompanyReview(companyReviewCd);
@@ -39,7 +57,7 @@ public class CompanyService {
 	
 	//기업리뷰목록(비승인)
 	public List<CompanyReviewVo> getCompanyReviewUnreceivedList(){
-		return companyDao.selectCompanyListByReviewAllow();
+		return companyDao.selectCompanyReviewListByReviewUnreceived();
 	}
 	
 	//기업리뷰등록(사용자) 메서드
