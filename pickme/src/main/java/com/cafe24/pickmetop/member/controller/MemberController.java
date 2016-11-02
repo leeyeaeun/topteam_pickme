@@ -19,17 +19,20 @@ public class MemberController {
 	
 	@Autowired
 	 MemberService memberService;
-	//로그인 입력화면
-	@RequestMapping(value="/memberGeneralInsert")
-	public String memberjoin(){
+	//01_01 일반회원가입 입력화면
+	@RequestMapping(value="/memberGeneralInsert", method = RequestMethod.GET)
+	public String memberGeneralInsert(){
 		return "/member/general/memberGeneralInsert"; 
 	}
-	
+	//01_02 일반회원가입 입력처리
 	@RequestMapping(value="/memberGeneralInsert", method = RequestMethod.POST)
 	public String memberGeneralInsert(MemberGeneralVo memberGeneralVo){
 		Logger.info("MemberGeneralVo:{}", memberGeneralVo.toString());
 		memberService.addMember(memberGeneralVo);
-	return "/member/general/memberGeneralInsert";
+	return "/index";
+	
+	//02_01 일반회원 로그인화면
+	//02_02 일반회원 로그인처리
 	
 	}
 	@RequestMapping(value="/memberLinkedInsert", method = RequestMethod.GET)

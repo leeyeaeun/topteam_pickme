@@ -20,7 +20,7 @@
 			<a class="btn btn-primary btn-lg" href="/resumeInsert" role="button">이력서 작성하러가기</a>
 		</div>
 		<div class="table">
-			<table class="table table-bordered">
+			<table class="table table-striped">
 				<thead>
 					<tr>
 						<th class="col-sm-1">번호</th>

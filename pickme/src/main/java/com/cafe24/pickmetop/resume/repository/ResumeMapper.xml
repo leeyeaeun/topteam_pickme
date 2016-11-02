@@ -270,23 +270,38 @@
 		FROM
 			tb_resume
 	</select>
-	<!-- <select id="selectResumeDetailByResumeCd" parameterType="String" resultType="com.cafe24.pickmetop.resume.model.ResumeVo">
+	<select id="selectResumeDetailByResumeCd" parameterType="String" resultType="com.cafe24.pickmetop.resume.model.ResumeVo">
 		SELECT 
-			
+			r.resume_cd as resumeCd,
+			r.login_id as loginId,
+			r.resume_name as resumeName,
+			r.resume_regdate as resumeRegdate,
+			r.resume_modidate	as resumeModidate,
+			    
+			p.personal_korname as personalKorname,
+			p.personal_engname as personalEngname,
+			p.personal_birthdate as personalBirthdate,
+			p.personal_gender as personalGender,
+			p.personal_phone as personalPhone,
+			p.personal_cellphone as personalCellphone,
+			p.personal_email as personalEmail,
+			p.personal_sns as personalSns,
+			p.personal_addr as personalAddr
+		
 		FROM
 			tb_resume r,
-			tb_resume_personal ,
-			tb_resume_highschool,
-			tb_resume_university,
-			tb_resume_militaryservice,
-			tb_resume_certificate,
-			tb_resume_career,
-			tb_resume_langauge,
-			tb_resume_award,
-			tb_resume_training,
-			tb_resume_club,
-			tb_resume_etc
+			tb_resume_personal p
+			<!-- tb_resume_highschool h,
+			tb_resume_university u,
+			tb_resume_militaryservice m,
+			tb_resume_certificate ce,
+			tb_resume_career ca,
+			tb_resume_langauge l,
+			tb_resume_award a,
+			tb_resume_training t,
+			tb_resume_club cl,
+			tb_resume_etc e -->
 		WHERE
 			resume_cd = #{resumeCd}	
-	</select> -->
+	</select>
 </mapper>

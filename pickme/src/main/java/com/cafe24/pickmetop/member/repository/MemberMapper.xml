@@ -1,26 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.cafe24.pickmetop.resume.repository.MemberMapper">
-
-
-<insert id="insertMember" parameterType="com.cafe24.pickmetop.member.model.MemberGeneralVo">
+<mapper namespace="com.cafe24.pickmetop.member.repository.MemberMapper">
+	<insert id="insertMemberGeneral" parameterType="com.cafe24.pickmetop.member.model.MemberGeneralVo">
 		INSERT INTO tb_member_general(
 			general_id,
 			general_pw,
 			general_nick,
-			<!-- general_level, -->
+			general_level,
 			general_date,
-			general_logdate
-			<!-- general_state -->
+			general_logdate,
+			general_state
 		)VALUES(
-			#{general_id},
-			#{general_pw},
-			#{general_nick}
-			<!-- #{general_level}, 권한어떻게-->
+			#{generalId},
+			#{generalPw},
+			#{generalNick},
+			#{generalLevel},
 			now(),
-			now()
-			<!-- #{general_state} -->
+			now(),
+			#{generalState}
 		)	
 	</insert>
 </mapper>
