@@ -3,8 +3,8 @@ package com.cafe24.pickmetop.resume.model;
 public class ResumeClubVo {
 	private String clubCd;
 	private String resumeCd;
-	private String clubHost;
 	private String clubName;
+	private String clubHost;
 	private String clubBegindate;
 	private String clubEnddate;
 	private String clubContent;

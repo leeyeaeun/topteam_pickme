@@ -26,14 +26,14 @@ public class ResumeVo {
 	private String highschoolBegindate;
 	private String highschoolEnddate;
 	//03 대학교
-	private String universityName;
-	private String universityCategory;
-	private String universityBegindate;
-	private String universityEnddate;
-	private String universityMajor;
-	private String universityDmajorminor;
-	private String universityDmajorminorName;
-	private String universityCredit;
+	private List<String> universityName;
+	private List<String> universityCategory;
+	private List<String> universityBegindate;
+	private List<String> universityEnddate;
+	private List<String> universityMajor;
+	private List<String> universityDmajorminor;
+	private List<String> universityDmajorminorName;
+	private List<String> universityCredit;
 	//04 가족
 	private List<String> familyRelation;
 	private List<String> familyName;
@@ -49,49 +49,49 @@ public class ResumeVo {
 	private String militaryserviceBegindate;
 	private String militaryserviceEnddate;
 	//자격면허
-	private String certificateCd;
-	private String certificateName;
-	private String certificateGrade;
-	private String certificateHost;
-	private String certificateBegindate;
-	private String certificateEnddate;
-	private String certificateRegnum;
+	private List<String> certificateCd;
+	private List<String> certificateName;
+	private List<String> certificateGrade;
+	private List<String> certificateHost;
+	private List<String> certificateBegindate;
+	private List<String> certificateEnddate;
+	private List<String> certificateRegnum;
 	//경력사항
-	private String careerCompany;
-	private String careerBegindate;
-	private String careerEnddate;
-	private String careerPeriod;
-	private String careerLevel;
-	private String careerResign;
-	private String careerDepartment;
-	private String careerTask;
+	private List<String> careerCompany;
+	private List<String> careerBegindate;
+	private List<String> careerEnddate;
+	private List<String> careerPeriod;
+	private List<String> careerLevel;
+	private List<String> careerResign;
+	private List<String> careerDepartment;
+	private List<String> careerTask;
 	//어학
-	private String languageCd;
-	private String languageName;
-	private String languageTest;
-	private String languageGrade;
-	private String languageLevel;
-	private String languageBegindate;
-	private String languageEnddate;
-	private String languageRegnum;
-	private String languageHost;
+	private List<String> languageCd;
+	private List<String> languageName;
+	private List<String> languageTest;
+	private List<String> languageGrade;
+	private List<String> languageLevel;
+	private List<String> languageBegindate;
+	private List<String> languageEnddate;
+	private List<String> languageRegnum;
+	private List<String> languageHost;
 	//수상경력
-	private String awardName;
-	private String awardContent;
-	private String awardHost;
-	private String awardDate;
+	private List<String> awardName;
+	private List<String> awardContent;
+	private List<String> awardHost;
+	private List<String> awardDate;
 	//국내외 연수
-	private String trainingCountry;
-	private String trainingAcademy;
-	private String trainingBegindate;
-	private String trainingEnddate;
-	private String trainingContent;
+	private List<String> trainingCountry;
+	private List<String> trainingAcademy;
+	private List<String> trainingBegindate;
+	private List<String> trainingEnddate;
+	private List<String> trainingContent;
 	//동아리
-	private String clubHost;
-	private String clubName;
-	private String clubBegindate;
-	private String clubEnddate;
-	private String clubContent;
+	private List<String> clubName;
+	private List<String> clubHost;
+	private List<String> clubBegindate;
+	private List<String> clubEnddate;
+	private List<String> clubContent;
 	//기타 및 포트폴리오
 	private String etcTitle;
 	private String etcContent;
@@ -206,93 +206,53 @@ public class ResumeVo {
 	public void setHighschoolEnddate(String highschoolEnddate) {
 		this.highschoolEnddate = highschoolEnddate;
 	}
-	public String getUniversityName() {
+	public List<String> getUniversityName() {
 		return universityName;
 	}
-	public void setUniversityName(String universityName) {
+	public void setUniversityName(List<String> universityName) {
 		this.universityName = universityName;
 	}
-	public String getUniversityCategory() {
+	public List<String> getUniversityCategory() {
 		return universityCategory;
 	}
-	public void setUniversityCategory(String universityCategory) {
+	public void setUniversityCategory(List<String> universityCategory) {
 		this.universityCategory = universityCategory;
 	}
-	public String getUniversityBegindate() {
+	public List<String> getUniversityBegindate() {
 		return universityBegindate;
 	}
-	public void setUniversityBegindate(String universityBegindate) {
+	public void setUniversityBegindate(List<String> universityBegindate) {
 		this.universityBegindate = universityBegindate;
 	}
-	public String getUniversityEnddate() {
+	public List<String> getUniversityEnddate() {
 		return universityEnddate;
 	}
-	public void setUniversityEnddate(String universityEnddate) {
+	public void setUniversityEnddate(List<String> universityEnddate) {
 		this.universityEnddate = universityEnddate;
 	}
-	public String getUniversityMajor() {
+	public List<String> getUniversityMajor() {
 		return universityMajor;
 	}
-	public void setUniversityMajor(String universityMajor) {
+	public void setUniversityMajor(List<String> universityMajor) {
 		this.universityMajor = universityMajor;
 	}
-	public String getUniversityDmajorminor() {
+	public List<String> getUniversityDmajorminor() {
 		return universityDmajorminor;
 	}
-	public void setUniversityDmajorminor(String universityDmajorminor) {
+	public void setUniversityDmajorminor(List<String> universityDmajorminor) {
 		this.universityDmajorminor = universityDmajorminor;
 	}
-	public String getUniversityDmajorminorName() {
+	public List<String> getUniversityDmajorminorName() {
 		return universityDmajorminorName;
 	}
-	public void setUniversityDmajorminorName(String universityDmajorminorName) {
+	public void setUniversityDmajorminorName(List<String> universityDmajorminorName) {
 		this.universityDmajorminorName = universityDmajorminorName;
 	}
-	public String getUniversityCredit() {
+	public List<String> getUniversityCredit() {
 		return universityCredit;
 	}
-	public void setUniversityCredit(String universityCredit) {
+	public void setUniversityCredit(List<String> universityCredit) {
 		this.universityCredit = universityCredit;
-	}
-	/*public String getFamilyRelation() {
-		return familyRelation;
-	}
-	public void setFamilyRelation(String familyRelation) {
-		this.familyRelation = familyRelation;
-	}
-	public String getFamilyName() {
-		return familyName;
-	}
-	public void setFamilyName(String familyName) {
-		this.familyName = familyName;
-	}
-	public String getFamilyBirthdate() {
-		return familyBirthdate;
-	}
-	public void setFamilyBirthdate(String familyBirthdate) {
-		this.familyBirthdate = familyBirthdate;
-	}
-	public String getFamilyEducation() {
-		return familyEducation;
-	}
-	public void setFamilyEducation(String familyEducation) {
-		this.familyEducation = familyEducation;
-	}
-	public String getFamilyJob() {
-		return familyJob;
-	}
-	public void setFamilyJob(String familyJob) {
-		this.familyJob = familyJob;
-	}
-	public String getFamilyCohabit() {
-		return familyCohabit;
-	}
-	public void setFamilyCohabit(String familyCohabit) {
-		this.familyCohabit = familyCohabit;
-	}*/
-	
-	public String getMilitaryserviceState() {
-		return militaryserviceState;
 	}
 	public List<String> getFamilyRelation() {
 		return familyRelation;
@@ -330,7 +290,9 @@ public class ResumeVo {
 	public void setFamilyCohabit(List<String> familyCohabit) {
 		this.familyCohabit = familyCohabit;
 	}
-	
+	public String getMilitaryserviceState() {
+		return militaryserviceState;
+	}
 	public void setMilitaryserviceState(String militaryserviceState) {
 		this.militaryserviceState = militaryserviceState;
 	}
@@ -364,232 +326,232 @@ public class ResumeVo {
 	public void setMilitaryserviceEnddate(String militaryserviceEnddate) {
 		this.militaryserviceEnddate = militaryserviceEnddate;
 	}
-	public String getCertificateCd() {
+	public List<String> getCertificateCd() {
 		return certificateCd;
 	}
-	public void setCertificateCd(String certificateCd) {
+	public void setCertificateCd(List<String> certificateCd) {
 		this.certificateCd = certificateCd;
 	}
-	public String getCertificateName() {
+	public List<String> getCertificateName() {
 		return certificateName;
 	}
-	public void setCertificateName(String certificateName) {
+	public void setCertificateName(List<String> certificateName) {
 		this.certificateName = certificateName;
 	}
-	public String getCertificateGrade() {
+	public List<String> getCertificateGrade() {
 		return certificateGrade;
 	}
-	public void setCertificateGrade(String certificateGrade) {
+	public void setCertificateGrade(List<String> certificateGrade) {
 		this.certificateGrade = certificateGrade;
 	}
-	public String getCertificateHost() {
+	public List<String> getCertificateHost() {
 		return certificateHost;
 	}
-	public void setCertificateHost(String certificateHost) {
+	public void setCertificateHost(List<String> certificateHost) {
 		this.certificateHost = certificateHost;
 	}
-	public String getCertificateBegindate() {
+	public List<String> getCertificateBegindate() {
 		return certificateBegindate;
 	}
-	public void setCertificateBegindate(String certificateBegindate) {
+	public void setCertificateBegindate(List<String> certificateBegindate) {
 		this.certificateBegindate = certificateBegindate;
 	}
-	public String getCertificateEnddate() {
+	public List<String> getCertificateEnddate() {
 		return certificateEnddate;
 	}
-	public void setCertificateEnddate(String certificateEnddate) {
+	public void setCertificateEnddate(List<String> certificateEnddate) {
 		this.certificateEnddate = certificateEnddate;
 	}
-	public String getCertificateRegnum() {
+	public List<String> getCertificateRegnum() {
 		return certificateRegnum;
 	}
-	public void setCertificateRegnum(String certificateRegnum) {
+	public void setCertificateRegnum(List<String> certificateRegnum) {
 		this.certificateRegnum = certificateRegnum;
 	}
-	public String getCareerCompany() {
+	public List<String> getCareerCompany() {
 		return careerCompany;
 	}
-	public void setCareerCompany(String careerCompany) {
+	public void setCareerCompany(List<String> careerCompany) {
 		this.careerCompany = careerCompany;
 	}
-	public String getCareerBegindate() {
+	public List<String> getCareerBegindate() {
 		return careerBegindate;
 	}
-	public void setCareerBegindate(String careerBegindate) {
+	public void setCareerBegindate(List<String> careerBegindate) {
 		this.careerBegindate = careerBegindate;
 	}
-	public String getCareerEnddate() {
+	public List<String> getCareerEnddate() {
 		return careerEnddate;
 	}
-	public void setCareerEnddate(String careerEnddate) {
+	public void setCareerEnddate(List<String> careerEnddate) {
 		this.careerEnddate = careerEnddate;
 	}
-	public String getCareerPeriod() {
+	public List<String> getCareerPeriod() {
 		return careerPeriod;
 	}
-	public void setCareerPeriod(String careerPeriod) {
+	public void setCareerPeriod(List<String> careerPeriod) {
 		this.careerPeriod = careerPeriod;
 	}
-	public String getCareerLevel() {
+	public List<String> getCareerLevel() {
 		return careerLevel;
 	}
-	public void setCareerLevel(String careerLevel) {
+	public void setCareerLevel(List<String> careerLevel) {
 		this.careerLevel = careerLevel;
 	}
-	public String getCareerResign() {
+	public List<String> getCareerResign() {
 		return careerResign;
 	}
-	public void setCareerResign(String careerResign) {
+	public void setCareerResign(List<String> careerResign) {
 		this.careerResign = careerResign;
 	}
-	public String getCareerDepartment() {
+	public List<String> getCareerDepartment() {
 		return careerDepartment;
 	}
-	public void setCareerDepartment(String careerDepartment) {
+	public void setCareerDepartment(List<String> careerDepartment) {
 		this.careerDepartment = careerDepartment;
 	}
-	public String getCareerTask() {
+	public List<String> getCareerTask() {
 		return careerTask;
 	}
-	public void setCareerTask(String careerTask) {
+	public void setCareerTask(List<String> careerTask) {
 		this.careerTask = careerTask;
 	}
-	public String getLanguageCd() {
+	public List<String> getLanguageCd() {
 		return languageCd;
 	}
-	public void setLanguageCd(String languageCd) {
+	public void setLanguageCd(List<String> languageCd) {
 		this.languageCd = languageCd;
 	}
-	public String getLanguageName() {
+	public List<String> getLanguageName() {
 		return languageName;
 	}
-	public void setLanguageName(String languageName) {
+	public void setLanguageName(List<String> languageName) {
 		this.languageName = languageName;
 	}
-	public String getLanguageTest() {
+	public List<String> getLanguageTest() {
 		return languageTest;
 	}
-	public void setLanguageTest(String languageTest) {
+	public void setLanguageTest(List<String> languageTest) {
 		this.languageTest = languageTest;
 	}
-	public String getLanguageGrade() {
+	public List<String> getLanguageGrade() {
 		return languageGrade;
 	}
-	public void setLanguageGrade(String languageGrade) {
+	public void setLanguageGrade(List<String> languageGrade) {
 		this.languageGrade = languageGrade;
 	}
-	public String getLanguageLevel() {
+	public List<String> getLanguageLevel() {
 		return languageLevel;
 	}
-	public void setLanguageLevel(String languageLevel) {
+	public void setLanguageLevel(List<String> languageLevel) {
 		this.languageLevel = languageLevel;
 	}
-	public String getLanguageBegindate() {
+	public List<String> getLanguageBegindate() {
 		return languageBegindate;
 	}
-	public void setLanguageBegindate(String languageBegindate) {
+	public void setLanguageBegindate(List<String> languageBegindate) {
 		this.languageBegindate = languageBegindate;
 	}
-	public String getLanguageEnddate() {
+	public List<String> getLanguageEnddate() {
 		return languageEnddate;
 	}
-	public void setLanguageEnddate(String languageEnddate) {
+	public void setLanguageEnddate(List<String> languageEnddate) {
 		this.languageEnddate = languageEnddate;
 	}
-	public String getLanguageRegnum() {
+	public List<String> getLanguageRegnum() {
 		return languageRegnum;
 	}
-	public void setLanguageRegnum(String languageRegnum) {
+	public void setLanguageRegnum(List<String> languageRegnum) {
 		this.languageRegnum = languageRegnum;
 	}
-	public String getLanguageHost() {
+	public List<String> getLanguageHost() {
 		return languageHost;
 	}
-	public void setLanguageHost(String languageHost) {
+	public void setLanguageHost(List<String> languageHost) {
 		this.languageHost = languageHost;
 	}
-	public String getAwardName() {
+	public List<String> getAwardName() {
 		return awardName;
 	}
-	public void setAwardName(String awardName) {
+	public void setAwardName(List<String> awardName) {
 		this.awardName = awardName;
 	}
-	public String getAwardContent() {
+	public List<String> getAwardContent() {
 		return awardContent;
 	}
-	public void setAwardContent(String awardContent) {
+	public void setAwardContent(List<String> awardContent) {
 		this.awardContent = awardContent;
 	}
-	public String getAwardHost() {
+	public List<String> getAwardHost() {
 		return awardHost;
 	}
-	public void setAwardHost(String awardHost) {
+	public void setAwardHost(List<String> awardHost) {
 		this.awardHost = awardHost;
 	}
-	public String getAwardDate() {
+	public List<String> getAwardDate() {
 		return awardDate;
 	}
-	public void setAwardDate(String awardDate) {
+	public void setAwardDate(List<String> awardDate) {
 		this.awardDate = awardDate;
 	}
-	public String getTrainingCountry() {
+	public List<String> getTrainingCountry() {
 		return trainingCountry;
 	}
-	public void setTrainingCountry(String trainingCountry) {
+	public void setTrainingCountry(List<String> trainingCountry) {
 		this.trainingCountry = trainingCountry;
 	}
-	public String getTrainingAcademy() {
+	public List<String> getTrainingAcademy() {
 		return trainingAcademy;
 	}
-	public void setTrainingAcademy(String trainingAcademy) {
+	public void setTrainingAcademy(List<String> trainingAcademy) {
 		this.trainingAcademy = trainingAcademy;
 	}
-	public String getTrainingBegindate() {
+	public List<String> getTrainingBegindate() {
 		return trainingBegindate;
 	}
-	public void setTrainingBegindate(String trainingBegindate) {
+	public void setTrainingBegindate(List<String> trainingBegindate) {
 		this.trainingBegindate = trainingBegindate;
 	}
-	public String getTrainingEnddate() {
+	public List<String> getTrainingEnddate() {
 		return trainingEnddate;
 	}
-	public void setTrainingEnddate(String trainingEnddate) {
+	public void setTrainingEnddate(List<String> trainingEnddate) {
 		this.trainingEnddate = trainingEnddate;
 	}
-	public String getTrainingContent() {
+	public List<String> getTrainingContent() {
 		return trainingContent;
 	}
-	public void setTrainingContent(String trainingContent) {
+	public void setTrainingContent(List<String> trainingContent) {
 		this.trainingContent = trainingContent;
 	}
-	public String getClubHost() {
-		return clubHost;
-	}
-	public void setClubHost(String clubHost) {
-		this.clubHost = clubHost;
-	}
-	public String getClubName() {
+	public List<String> getClubName() {
 		return clubName;
 	}
-	public void setClubName(String clubName) {
+	public void setClubName(List<String> clubName) {
 		this.clubName = clubName;
 	}
-	public String getClubBegindate() {
+	public List<String> getClubHost() {
+		return clubHost;
+	}
+	public void setClubHost(List<String> clubHost) {
+		this.clubHost = clubHost;
+	}
+	public List<String> getClubBegindate() {
 		return clubBegindate;
 	}
-	public void setClubBegindate(String clubBegindate) {
+	public void setClubBegindate(List<String> clubBegindate) {
 		this.clubBegindate = clubBegindate;
 	}
-	public String getClubEnddate() {
+	public List<String> getClubEnddate() {
 		return clubEnddate;
 	}
-	public void setClubEnddate(String clubEnddate) {
+	public void setClubEnddate(List<String> clubEnddate) {
 		this.clubEnddate = clubEnddate;
 	}
-	public String getClubContent() {
+	public List<String> getClubContent() {
 		return clubContent;
 	}
-	public void setClubContent(String clubContent) {
+	public void setClubContent(List<String> clubContent) {
 		this.clubContent = clubContent;
 	}
 	public String getEtcTitle() {
@@ -648,11 +610,10 @@ public class ResumeVo {
 				+ ", awardName=" + awardName + ", awardContent=" + awardContent + ", awardHost=" + awardHost
 				+ ", awardDate=" + awardDate + ", trainingCountry=" + trainingCountry + ", trainingAcademy="
 				+ trainingAcademy + ", trainingBegindate=" + trainingBegindate + ", trainingEnddate=" + trainingEnddate
-				+ ", trainingContent=" + trainingContent + ", clubHost=" + clubHost + ", clubName=" + clubName
+				+ ", trainingContent=" + trainingContent + ", clubName=" + clubName + ", clubHost=" + clubHost
 				+ ", clubBegindate=" + clubBegindate + ", clubEnddate=" + clubEnddate + ", clubContent=" + clubContent
 				+ ", etcTitle=" + etcTitle + ", etcContent=" + etcContent + ", etcBegindate=" + etcBegindate
 				+ ", etcEnddate=" + etcEnddate + "]";
 	}
-	
 	
 }
