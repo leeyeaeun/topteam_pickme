@@ -9,18 +9,18 @@
 			general_id,
 			general_pw,
 			general_nick,
-			general_level,
+			<!-- general_level, -->
 			general_date,
-			general_logdate,
-			general_state
+			general_logdate
+			<!-- general_state -->
 		)VALUES(
 			#{general_id},
 			#{general_pw},
 			#{general_nick}
-			#{general_level},
+			<!-- #{general_level}, 권한어떻게-->
 			now(),
-			now(),
-			#{general_state}
+			now()
+			<!-- #{general_state} -->
 		)	
 	</insert>
 </mapper>

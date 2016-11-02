@@ -178,15 +178,13 @@ $(document).ready(function(){
 	<div class="container">
 	<div class="User">
 		<h1 class="signUpTitle">회 원 가 입</h1>
-		<input type="text" id="email" name="general_id"  class="signUpInput" placeholder="이메일" required>
-
-		<input type="password" id="password" name="general_pw"  class="signUpInput" placeholder="비밀번호" required>
- 		<input type="password" name="general_nick" class="signUpInput" placeholder="비밀번호 재입력" required>
+		<input type="text" id="email" name="generalId"  class="signUpInput" placeholder="이메일" required>
+		<input type="password" id="password" name="generalPw"  class="signUpInput" placeholder="비밀번호" required>
+ 		<input type="password" id="password" class="signUpInput" placeholder="비밀번호 재입력" required>
+ 		<input type="text" id="name" name="generalNick"  class="signUpInput" placeholder="닉네임" required>
    	 	  회원가입시<a href="/terms" data-toggle="tooltip" title="Hooray!">이용약관</a>에 동의하게 됩니다.
 	</div>
-	</div>
-
-			
+	</div>			
 	<input type="submit" value="회원가입" class="signUpButton">
 	
 	<input type="image" class="signUpButton" value="회원가입" onclick="javascript:wondow.location='memberGeneralInsert'" src="/img/naver.jpg" width="100%" height="px" >

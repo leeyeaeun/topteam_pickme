@@ -15,11 +15,8 @@ public class MemberService {
 	@Autowired
 	MemberDao memberDao;
 	
-	public void addMember(MemberGeneralVo genera){
-		genera.setGeneral_id("General_id");
-		genera.setGeneral_pw("General_pw");
-		memberDao.Memberjoin(genera);
-		
+	public void addMember(MemberGeneralVo memberGeneralVo){
+		 memberDao.insertMemberGeneral(memberGeneralVo);
 		
 		
 	}

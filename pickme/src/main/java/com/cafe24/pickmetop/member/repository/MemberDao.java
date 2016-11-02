@@ -17,13 +17,16 @@ public class MemberDao {
 	@Resource(name="sqlSessionMember")
 	private SqlSessionTemplate sqlSessionFactoryMember;
 	
-	public int Memberjoin(MemberGeneralVo genner){
-		return sqlSessionFactoryMember.insert(NS+".insertMember", genner);
+	//일반회원 입력
+	public int insertMemberGeneral(MemberGeneralVo memberGeneralVo){
+		return sqlSessionFactoryMember.insert(NS+".insertMember", memberGeneralVo);
 	
 	}
+	//api 연동회원 로그인
 	public int insertMemberLinkedVo(MemberLinkedVo linke){
 		return sqlSessionFactoryMember.insert(NS+".insertMember", linke);
 	}
+	
 	public int insertMemberWithdrawVo(MemberWithdrawVo withdraw){
 		return sqlSessionFactoryMember.insert(NS+".insertMember",  withdraw);
 		
