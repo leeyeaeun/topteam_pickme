@@ -87,8 +87,8 @@ public class ResumeVo {
 	private List<String> trainingEnddate;
 	private List<String> trainingContent;
 	//µ¿¾Æ¸®
-	private List<String> clubHost;
 	private List<String> clubName;
+	private List<String> clubHost;
 	private List<String> clubBegindate;
 	private List<String> clubEnddate;
 	private List<String> clubContent;
@@ -524,17 +524,17 @@ public class ResumeVo {
 	public void setTrainingContent(List<String> trainingContent) {
 		this.trainingContent = trainingContent;
 	}
-	public List<String> getClubHost() {
-		return clubHost;
-	}
-	public void setClubHost(List<String> clubHost) {
-		this.clubHost = clubHost;
-	}
 	public List<String> getClubName() {
 		return clubName;
 	}
 	public void setClubName(List<String> clubName) {
 		this.clubName = clubName;
+	}
+	public List<String> getClubHost() {
+		return clubHost;
+	}
+	public void setClubHost(List<String> clubHost) {
+		this.clubHost = clubHost;
 	}
 	public List<String> getClubBegindate() {
 		return clubBegindate;
@@ -610,7 +610,7 @@ public class ResumeVo {
 				+ ", awardName=" + awardName + ", awardContent=" + awardContent + ", awardHost=" + awardHost
 				+ ", awardDate=" + awardDate + ", trainingCountry=" + trainingCountry + ", trainingAcademy="
 				+ trainingAcademy + ", trainingBegindate=" + trainingBegindate + ", trainingEnddate=" + trainingEnddate
-				+ ", trainingContent=" + trainingContent + ", clubHost=" + clubHost + ", clubName=" + clubName
+				+ ", trainingContent=" + trainingContent + ", clubName=" + clubName + ", clubHost=" + clubHost
 				+ ", clubBegindate=" + clubBegindate + ", clubEnddate=" + clubEnddate + ", clubContent=" + clubContent
 				+ ", etcTitle=" + etcTitle + ", etcContent=" + etcContent + ", etcBegindate=" + etcBegindate
 				+ ", etcEnddate=" + etcEnddate + "]";

@@ -27,7 +27,7 @@ public class ResumeService {
 	final static Logger Logger = LoggerFactory.getLogger(ResumeService.class);
 	@Autowired
 	ResumeDao resumeDao;
-	final String resumeCd = "resume_cd_22";
+	final String resumeCd = "resume_cd_24";
 	// 이력서 입력
 	public void addResume(ResumeVo resume){
 		resume.setResumeCd(resumeCd);
@@ -100,7 +100,7 @@ public class ResumeService {
 			ResumeCertificateVo certificate = new ResumeCertificateVo();
 			certificate.setResumeCd(resumeCd);
 			certificate.setCertificateName(resume.getCertificateName().get(i));
-			certificate.setCertificateCd(resume.getCertificateCd().get(i));
+			//certificate.setCertificateCd(resume.getCertificateCd().get(i));
 			certificate.setCertificateGrade(resume.getCertificateGrade().get(i));
 			certificate.setCertificateHost(resume.getCertificateHost().get(i));
 			certificate.setCertificateBegindate(resume.getCertificateBegindate().get(i));

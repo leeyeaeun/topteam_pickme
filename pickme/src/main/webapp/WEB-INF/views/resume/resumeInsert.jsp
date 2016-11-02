@@ -154,7 +154,7 @@
 										<option value="여자">여자</option>
 									</select>
 								</td>
-								<td class="col-sm-3"><input type="date" class="form-control" id="personlBirthdate" name="personalBirthdate" placeholder="생년월일 8자리 입력"></td>
+								<td class="col-sm-3"><input type="date" class="form-control" id="personlBirthdate" name="personalBirthdate" value="2016-11-02"></td>
 							</tr>
 							<tr>
 								<th class="col-sm-3">일반전화</th>
@@ -163,8 +163,8 @@
 								<th class="col-sm-3">SNS</th>
 							</tr>
 							<tr>
-								<td class="col-sm-3"><input type="text" class="form-control" id="personlPhone" name="personalPhone" data-mask="999-9999-9999" placeholder="일반전화번호 입력"></td>
-								<td class="col-sm-3"><input type="text" class="form-control" id="personlCellphone" name="personalCellphone" data-mask="999-9999-9999" placeholder="휴대전화번호 입력"></td>
+								<td class="col-sm-3"><input type="text" class="form-control" id="personlPhone" name="personalPhone" data-mask="999-9999-9999" value="010-1234-1234"></td>
+								<td class="col-sm-3"><input type="text" class="form-control" id="personlCellphone" name="personalCellphone" data-mask="999-9999-9999" value="010-1234-1234"></td>
 								<td class="col-sm-3"><input type="text" class="form-control" id="personlEmail" name="personalEmail" placeholder="이메일주소 입력"></td>
 								<td class="col-sm-3"><input type="text" class="form-control" id="personlSns" name="personalSns" placeholder="sns계정 또는 url 입력"></td>
 							</tr>
@@ -198,8 +198,8 @@
 										<option value="예체능">예체능</option>
 									</select>
 								</td>
-								<td class="col-sm-3"><input type="date" class="form-control" id="highschoolBegindate" name="highschoolBegindate" placeholder="입학일자 8자리입력"></td>
-								<td class="col-sm-3"><input type="date" class="form-control" id="highschoolEnddate" name="highschoolEnddate" placeholder="졸업일자 8자리입력"></td>
+								<td class="col-sm-3"><input type="date" class="form-control" id="highschoolBegindate" name="highschoolBegindate" value="2016-11-02"></td>
+								<td class="col-sm-3"><input type="date" class="form-control" id="highschoolEnddate" name="highschoolEnddate" value="2016-11-02"></td>
 							</tr>	
 						</table>
 					</div>
@@ -228,10 +228,10 @@
 									</td>
 									<td class="col-sm-3"><input type="text" class="form-control" id="universityName" name="universityName" placeholder="ex)서울대학교"></td>
 									<td class="col-sm-3">
-										<input type="date" class="form-control" id="universityBegindate" name="universityBegindate"  placeholder="입학일자 8자리입력">
+										<input type="date" class="form-control" id="universityBegindate" name="universityBegindate" value="2016-11-02">
 									</td>
 									<td class="col-sm-3">	
-										<input type="date" class="form-control" id="universityEnddate" name="universityEnddate" placeholder="졸업일자 8자리입력">
+										<input type="date" class="form-control" id="universityEnddate" name="universityEnddate" value="2016-11-02">
 									</td>
 								</tr>
 								<tr>
@@ -283,7 +283,7 @@
 									<tr>
 										<td class="col-sm-2"><input type="text" class="form-control" id="familyRelation" name="familyRelation" placeholder="ex) 부, 모, 남동생, 여동생"></td>
 										<td class="col-sm-2"><input type="text" class="form-control" id="familyName" name="familyName" placeholder="이름 입력"></td>
-										<td class="col-sm-2"><input type="date" class="form-control" id="familyBirthdate" name="familyBirthdate"></td>
+										<td class="col-sm-2"><input type="date" class="form-control" id="familyBirthdate" name="familyBirthdate" value="2016-11-02"></td>
 										<td class="col-sm-2"><input type="text" class="form-control" id="familyEducation" name="familyEducation" placeholder="ex) 고졸, 대졸, 대재"></td>
 										<td class="col-sm-2"><input type="text" class="form-control" id="familyJob" name="familyJob" placeholder="ex) 자영업, 회사원, 가사"></td>
 										<td class="col-sm-2">
@@ -357,8 +357,8 @@
 								<td class="col-sm-2">
 									<input type="text" class="form-control" id="militaryserviceBranch" name="militaryserviceBranch" placeholder="ex) 소총수, 공병, 통신병">
 								</td>
-								<td class="col-sm-2"><input type="date" class="form-control" id="militaryserviceBegindate" name="militaryserviceBegindate" placeholder="입영일자 8자리 입력"></td>
-								<td class="col-sm-2"><input type="date" class="form-control" id="militaryserviceEnddate" name="militaryserviceEnddate" placeholder="전역일자 8자리 입력"></td>
+								<td class="col-sm-2"><input type="date" class="form-control" id="militaryserviceBegindate" name="militaryserviceBegindate" value="2016-11-02"></td>
+								<td class="col-sm-2"><input type="date" class="form-control" id="militaryserviceEnddate" name="militaryserviceEnddate" value="2016-11-02"></td>
 							</tr>	
 						</table>
 					</div>
@@ -385,8 +385,8 @@
 										<td class="col-sm-2"><input type="text" class="form-control" id="certificateGrade" name="certificateGrade" placeholder="ex)1급, 1종, 최종합격"></td>
 										<td class="col-sm-2"><input type="text" class="form-control" id="certificateRegnum" name="certificateRegnum" placeholder="등록번호 또는 자격번호 입력"></td>
 										<td class="col-sm-2"><input type="text" class="form-control" id="certificateHost" name="certificateHost" placeholder="ex)한국산업인력공단"></td>
-										<td class="col-sm-2"><input type="date" class="form-control" id="certificateBegindate" name="certificateBegindate" placeholder="취득일자 8자리 입력"></td>
-										<td class="col-sm-2"><input type="date" class="form-control" id="certificateEnddate" name="certificateEnddate" placeholder="만료일자 8자리 입력"></td>
+										<td class="col-sm-2"><input type="date" class="form-control" id="certificateBegindate" name="certificateBegindate" value="2016-11-02"></td>
+										<td class="col-sm-2"><input type="date" class="form-control" id="certificateEnddate" name="certificateEnddate" value="2016-11-02"></td>
 									</tr>	
 							</table>
 							<input type="button" class="btn btn-defualt btn-xs" value="삭제" onclick="removeDivCertificate(this)">
@@ -414,10 +414,10 @@
 									<td class="col-sm-2"><input type="text" class="form-control" id="careerLevel" name="careerLevel" placeholder="ex) 대리, 인턴, 아르바이트 사원"></td>
 									<td class="col-sm-2"><input type="text" class="form-control" id="careerDepartment" name="careerDepartment" placeholder="ex) 영업, 생산, 품질관리"></td>
 									<td class="col-sm-2">
-										<input type="date" class="form-control" id="careerBegindate" name="careerBegindate">
+										<input type="date" class="form-control" id="careerBegindate" name="careerBegindate" value="2016-11-02">
 									</td>
 									<td class="col-sm-2">
-										<input type="date" class="form-control" id="careerEnddate" name="careerEnddate">
+										<input type="date" class="form-control" id="careerEnddate" name="careerEnddate" value="2016-11-02">
 									</td>
 									<td class="col-sm-2"><input type="text" class="form-control" id="careerPeriod" name="careerPeriod" placeholder="근무기간"></td>
 								</tr>
@@ -473,10 +473,10 @@
 								</tr>
 								<tr>
 									<td class="col-sm-3">
-										<input type="date" class="form-control" id="languageBegindate" name="languageBegindate">
+										<input type="date" class="form-control" id="languageBegindate" name="languageBegindate" value="2016-11-02">
 									</td>
 									<td class="col-sm-3">
-										<input type="date" class="form-control" id="languageEnddate" name="languageEnddate">
+										<input type="date" class="form-control" id="languageEnddate" name="languageEnddate" value="2016-11-02">
 									</td>
 									<td class="col-sm-3">
 										<input type="text" class="form-control" id="languageHost" name="languageHost" placeholder="ex) 한국토익위원회">
@@ -510,7 +510,7 @@
 									</td>
 									<td class="col-sm-4"><input type="text" class="form-control" id="awardContent" name="awardContent" placeholder="수상내용 입력"></td>
 									<td class="col-sm-3"><input type="text" class="form-control" id="awardHost" name="awardHost" placeholder="수여기관 입력"></td>
-									<td class="col-sm-2"><input type="date" class="form-control" id="awardDate" name="awardDate" placeholder="수여일자 8자리 입력"></td>
+									<td class="col-sm-2"><input type="date" class="form-control" id="awardDate" name="awardDate" value="2016-11-02"></td>
 								</tr>
 							</table>
 							<input type="button" class="btn btn-defualt btn-xs" value="삭제" onclick="removeDivAward(this)">
@@ -535,10 +535,10 @@
 									<td class="col-sm-3"><input type="text" class="form-control" id="trainingCountry" name="trainingCountry" placeholder="ex) 대한민국, 중국, 미국"></td>	
 									<td class="col-sm-3"><input type="text" class="form-control" id="trainingAcademy" name="trainingAcademy" placeholder="연수기관 입력"></td>
 									<td class="col-sm-3">
-										<input type="date" class="form-control" id="trainingBegindate" name="trainingBegindate" placeholder="연수시작일자 8자리 입력">
+										<input type="date" class="form-control" id="trainingBegindate" name="trainingBegindate" value="2016-11-02">
 									</td>
 									<td class="col-sm-3">
-										<input type="date" class="form-control" id="trainingEnddate" name="trainingEnddate" placeholder="연수종료일자 8자리 입력">
+										<input type="date" class="form-control" id="trainingEnddate" name="trainingEnddate" value="2016-11-02">
 									</td>
 								</tr>
 								<tr>
@@ -567,11 +567,11 @@
 									<td class="col-sm-2"><input type="text" class="form-control" id="clubHost" name="clubHost" placeholder="주관기관 입력"></td>
 									<td class="col-sm-1">시작일자</td>
 									<td class="col-sm-2">
-										<input type="date" class="form-control" id="clubBegindate" name="clubBegindate">
+										<input type="date" class="form-control" id="clubBegindate" name="clubBegindate" value="2016-11-02">
 									</td>
 									<td class="col-sm-1">종료일자</td>
 									<td class="col-sm-2">
-										<input type="date" class="form-control" id="clubEnddate" name="clubEnddate">
+										<input type="date" class="form-control" id="clubEnddate" name="clubEnddate" value="2016-11-02">
 									</td>
 								</tr>
 								<tr>
@@ -598,10 +598,10 @@
 							<tr>
 								<td class="col-sm-3"><input type="text" class="form-control" id="etcTitle" name="etcTitle" placeholder="기타 및 포트폴리오명 입력"></td>
 								<td class="col-sm-1">
-									<input type="date" class="form-control" id="etcBegindate" name="etcBegindate" placeholder="시작일자 8자리 입력">
+									<input type="date" class="form-control" id="etcBegindate" name="etcBegindate" value="2016-11-02">
 								</td>
 								<td class="col-sm-1">
-									<input type="date" class="form-control" id="etcEnddate" name="etcEnddate" placeholder="종료일자 8자리 입력">
+									<input type="date" class="form-control" id="etcEnddate" name="etcEnddate" value="2016-11-02">
 								</td>
 								<td class="col-sm-7"><textarea class="form-control col-sm-5" rows="2" id="etcContent" name="etcContent" placeholder="포트폴리오를 첨부 하실 분은 간략한 설명한 설명 입력해주세요"></textarea></td>
 							</tr>

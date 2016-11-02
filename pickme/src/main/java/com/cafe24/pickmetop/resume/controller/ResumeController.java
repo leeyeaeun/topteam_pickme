@@ -28,7 +28,7 @@ public class ResumeController {
 	@RequestMapping(value="/resumeInsert", method = RequestMethod.POST)
 	public String resumeInsert(ResumeVo resume){
 		resumeService.addResume(resume);
-		return "/resume/resumeList";
+		return "/resume/resumeInsert";
 	}
 	//03 이력서 리스트
 	@RequestMapping(value="/resumeList", method = RequestMethod.GET)
