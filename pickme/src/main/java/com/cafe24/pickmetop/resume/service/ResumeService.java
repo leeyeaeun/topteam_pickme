@@ -27,7 +27,7 @@ public class ResumeService {
 	final static Logger Logger = LoggerFactory.getLogger(ResumeService.class);
 	@Autowired
 	ResumeDao resumeDao;
-	final String resumeCd = "resume_cd_51";
+	final String resumeCd = "resume_cd_22";
 	// 이력서 입력
 	public void addResume(ResumeVo resume){
 		resume.setResumeCd(resumeCd);
@@ -58,16 +58,18 @@ public class ResumeService {
 		resumeDao.insertResumeHighschool(highschool);
 		
 		//03 대학교
+		for(int i=0; i<resume.getUniversityName().size(); i++){
 		ResumeUniversityVo university = new ResumeUniversityVo();
-		university.setResumeCd(resumeCd);
-		university.setUniversityName(resume.getUniversityName());
-		university.setUniversityCategory(resume.getUniversityCategory());
-		university.setUniversityBegindate(resume.getUniversityBegindate());
-		university.setUniversityEnddate(resume.getUniversityEnddate());
-		university.setUniversityMajor(resume.getUniversityDmajorminor());
-		university.setUniversityDmajorminorName(resume.getUniversityDmajorminorName());
-		university.setUniversityCredit(resume.getUniversityCredit());
-		resumeDao.insertResumeUniversity(university);
+			university.setResumeCd(resumeCd);
+			university.setUniversityName(resume.getUniversityName().get(i));
+			university.setUniversityCategory(resume.getUniversityCategory().get(i));
+			university.setUniversityBegindate(resume.getUniversityBegindate().get(i));
+			university.setUniversityEnddate(resume.getUniversityEnddate().get(i));
+			university.setUniversityMajor(resume.getUniversityDmajorminor().get(i));
+			university.setUniversityDmajorminorName(resume.getUniversityDmajorminorName().get(i));
+			university.setUniversityCredit(resume.getUniversityCredit().get(i));
+			resumeDao.insertResumeUniversity(university);
+			}
 		
 		//04 가족
 		for(int i = 0; i<resume.getFamilyRelation().size(); i++ ){
@@ -82,7 +84,6 @@ public class ResumeService {
 			resumeDao.insertResumeFamily(family);
 		}
 		
-		
 		//05 병역
 		ResumeMilitaryserviceVo militaryService = new ResumeMilitaryserviceVo();
 		militaryService.setResumeCd(resumeCd);
@@ -95,70 +96,83 @@ public class ResumeService {
 		resumeDao.insertResumeMilitaryservice(militaryService);
 		
 		//06 자격면허
-		ResumeCertificateVo certificate = new ResumeCertificateVo();
-		certificate.setResumeCd(resumeCd);
-		certificate.setCertificateCd(resume.getCertificateCd());
-		certificate.setCertificateGrade(resume.getCertificateGrade());
-		certificate.setCertificateHost(resume.getCertificateHost());
-		certificate.setCertificateBegindate(resume.getCertificateBegindate());
-		certificate.setCertificateEnddate(resume.getCertificateEnddate());
-		certificate.setCertificateRegnum(resume.getCertificateEnddate());
-		resumeDao.insertResumeCertificate(certificate);
+		for(int i=0; i<resume.getCertificateName().size(); i++){
+			ResumeCertificateVo certificate = new ResumeCertificateVo();
+			certificate.setResumeCd(resumeCd);
+			certificate.setCertificateName(resume.getCertificateName().get(i));
+			certificate.setCertificateCd(resume.getCertificateCd().get(i));
+			certificate.setCertificateGrade(resume.getCertificateGrade().get(i));
+			certificate.setCertificateHost(resume.getCertificateHost().get(i));
+			certificate.setCertificateBegindate(resume.getCertificateBegindate().get(i));
+			certificate.setCertificateEnddate(resume.getCertificateEnddate().get(i));
+			certificate.setCertificateRegnum(resume.getCertificateEnddate().get(i));
+			resumeDao.insertResumeCertificate(certificate);
+		}
 		
 		//07 경력사항
-		ResumeCareerVo career = new ResumeCareerVo();
-		career.setResumeCd(resumeCd);
-		career.setCareerCompany(resume.getCareerCompany());
-		career.setCareerBegindate(resume.getCareerBegindate());
-		career.setCareerEnddate(resume.getCareerEnddate());
-		career.setCareerPeriod(resume.getCareerPeriod());
-		career.setCareerResign(resume.getCareerResign());
-		career.setCareerLevel(resume.getCareerLevel());
-		career.setCareerDepartment(resume.getCareerDepartment());
-		career.setCareerTask(resume.getCareerTask());
-		resumeDao.insertResumeCareer(career);
+		for(int i=0; i<resume.getCareerCompany().size(); i++){
+			ResumeCareerVo career = new ResumeCareerVo();
+			career.setResumeCd(resumeCd);
+			career.setCareerCompany(resume.getCareerCompany().get(i));
+			career.setCareerBegindate(resume.getCareerBegindate().get(i));
+			career.setCareerEnddate(resume.getCareerEnddate().get(i));
+			career.setCareerPeriod(resume.getCareerPeriod().get(i));
+			career.setCareerResign(resume.getCareerResign().get(i));
+			career.setCareerLevel(resume.getCareerLevel().get(i));
+			career.setCareerDepartment(resume.getCareerDepartment().get(i));
+			career.setCareerTask(resume.getCareerTask().get(i));
+			resumeDao.insertResumeCareer(career);
+		}
 		
 		//08 어학
-		ResumeLanguageVo language = new ResumeLanguageVo();
-		language.setResumeCd(resumeCd);
-		language.setLanguageName(resume.getLanguageName());
-		language.setLanguageTest(resume.getLanguageTest());
-		language.setLanguageGrade(resume.getLanguageGrade());
-		language.setLanguageLevel(resume.getLanguageLevel());
-		language.setLanguageBegindate(resume.getLanguageBegindate());
-		language.setLanguageEnddate(resume.getLanguageEnddate());
-		language.setLanguageRegnum(resume.getLanguageRegnum());
-		language.setLanguageHost(resume.getLanguageHost());
-		resumeDao.insertResumeLanguage(language);
+		for(int i=0; i<resume.getLanguageName().size(); i++){
+			ResumeLanguageVo language = new ResumeLanguageVo();
+			language.setResumeCd(resumeCd);
+			language.setLanguageName(resume.getLanguageName().get(i));
+			language.setLanguageTest(resume.getLanguageTest().get(i));
+			language.setLanguageGrade(resume.getLanguageGrade().get(i));
+			language.setLanguageLevel(resume.getLanguageLevel().get(i));
+			language.setLanguageBegindate(resume.getLanguageBegindate().get(i));
+			language.setLanguageEnddate(resume.getLanguageEnddate().get(i));
+			language.setLanguageRegnum(resume.getLanguageRegnum().get(i));
+			language.setLanguageHost(resume.getLanguageHost().get(i));
+			resumeDao.insertResumeLanguage(language);
+		}
 		
 		//09 수상경력
-		ResumeAwardVo award = new ResumeAwardVo();
-		award.setResumeCd(resumeCd);
-		award.setAwardName(resume.getAwardName());
-		award.setAwardContent(resume.getAwardContent());
-		award.setAwardHost(resume.getAwardHost());
-		award.setAwardDate(resume.getAwardDate());
-		resumeDao.insertResumeAward(award);
+		for(int i=0; i<resume.getAwardName().size(); i++){
+			ResumeAwardVo award = new ResumeAwardVo();
+			award.setResumeCd(resumeCd);
+			award.setAwardName(resume.getAwardName().get(i));
+			award.setAwardContent(resume.getAwardContent().get(i));
+			award.setAwardHost(resume.getAwardHost().get(i));
+			award.setAwardDate(resume.getAwardDate().get(i));
+			resumeDao.insertResumeAward(award);
+		}
 		
 		//10 국내외연수
-		ResumeTrainingVo training = new ResumeTrainingVo();
-		training.setResumeCd(resumeCd);
-		training.setTrainingCountry(resume.getTrainingCountry());
-		training.setTrainingAcademy(resume.getTrainingAcademy());
-		training.setTrainingBegindate(resume.getTrainingBegindate());
-		training.setTrainingEnddate(resume.getTrainingEnddate());
-		training.setTrainingContent(resume.getTrainingContent());
-		resumeDao.insertResumeTraining(training);
+		for(int i=0; i<resume.getTrainingCountry().size(); i++){
+			ResumeTrainingVo training = new ResumeTrainingVo();
+			training.setResumeCd(resumeCd);
+			training.setTrainingCountry(resume.getTrainingCountry().get(i));
+			training.setTrainingAcademy(resume.getTrainingAcademy().get(i));
+			training.setTrainingBegindate(resume.getTrainingBegindate().get(i));
+			training.setTrainingEnddate(resume.getTrainingEnddate().get(i));
+			training.setTrainingContent(resume.getTrainingContent().get(i));
+			resumeDao.insertResumeTraining(training);
+		}
 		
 		//11 동아리
-		ResumeClubVo club = new ResumeClubVo();
-		club.setResumeCd(resumeCd);
-		club.setClubHost(resume.getClubHost());
-		club.setClubName(resume.getClubName());
-		club.setClubBegindate(resume.getClubBegindate());
-		club.setClubEnddate(resume.getClubEnddate());
-		club.setClubContent(resume.getClubContent());
-		resumeDao.insertResumeClub(club);
+		for(int i=0; i<resume.getClubName().size(); i++){
+			ResumeClubVo club = new ResumeClubVo();
+			club.setResumeCd(resumeCd);
+			club.setClubName(resume.getClubName().get(i));
+			club.setClubHost(resume.getClubHost().get(i));
+			club.setClubBegindate(resume.getClubBegindate().get(i));
+			club.setClubEnddate(resume.getClubEnddate().get(i));
+			club.setClubContent(resume.getClubContent().get(i));
+			resumeDao.insertResumeClub(club);
+		}
 		
 		//12 기타 및 포트폴리오
 		ResumeEtcVo etc = new ResumeEtcVo();

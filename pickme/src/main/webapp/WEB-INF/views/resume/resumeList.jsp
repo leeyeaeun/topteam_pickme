@@ -47,9 +47,6 @@
 				</tbody>
 			</table>
 		</div>
-		<div>
-			<a class="btn btn-default" href="/resumeInsert" role="button">이력서 작성하러가기</a>
-		</div>
 	</div>
 </body>
 </html>
