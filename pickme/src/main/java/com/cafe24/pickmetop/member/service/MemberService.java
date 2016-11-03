@@ -15,7 +15,7 @@ public class MemberService {
 	@Autowired
 	MemberDao memberDao;
 	
-	public void addMember(MemberGeneralVo memberGeneralVo){
+	public void addmemberGeneral(MemberGeneralVo memberGeneralVo){
 		 memberDao.insertMemberGeneral(memberGeneralVo);
 		
 		
