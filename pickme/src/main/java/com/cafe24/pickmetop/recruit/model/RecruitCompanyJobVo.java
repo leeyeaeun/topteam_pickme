@@ -1,9 +1,7 @@
 package com.cafe24.pickmetop.recruit.model;
 
-import java.io.File;
-
 import org.springframework.stereotype.Component;
-import org.springframework.web.multipart.MultipartFile;
+
 
 @Component
 public class RecruitCompanyJobVo {
@@ -14,7 +12,7 @@ String jobMidindexCd;
 String recruitJobWorkstatus;
 String recruitJobJobdetail;
 String recruitJobEducation;
-MultipartFile recruitJobFile;
+String recruitJobFile;
 public String getRecruitJobCd() {
 	return recruitJobCd;
 }
@@ -57,10 +55,10 @@ public String getRecruitJobEducation() {
 public void setRecruitJobEducation(String recruitJobEducation) {
 	this.recruitJobEducation = recruitJobEducation;
 }
-public MultipartFile getRecruitJobFile() {
+public String getRecruitJobFile() {
 	return recruitJobFile;
 }
-public void setRecruitJobFile(MultipartFile recruitJobFile) {
+public void setRecruitJobFile(String recruitJobFile) {
 	this.recruitJobFile = recruitJobFile;
 }
 @Override
@@ -70,6 +68,7 @@ public String toString() {
 			+ recruitJobWorkstatus + ", recruitJobJobdetail=" + recruitJobJobdetail + ", recruitJobEducation="
 			+ recruitJobEducation + ", recruitJobFile=" + recruitJobFile + "]";
 }
+
 
 
 }

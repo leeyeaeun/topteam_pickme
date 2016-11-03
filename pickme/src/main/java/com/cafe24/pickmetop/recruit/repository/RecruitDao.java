@@ -9,6 +9,8 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.cafe24.pickmetop.admin.model.JobMidIndexVo;
+import com.cafe24.pickmetop.admin.model.JobTopIndexVo;
 import com.cafe24.pickmetop.recruit.model.RecruitCompany;
 import com.cafe24.pickmetop.recruit.model.RecruitCompanyJobVo;
 
@@ -19,11 +21,36 @@ public class RecruitDao {
 	@Resource(name = "sqlSessionRecruit")
 	private SqlSessionTemplate sqlSessionFactoryRecruit;	
 	
+	//전체 직무 대분류
+	public List<JobTopIndexVo> getJopTopIndexCd(){
+		return sqlSessionFactoryRecruit.selectList(NS+".getJobTopIndexCd");
+	}
 	
+	//전체 직무 중분류 
+	public List<JobMidIndexVo> getJobMidIndexCd(){
+		return sqlSessionFactoryRecruit.selectList(NS+".getJobMidIndexCd");
+	}
 	
+	//RecruitCompanyJob의 전체갯수 검색
+	public int getCountOfRecruitJob(){
+		return sqlSessionFactoryRecruit.selectOne(NS+".getCountOfRecruitJob");
+	}
+	
+	//RecruitCompany 전체 입력갯수를 검색
+	public int getCountOfRecruit(){
+		return sqlSessionFactoryRecruit.selectOne(NS+".getCountOfRecruit");
+	}
+	
+	//기업명으로 기업코드를 검색
+	public String getCompanyCd(String companyName){
+		return sqlSessionFactoryRecruit.selectOne(NS+".getCompanyCd",companyName);
+	}
+	
+	//전체 기업명을 검색
 	public List<String> selectCompany(){
 		return sqlSessionFactoryRecruit.selectList(NS+".selectCompany");
 	}
+	
 	//RecruitCompanyJob입력 
 	public int insertRecruitJob(RecruitCompanyJobVo recruitCompanyJobVo){
 		return sqlSessionFactoryRecruit.insert(NS+".insertRecruitJob",recruitCompanyJobVo);

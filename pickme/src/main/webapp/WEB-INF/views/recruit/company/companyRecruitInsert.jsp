@@ -21,10 +21,8 @@ $(document).ready(function(){
 	var substringMatcher = function(strs) {
 		  return function findMatches(q, cb) {
 		    var matches, substringRegex;
-
 		    // an array that will be populated with substring matches
 		    matches = [];
-
 		    // regex used to determine if a string contains the substring `q`
 		    substrRegex = new RegExp(q, 'i');
 
@@ -41,11 +39,9 @@ $(document).ready(function(){
 		
 	//db에서 가져온 기업명 리스트
 	var list = new Array();
-
 	<c:forEach items="${companyList}" var="item">
 	list.push("${item}");
 	</c:forEach>
-
 	var states =  list; 
 
 	$('#the-basics .typeahead').typeahead({
@@ -77,8 +73,7 @@ $(document).ready(function(){
 		    suggestion: Handlebars.compile('<div><strong>{{value}}</strong> – {{year}}</div>')
 		  }
 		});
-	*/
-		 		
+	*/		 		
 	//직무추가 버튼 클릭시
 	$('#jobAddBtn').click(function(){
 		if($('#recruitJobWorkstatus').val()==''||$('#recruitJobJobdetail').val()==''||$('#recruitJobEducation').val()==''){
@@ -87,7 +82,9 @@ $(document).ready(function(){
 			 $('#job').append(
 						'<hr/><div id="job">'+
 						'<div class="form-group">직무선택(직무중분류코드)/'+
-							'<input type="radio" name="jobMidindexName" id="jobMidindexName" >db에서'+
+							'<c:forEach var ="jobIndex" items="${jobIndex}">'+
+								'<input type="radio" name="jobMidindexCd" value="${jobIndex.jobMidIndexCd}">${jobIndex.jobMidIndexName}'+
+							'</c:forEach>'+
 						'</div>'+
 						'<div class="form-group">'+
 							'채용형태(선택)'+
@@ -114,9 +111,10 @@ $(document).ready(function(){
 					'</div>'	 
 			 );
 		}
-
 		
-		/* 			var flag= true;
+		/* 	
+		이거는 사진파일 유효성검사 
+		var flag= true;
 		$('.boardImg').each(function(item,index){
 			if($(this).val()==''){
 				flag=false;
@@ -128,17 +126,30 @@ $(document).ready(function(){
 		 $('#fileSection').append('<div> <input type="file" name="boardImg" multiple="multiple" class="boardImg"/> </div>');
 		}	 */
 	});
-	//등록버튼 클릭시 유효성검사
 	
-/* 	$('#recruitAdd').click(function(){
+	
+		$("#jobTopIndexCd").change(function(){
+			<c:forEach items="${jobIndex}" var ="jobMid">
+				if($('#jobTopIndexCd').val()==${jobMid.jobTopIndexCd}){
+					$('#jobMidIndexCd').append(
+							'<option value="${jobMid.jobMidIndexCd}">"${jobMid.jobMidIndexName}"</option>');
+				}
+			</c:forEach>	
+		});
+
+	
+	//등록버튼 클릭시 유효성검사
+ 	$('#recruitAdd').click(function(){
 		
 		$('#recruitJobFile').each(function(item,index){
 			if($(this).val()==''){
 				$(this).remove();
 			}
-		});
-		
-		if($('#recruitName').val()==''){
+		});		
+		if($('#CompanyName').val()==''){
+			$('#error').text('기업명을 입력하세요');
+			$('#CompanyName').focus();	
+		}else if($('#recruitName').val()==''){
 			$('#error').text('공고명을 입력하세요');
 			$('#recruitName').focus();
 		}else if($('#recruitBegindate').val()==''){
@@ -147,10 +158,22 @@ $(document).ready(function(){
 		}else if($('#recruitEnddate').val()==''){
 			$('#error').text('채용종료일을 입력하세요');
 			$('#recruitEnddate').focus();
+		}else if($('#jobMidindexName').val()==''){
+			$('#error').text('직무를 입력하세요');
+			$('#jobMidindexName').focus();
+		}else if($('#recruitJobWorkstatus').val()==''){
+			$('#error').text('채용형태를 입력하세요');
+			$('#recruitJobWorkstatus').focus();
+		}else if($('#recruitJobJobdetail').val()==''){
+			$('#error').text('채용상세직무 입력하세요');
+			$('#recruitJobJobdetail').focus();
+		}else if($('#recruitJobEducation').val()==''){
+			$('#error').text('학력을 입력하세요');
+			$('#recruitJobEducation').focus();
 		}else{
 		$('#recruitInsertForm').submit();
 		}
-	}); */
+	}); 
 });
 </script>
 <title>Insert title here</title>
@@ -158,41 +181,51 @@ $(document).ready(function(){
 <body>
 <div class="container">
 	<jsp:include page="${pageContext.request.contextPath}/WEB-INF/views/common/module/modHeader.jsp"/>
-	<form id="recruitInsertForm" enctype="multipart/form-data" action="/recruitInsert"  class="form-horizontal" method="post" >
-<!-- 	 -->
+	<form id="recruitInsertForm" action="/recruitInsert"  class="form-horizontal" method="post" enctype="multipart/form-data" >
+		<h1>채용입력</h1>
 		<div class="form-group" id="the-basics">
-			채용기업<input class="typeahead" type="text"  class="form-control" placeholder="기업명을 입력하세요"><!-- name="recruitName" id="recruitName"  -->
+			채용기업<input class="typeahead" type="text"  class="form-control" name="CompanyName" id="CompanyName" placeholder="기업명을 입력하세요" value="${recruit.companyName}">
 		</div>
 		<div class="form-group">
-			채용공고명<input type="text" name="recruitName" id="recruitName"  class="form-control">
-		</div>
-		
-		<div class="form-group">
-			채용시작일<input type="date" name="recruitBegindate"id="recruitBegindate" class="form-control">
+			채용공고명<input type="text" name="recruitName" id="recruitName"  class="form-control" value="${recruit.recruitName}">
 		</div>
 		
 		<div class="form-group">
-			채용마감일<input type="date" name="recruitEnddate" id="recruitEnddate"class="form-control">
+			채용시작일<input type="date" name="recruitBegindate"id="recruitBegindate" class="form-control" value="${recruit.recruitBegindate}">
+		</div>
+		
+		<div class="form-group">
+			채용마감일<input type="date" name="recruitEnddate" id="recruitEnddate"class="form-control" value="${recruit.recruitEnddate}">
 		</div>
 
-		<div class="form-group">
+	 	<div class="form-group">
 			공고문(사진파일1장)
-			<input type="file" name="recruitJobFile" id="recruitJobFile" >
+		<input type="file" name="recruitJobFile" id="recruitJobFile" >
+		<span style="color:red">${errorMsg}</span>
 		</div> 
 		
 		<!-- 직무등록--하나 기본으로 보이고 추가누를시 추가됨 -->
 		<hr/>
+		<h1>직무별 상세입력</h1>
 		<div id="job">
 			<div class="form-group">
-				직무선택 (직무중분류코드)/
-				<c:forEach items="">
-				<input type="radio" name="jobMidindexName" id="jobMidindexName">db에서 
-				</c:forEach>
+			직무선택 : 
+				<select name="jobTopIndexCd" id="jobTopIndexCd" >
+					<option value="">대분류</option>
+					<c:forEach var ="jobTopIndex" items="${jobTopIndex}">
+						<option value="${jobTopIndex.jobTopIndexCd}">${jobTopIndex.jobTopIndexName}</option>
+					</c:forEach>
+				</select>
+				<select name="jobMidIndexCd" id="jobMidIndexCd" >
+					<option value="">소분류</option>
+						<%-- <option value="${jobIndex.jobMidIndexCd}">${jobIndex.jobMidIndexName}</option> --%>
+				</select>
+
 			</div>
 			
 			<div class="form-group">
 				채용형태(선택)
-				<select name="recruitJobWorkstatus" id="recruitJobWorkstatus">
+				<select name="recruitJobWorkstatus" id="recruitJobWorkstatus" >
 					<option value="신입">신입</option>
 					<option value="경력">경력</option>
 					<option value="인턴">인턴</option>
@@ -202,12 +235,13 @@ $(document).ready(function(){
 			
 			<div class="form-group">
 				채용상세직무
+				<%-- 리스트로 들어가니까 value="${recruit.recruitEnddate}"를 하면 [ㅇㄹㅇ]이런 형식으로 들어간당 --%>
 				<input type="text" name="recruitJobJobdetail" id="recruitJobJobdetail" class="form-control">
 			</div>
 			
 			<div class="form-group">
 				학력
-				<select name="recruitJobEducation" id="recruitJobEducation" class="form-control">
+				<select name="recruitJobEducation" id="recruitJobEducation" class="form-control" >
 					<option value="학력무관">학력무관</option>
 					<option value="고졸">고졸</option>
 					<option value="전문대졸">전문대졸</option>
@@ -222,8 +256,8 @@ $(document).ready(function(){
 		</div>
 		
 		<div class="form-group">
-			<input type="submit" id="recruitAdd"value="등록">
-			<span id="error"></span>
+			<input type="button" id="recruitAdd"value="등록">
+			<span id="error" style="color:red"></span>
 		</div>
 	</form>
 </div>

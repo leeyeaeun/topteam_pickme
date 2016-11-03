@@ -1,7 +1,5 @@
 package com.cafe24.pickmetop.recruit.model;
 
-import java.util.Date;
-
 import org.springframework.stereotype.Component;
 
 @Component
@@ -15,6 +13,7 @@ public class RecruitCompany {
 	String recruitRegister;
 	String recruitModidate;
 	String recruitModify;
+	
 	public String getRecruitCompanyCd() {
 		return recruitCompanyCd;
 	}
