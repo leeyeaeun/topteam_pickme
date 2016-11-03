@@ -107,7 +107,7 @@
 			<h2>이력서</h2>
 			<p><strong>Pick Me</strong>는 절대 사용자 동의 없이 입력하신 정보를 외부로 유출,공개하지 않습니다.</p>
 		</div>
-			<form id="resumeInsert" action="/resumeInsert" method="post">	
+			<form id="resumeInsert" action="/resumeInsert" method="post" enctype="multipart/form-data">	
 				<div class="row">
 					<div class="col-sm-5">
 						<h3>나의 이력서</h3>

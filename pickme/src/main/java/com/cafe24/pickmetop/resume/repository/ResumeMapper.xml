@@ -32,7 +32,7 @@
 			personal_sns,
 			personal_addr
 		) VALUES (
-			#{resumeCd},
+			(SELECT CONCAT('resume_cd_', max(substring(resume.resume_cd, 11))+1-1) FROM tb_resume resume),
 			#{personalKorname},
 			#{personalEngname},
 			#{personalBirthdate},
@@ -53,7 +53,7 @@
 			highschool_begindate,
 			highschool_enddate
 		) VALUES (
-			#{resumeCd},
+			(SELECT CONCAT('resume_cd_', max(substring(resume.resume_cd, 11))+1-1) FROM tb_resume resume),
 			#{highschoolName},
 			#{highschoolCategory},
 			#{highschoolBegindate},
@@ -75,7 +75,7 @@
 			university_dmajorminor_name,
 			university_credit
 		) VALUES (
-			#{resumeCd},
+			(SELECT CONCAT('resume_cd_', max(substring(resume.resume_cd, 11))+1-1) FROM tb_resume resume),
 			#{universityName},
 			#{universityCategory},
 			#{universityBegindate},
@@ -97,7 +97,7 @@
 			family_job,
 			family_cohabit
 		) VALUES (
-			#{resumeCd},
+			(SELECT CONCAT('resume_cd_', max(substring(resume.resume_cd, 11))+1-1) FROM tb_resume resume),
 			#{familyRelation},
 			#{familyName},
 			#{familyBirthdate},
@@ -117,7 +117,7 @@
 			militaryservice_begindate,
 			militaryservice_enddate
 		) VALUES (
-			#{resumeCd},
+			(SELECT CONCAT('resume_cd_', max(substring(resume.resume_cd, 11))+1-1) FROM tb_resume resume),
 			#{militaryserviceState},
 			#{militaryserviceGroup},
 			#{militaryserviceLevel},
@@ -137,7 +137,7 @@
 			certificate_begindate,
 			certificate_enddate
 		) VALUES (
-			#{resumeCd},	
+			(SELECT CONCAT('resume_cd_', max(substring(resume.resume_cd, 11))+1-1) FROM tb_resume resume),
 			#{certificateName},
 			#{certificateHost},
 			#{certificateGrade},
@@ -159,7 +159,7 @@
 			career_department,
 			career_task
 		) VALUES (
-			#{resumeCd},
+			(SELECT CONCAT('resume_cd_', max(substring(resume.resume_cd, 11))+1-1) FROM tb_resume resume),
 			#{careerCompany},
 			#{careerBegindate},
 			#{careerEnddate},
@@ -183,7 +183,7 @@
 			language_begindate,
 			language_enddate
 		) VALUES (
-			#{resumeCd},
+			(SELECT CONCAT('resume_cd_', max(substring(resume.resume_cd, 11))+1-1) FROM tb_resume resume),
 			#{languageName},
 			#{languageLevel},
 			#{languageTest},
@@ -203,7 +203,7 @@
 			award_host,
 			award_date
 		) VALUES (
-			#{resumeCd},
+			(SELECT CONCAT('resume_cd_', max(substring(resume.resume_cd, 11))+1-1) FROM tb_resume resume),
 			#{awardName},
 			#{awardContent},
 			#{awardHost},
@@ -220,7 +220,7 @@
 			training_enddate,
 			training_content
 		) VALUES (
-			#{resumeCd},
+			(SELECT CONCAT('resume_cd_', max(substring(resume.resume_cd, 11))+1-1) FROM tb_resume resume),
 			#{trainingCountry},
 			#{trainingAcademy},
 			#{trainingBegindate},
@@ -238,7 +238,7 @@
 			club_enddate,
 			club_content
 		) VALUES (
-			#{resumeCd},
+			(SELECT CONCAT('resume_cd_', max(substring(resume.resume_cd, 11))+1-1) FROM tb_resume resume),
 			#{clubHost},
 			#{clubName},
 			#{clubBegindate},
@@ -255,7 +255,7 @@
 			etc_begindate,
 			etc_enddate
 		) VALUES (
-			#{resumeCd},
+			(SELECT CONCAT('resume_cd_', max(substring(resume.resume_cd, 11))+1-1) FROM tb_resume resume),
 			#{etcTitle},
 			#{etcContent},
 			#{etcBegindate},

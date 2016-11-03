@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.cafe24.pickmetop.resume.model.ResumeAwardVo;
 import com.cafe24.pickmetop.resume.model.ResumeCareerVo;
@@ -29,11 +30,13 @@ public class ResumeService {
 	ResumeDao resumeDao;
 	
 	// 01_이력서 입력
+	@Transactional
 	public void addResume(ResumeVo resumeVo, ResumePersonalVo personalVo, ResumeHighschoolVo highschoolVo, ResumeUniversityVo universityVo, 
 			ResumeFamilyVo familyVo, ResumeMilitaryserviceVo militaryserviceVo, ResumeCertificateVo certificateVo, ResumeCareerVo careerVo, 
 			ResumeLanguageVo languageVo, ResumeAwardVo awardVo, ResumeTrainingVo trainingVo, ResumeClubVo clubVo, ResumeEtcVo etcVo){
 		
 		resumeVo.setLoginId("walbatrossw@gmail.com");
+		
 		resumeDao.insertResume(resumeVo);
 		resumeDao.insertResumePersonal(personalVo);
 		resumeDao.insertResumeHighschool(highschoolVo);

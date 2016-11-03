@@ -81,5 +81,4 @@ public class ResumeUniversityVo {
 				+ universityDmajorminorName + ", universityCredit=" + universityCredit + "]";
 	}
 	
-	
 }
