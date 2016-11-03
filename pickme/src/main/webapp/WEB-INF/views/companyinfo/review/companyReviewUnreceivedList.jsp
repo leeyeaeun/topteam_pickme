@@ -31,7 +31,7 @@
 					<tr>
 				</thead>
 				<tbody>
-					<c:forEach var="companyReviewList" items="${reviewUnreceivedList}" varStatus="i">
+					<c:forEach var="companyReviewList" items="${reviewUnreceivedMap.reviewListUnreceived}" varStatus="i">
 						<tr class="tablehover" onClick="location.href='/review/companyReviewDetail?companyReviewCd=${companyReviewList.companyReviewCd}'">
 							<td>${i.count }</td>
 							<td>${companyReviewList.companyCd }</td>
@@ -42,7 +42,26 @@
 						</tr>				
 					</c:forEach>
 				</tbody>
-			</table>
+			</table>	
+			<!-- 페이징 -->
+			<div class="text-center">
+				<ul class="pager">
+					<c:if test="${page > 1}">
+						<li class="previous"><a href="/review/companyReviewListAllow?page=${page-1}">이전</a><li>
+					</c:if>
+					<c:forEach var="i" begin="${reviewUnreceivedMap.startPage }" end="${reviewUnreceivedMap.endPage }">
+						<c:if test="${page == i}">
+							<li><a href="/review/companyReviewListAllow?page=${i }">${i }</a><li>
+						</c:if>
+						<c:if test="${page != i}">
+							<li><a href="/review/companyReviewListAllow?page=${i }">${i }</a></li>
+						</c:if>
+					</c:forEach>
+					<c:if test="${page < reviewUnreceivedMap.endPage}">
+						<li class="next"><a href="/review/companyReviewListAllow?page=${page+1}">다음</a></li>
+					</c:if>
+				</ul>
+			</div>
 		</div>
 	</div>
 </body>

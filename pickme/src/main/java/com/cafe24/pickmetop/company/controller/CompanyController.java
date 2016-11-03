@@ -30,9 +30,14 @@ public class CompanyController {
 	
 	//기업리뷰 사용자리스트 맵핑
 	@RequestMapping(value = "/review/companyReviewListAllow", method = RequestMethod.GET)
-	public String companyReviewListAllow(Model model, @RequestParam(value="page", defaultValue="1") int page) {
-		Map<String, Object> companyReviewMap = companyService.getCompanyReviewAllowList(page);
+	public String companyReviewListAllow(Model model, @RequestParam(value="page", defaultValue="1") int page, @RequestParam(value="jobTopIndexCd", defaultValue="") String jobTopIndexCd) {
+		Map<String, Object> companyReviewMap = companyService.getCompanyReviewAllowList(page, jobTopIndexCd);
+		model.addAttribute("page", page);
+		logger.info("jobTopIndexCd : {}",jobTopIndexCd);
+		model.addAttribute("jobTopIndexCd", jobTopIndexCd);	
+		model.addAttribute("jobTopIndexList",companyService.getJobTopIndexList());
 		model.addAttribute("reviewListAllow", companyReviewMap.get("reviewListAllow"));
+		logger.info("jobTopIndexCd : {}",companyReviewMap.get("reviewListAllow").toString());
 		model.addAttribute("startPage", companyReviewMap.get("startPage"));
 		model.addAttribute("endPage", companyReviewMap.get("endPage"));		
 		return "/companyinfo/review/companyReviewList";
@@ -60,9 +65,10 @@ public class CompanyController {
 	
 	//기업리뷰 비승인리스트(관리자)
 	@RequestMapping(value = "/review/companyReviewUnreceivedList", method = RequestMethod.GET)
-	public String companyReviewUnreceivedList(Model model) {
-		model.addAttribute("reviewUnreceivedList", companyService.getCompanyReviewUnreceivedList());
-		return "/companyinfo/review/companyReviewAllowList";
+	public String companyReviewUnreceivedList(Model model, @RequestParam(value="page", defaultValue="1") int page) {
+		model.addAttribute("page", page);
+		model.addAttribute("reviewUnreceivedMap", companyService.getCompanyReviewUnreceivedList(page));
+		return "/companyinfo/review/companyReviewUnreceivedList";
 	}
 	
 	//기업리뷰 등록처리 맵핑

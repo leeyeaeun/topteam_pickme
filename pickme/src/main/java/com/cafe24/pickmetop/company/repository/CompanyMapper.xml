@@ -86,25 +86,29 @@
 			review_allow = 0
 		ORDER BY
 			review_regdate DESC
+		LIMIT #{startRow}, #{linePerPage}
 	</select>
 	
 	<!-- 기업리뷰 승인 리스트 -->
-	<select id="selectCompanyReviewListByReviewAllow" parameterType="com.cafe24.pickmetop.commons.PageHelper" resultType="com.cafe24.pickmetop.company.model.CompanyReviewVo">
+	<select id="selectCompanyReviewListByReviewAllow" parameterType="java.util.Map" resultType="com.cafe24.pickmetop.company.model.CompanyReviewVo">
 		SELECT
-			company_review_cd as companyReviewCd,
+			review.company_review_cd as companyReviewCd,
 			(SELECT company_name FROM tb_company_info WHERE company_cd = review.company_cd) as companyName,
 			(SELECT job_topindex_name FROM tb_job_topindex WHERE job_topindex_cd=review.job_topindex_cd) as jobTopIndexName,
-			review_comment as reviewComment,
-			review_strength as reviewStrength,
-			review_weak as reviewWeak,
-			DATE_FORMAT(review_regdate, '%Y-%m-%d %H:%i') as reviewRegDate
+			review.review_comment as reviewComment,
+			review.review_strength as reviewStrength,
+			review.review_weak as reviewWeak,
+			DATE_FORMAT(review.review_regdate, '%Y-%m-%d %H:%i') as reviewRegDate
 		FROM
 			tb_company_review review
 		WHERE
-			review_allow = 1
+			review.review_allow = 1
+		<if test='jobTopIndexCd != null and jobTopIndexCd != ""'>
+			AND review.job_topindex_cd = #{jobTopIndexCd}
+		</if>
 		ORDER BY
-			review_regdate DESC
-        LIMIT #{startRow}, #{linePerPage}
+			review.review_regdate DESC
+        LIMIT #{pageHelp.startRow}, #{pageHelp.linePerPage}
 	</select>
 	
 	<!-- 기업리뷰 리스트 수 -->
@@ -115,6 +119,18 @@
         	tb_company_review
         WHERE
         	review_allow = #{reviewAllow}
+    </select>
+    
+    <!-- 기업리뷰 분류 리스트 수 -->
+	<select id="selectAllowSearchCount" parameterType="String" resultType="Integer">
+        SELECT
+            COUNT(*)
+        FROM 
+        	tb_company_review
+        WHERE
+        	review_allow = 1
+        AND
+        	job_topindex_cd = #{jobTopIndexCd}	
     </select>
     
 	<!-- 기업리뷰 디테일 -->

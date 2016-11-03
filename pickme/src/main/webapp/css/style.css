@@ -18,19 +18,29 @@ body {
 }
 /*기업리뷰 승인리스트 관련*/
 .companyReviewList{
-	
 	background-color: rgba(213,213,213,0.5);
 	padding: 30px 40px 30px 40px;
 }
 .review{
-	border-radius: 20px;
+	border-radius: 10px;
 	padding: 10px 20px 10px 20px;
 	margin-bottom: 10px;
 	background-color: #fff;
 }
-.glyphicon-user{
-	width: 60px;
+.media{
+	margin-bottom: 20px;
 }
+#reviewComment .media-body{
+	padding-top: 20px;
+}
+.row{
+	margin-bottom: 20px;
+}
+/* #reviewComment .media-left span img{
+	margin: -184px -350px -140px -135px;
+	background-color: #fff;
+} */
+
 /*기업리뷰 미승인리스트 관련*/
 .tablehover:hover{
 	background-color: rgba(213,213,213,0.5);

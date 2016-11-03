@@ -26,15 +26,24 @@ public class CompanyService {
 	CompanyDao companyDao;
 	
 	//기업리뷰목록(승인)
-	public Map<String, Object> getCompanyReviewAllowList(int page){
+	public Map<String, Object> getCompanyReviewAllowList(int page, String jobTopIndexCd){
 		//승인목록 페이지 처리
 		PageHelper pageHelper = new PageHelper(page,MAX_LINE_COUNT);
 		//승인상태값 1로 승인상태인것만 갯수를 얻어와서 마지막페이지 SET
-		pageHelper.setLastPage(companyDao.selectAllowTotalCount(1),MAX_LINE_COUNT);
+		if(jobTopIndexCd.equals("")){
+			pageHelper.setLastPage(companyDao.selectAllowTotalCount(1),MAX_LINE_COUNT);
+		}else{
+			pageHelper.setLastPage(companyDao.selectAllowSearchCount(jobTopIndexCd),MAX_LINE_COUNT);
+		}
 		Map<String, Object> reviewAllowMap = new HashMap<String, Object>();
 		reviewAllowMap.put("startPage", pageHelper.startPage(page, MAX_PAGE_COUNT));
 		reviewAllowMap.put("endPage", pageHelper.endPage());
-		reviewAllowMap.put("reviewListAllow", companyDao.selectCompanyReviewListByReviewAllow(pageHelper));
+		
+		Map<String, Object> reviewSearchMap = new HashMap<String, Object>();
+		reviewSearchMap.put("pageHelp", pageHelper);
+		reviewSearchMap.put("jobTopIndexCd", jobTopIndexCd);
+		
+		reviewAllowMap.put("reviewListAllow", companyDao.selectCompanyReviewListByReviewAllow(reviewSearchMap));
 		return reviewAllowMap;
 	}
 	
@@ -56,8 +65,16 @@ public class CompanyService {
 	}
 	
 	//기업리뷰목록(비승인)
-	public List<CompanyReviewVo> getCompanyReviewUnreceivedList(){
-		return companyDao.selectCompanyReviewListByReviewUnreceived();
+	public Map<String, Object> getCompanyReviewUnreceivedList(int page){
+		//비승인목록 페이지 처리
+		PageHelper pageHelper = new PageHelper(page,MAX_LINE_COUNT);
+		//승인상태값 0로 비승인상태인것만 갯수를 얻어와서 마지막페이지 SET
+		pageHelper.setLastPage(companyDao.selectAllowTotalCount(0),MAX_LINE_COUNT);
+		Map<String, Object> reviewUnreceivedMap = new HashMap<String, Object>();
+		reviewUnreceivedMap.put("startPage", pageHelper.startPage(page, MAX_PAGE_COUNT));
+		reviewUnreceivedMap.put("endPage", pageHelper.endPage());
+		reviewUnreceivedMap.put("reviewListUnreceived", companyDao.selectCompanyReviewListByReviewUnreceived(pageHelper));
+		return reviewUnreceivedMap;
 	}
 	
 	//기업리뷰등록(사용자) 메서드

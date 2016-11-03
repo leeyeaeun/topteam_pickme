@@ -21,8 +21,8 @@ public class CompanyDao {
 	private SqlSessionTemplate sqlSessionFactoryCompany;
 	
 	//기업리뷰 목록(승인)
-	public List<CompanyReviewVo> selectCompanyReviewListByReviewAllow(PageHelper pageHelper){
-		return sqlSessionFactoryCompany.selectList(NS +".selectCompanyReviewListByReviewAllow", pageHelper);
+	public List<CompanyReviewVo> selectCompanyReviewListByReviewAllow(Map<String, Object> reviewSearchMap){
+		return sqlSessionFactoryCompany.selectList(NS +".selectCompanyReviewListByReviewAllow", reviewSearchMap);
 	}
 	//기업리뷰등록(사용자) 메서드
 	public int insertCompanyReview(CompanyReviewVo companyReviewVo){
@@ -42,8 +42,8 @@ public class CompanyDao {
 		return sqlSessionFactoryCompany.selectList(NS + ".selectJobTopIndexAllList");
 	}
 	//기업리뷰목록(비승인)
-	public List<CompanyReviewVo> selectCompanyReviewListByReviewUnreceived(){
-		return sqlSessionFactoryCompany.selectList(NS + ".selectCompanyReviewListByReviewUnreceived");
+	public List<CompanyReviewVo> selectCompanyReviewListByReviewUnreceived(PageHelper pageHelper){
+		return sqlSessionFactoryCompany.selectList(NS + ".selectCompanyReviewListByReviewUnreceived", pageHelper);
 	}
 	//기업리뷰상세보기
 	public CompanyReviewVo selectCompanyListByReviewCd(int companyReviewCd){
@@ -60,5 +60,8 @@ public class CompanyDao {
 	//기업리뷰 목록 카운트
 	public int selectAllowTotalCount(int reviewAllow){
 		return sqlSessionFactoryCompany.selectOne(NS + ".selectAllowTotalCount", reviewAllow);
+	}
+	public int selectAllowSearchCount(String jobTopIndexCd){
+		return sqlSessionFactoryCompany.selectOne(NS + ".selectAllowSearchCount", jobTopIndexCd);
 	}
 }
