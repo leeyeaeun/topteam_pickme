@@ -1,10 +1,13 @@
 package com.cafe24.pickmetop.resume.controller;
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -46,13 +49,13 @@ public class ResumeController {
 	//02 이력서 입력처리
 	@RequestMapping(value="/resumeInsert", method = RequestMethod.POST)
 	public String resumeInsert(ResumeVo resumeVo, ResumePersonalVo personalVo, ResumeHighschoolVo highschoolVo, ResumeUniversityVo universityVo, 
-			ResumeFamilyVo familyVo, ResumeMilitaryserviceVo militaryserviceVo, ResumeCertificateVo certificateVo, ResumeCareerVo careerVo, 
+			ResumeFamilyVo resumeFamilyVo, ResumeMilitaryserviceVo militaryserviceVo, ResumeCertificateVo certificateVo, ResumeCareerVo careerVo, 
 			ResumeLanguageVo languageVo, ResumeAwardVo awardVo, ResumeTrainingVo trainingVo, ResumeClubVo clubVo, ResumeEtcVo etcVo){
 		Logger.info("이력서 입력 : {}", resumeVo.toString());
 		Logger.info("개인신상 입력 : {}", personalVo.toString());
 		Logger.info("고등학교 입력 : {}", highschoolVo.toString());
 		Logger.info("대학교 입력 : {}", universityVo.toString());
-		Logger.info("가족 입력 : {}", familyVo.toString());
+		Logger.info("가족 입력 : {}", resumeFamilyVo.getResumeFamilyVoList().toString());
 		Logger.info("병역 입력 : {}", militaryserviceVo.toString());
 		Logger.info("자격증 입력 : {}", certificateVo.toString());
 		Logger.info("경력 입력 : {}", careerVo.toString());
@@ -61,8 +64,8 @@ public class ResumeController {
 		Logger.info("국내외연수 입력 : {}", trainingVo.toString());
 		Logger.info("동아리, 동호회 입력 : {}", clubVo.toString());
 		Logger.info("기타,포트폴리오 입력 : {}", etcVo.toString());
-		resumeService.addResume(resumeVo, personalVo, highschoolVo, universityVo, familyVo, militaryserviceVo, 
-				certificateVo, careerVo, languageVo, awardVo, trainingVo, clubVo, etcVo);
+		/*resumeService.addResume(resumeVo, personalVo, highschoolVo, universityVo, familyVo, militaryserviceVo, 
+				certificateVo, careerVo, languageVo, awardVo, trainingVo, clubVo, etcVo);*/
 		return "/resume/resumeInsert";
 	}
 	

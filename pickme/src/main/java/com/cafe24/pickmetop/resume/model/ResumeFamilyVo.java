@@ -1,5 +1,6 @@
 package com.cafe24.pickmetop.resume.model;
 
+import java.util.List;
 
 public class ResumeFamilyVo {
 	private String familyCd;
@@ -10,6 +11,16 @@ public class ResumeFamilyVo {
 	private String familyEducation;
 	private String familyJob;
 	private String familyCohabit;
+	
+	private List<ResumeFamilyVo> resumeFamilyVoList;
+	
+	public List<ResumeFamilyVo> getResumeFamilyVoList() {
+		return resumeFamilyVoList;
+	}
+	public void setResumeFamilyVoList(List<ResumeFamilyVo> resumeFamilyVoList) {
+		this.resumeFamilyVoList = resumeFamilyVoList;
+	}
+	
 	public String getFamilyCd() {
 		return familyCd;
 	}
@@ -62,7 +73,10 @@ public class ResumeFamilyVo {
 	public String toString() {
 		return "ResumeFamilyVo [familyCd=" + familyCd + ", resumeCd=" + resumeCd + ", familyRelation=" + familyRelation
 				+ ", familyName=" + familyName + ", familyBirthdate=" + familyBirthdate + ", familyEducation="
-				+ familyEducation + ", familyJob=" + familyJob + ", familyCohabit=" + familyCohabit + "]";
+				+ familyEducation + ", familyJob=" + familyJob + ", familyCohabit=" + familyCohabit
+				+ ", resumeFamilyVoList=" + resumeFamilyVoList + "]";
 	}
+	
+	
 	
 }

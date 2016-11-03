@@ -11,6 +11,8 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <script>
+var num = 0;
+
 	//자격증 및 어학 검색 버튼 클릭시 팝업창띄우기
 	function openPop() { 
 	    window.open("/resumeCertilangIndex", "CertifiLang", "top=0, left=0, width=500, height=300, scrollbars=no, resizable=no ,status=no ,toolbar=no"); 
@@ -29,13 +31,38 @@
 	}
 	//02_01 가족사항 추가
 	function addDivFamily(){
-	    var div = document.createElement('div');
-		div.innerHTML = document.getElementById('family').innerHTML;
-		document.getElementById('fieldFamily').appendChild(div);
+		num++;
+		$('#fieldFamily').append('<table id="ll" class="table table-striped">'+
+				'<tr>'+
+					'<th class="col-sm-2">관계</th>'+
+					'<th class="col-sm-2">이름</th>'+
+					'<th class="col-sm-2">생년월일</th>'+
+					'<th class="col-sm-2">학력</th>'+
+					'<th class="col-sm-2">직업</th>'+
+					'<th class="col-sm-2">동거여부</th>'+
+				'</tr>'+
+				'<tr>'+
+					'<td class="col-sm-2"><input type="text" class="form-control" name="resumeFamilyVoList['+num+'].familyRelation" placeholder="ex) 부, 모, 남동생, 여동생"></td>'+
+					'<td class="col-sm-2"><input type="text" class="form-control" name="resumeFamilyVoList['+num+'].familyName" placeholder="이름 입력"></td>'+
+					'<td class="col-sm-2"><input type="date" class="form-control" name="resumeFamilyVoList['+num+'].familyBirthdate" value="2016-11-02"></td>'+
+					'<td class="col-sm-2"><input type="text" class="form-control" id="familyEducation" name="resumeFamilyVoList['+num+'].familyEducation" placeholder="ex) 고졸, 대졸, 대재"></td>'+
+					'<td class="col-sm-2"><input type="text" class="form-control" id="familyJob" name="resumeFamilyVoList['+num+'].familyJob" placeholder="ex) 자영업, 회사원, 가사"></td>'+
+					'<td class="col-sm-2">'+
+						'<select class="form-control" id="familyCohabit" name="resumeFamilyVoList['+num+'].familyCohabit">'+
+							'<option value="">::선택::</option>'+
+							'<option value="예">예</option>'+
+							'<option value="아니요">아니요</option>'+
+						'</select>'+
+					'</td>'+	
+				'</tr>'+
+		'</table>'
+		);
 	}
 	//02_02 가족사항 삭제
-	function removeDivFamily(obj){
-		document.getElementById('fieldFamily').removeChild(obj.parentNode);
+	function removeDivFamily(){
+		num--;
+		var test = document.getElementById("ll");
+		document.getElementById('fieldFamily').removeChild(test);
 	}
 	//03_01 자격증 추가
 	function addDivCertificate(){
@@ -97,6 +124,7 @@
 	function removeDivClub(obj){
 		document.getElementById('fieldClub').removeChild(obj.parentNode);
 	}
+	
 	//동적DIV : 추가항목 생성,삭제 END
 </script>
 </head>
@@ -280,13 +308,13 @@
 										<th class="col-sm-2">동거여부</th>
 									</tr>
 									<tr>
-										<td class="col-sm-2"><input type="text" class="form-control" id="familyRelation" name="familyRelation" placeholder="ex) 부, 모, 남동생, 여동생"></td>
-										<td class="col-sm-2"><input type="text" class="form-control" id="familyName" name="familyName" placeholder="이름 입력"></td>
-										<td class="col-sm-2"><input type="date" class="form-control" id="familyBirthdate" name="familyBirthdate" value="2016-11-02"></td>
-										<td class="col-sm-2"><input type="text" class="form-control" id="familyEducation" name="familyEducation" placeholder="ex) 고졸, 대졸, 대재"></td>
-										<td class="col-sm-2"><input type="text" class="form-control" id="familyJob" name="familyJob" placeholder="ex) 자영업, 회사원, 가사"></td>
+										<td class="col-sm-2"><input type="text" class="form-control" id="familyRelation" name="resumeFamilyVoList[0].familyRelation" placeholder="ex) 부, 모, 남동생, 여동생"></td>
+										<td class="col-sm-2"><input type="text" class="form-control" id="familyName" name="resumeFamilyVoList[0].familyName" placeholder="이름 입력"></td>
+										<td class="col-sm-2"><input type="date" class="form-control" id="familyBirthdate" name="resumeFamilyVoList[0].familyBirthdate" value="2016-11-02"></td>
+										<td class="col-sm-2"><input type="text" class="form-control" id="familyEducation" name="resumeFamilyVoList[0].familyEducation" placeholder="ex) 고졸, 대졸, 대재"></td>
+										<td class="col-sm-2"><input type="text" class="form-control" id="familyJob" name="resumeFamilyVoList[0].familyJob" placeholder="ex) 자영업, 회사원, 가사"></td>
 										<td class="col-sm-2">
-											<select class="form-control" id="familyCohabit" name="familyCohabit">
+											<select class="form-control" id="familyCohabit" name="resumeFamilyVoList[0].familyCohabit">
 												<option value="">::선택::</option>
 												<option value="예">예</option>
 												<option value="아니요">아니요</option>
@@ -294,9 +322,9 @@
 										</td>	
 									</tr>
 							</table>
-							<input type="button" class="btn btn-defualt btn-xs" value="삭제" onclick="removeDivFamily(this)">
 						</div>
 						<div id="fieldFamily"></div>
+						<input type="button" class="btn btn-defualt btn-xs" value="삭제" onclick="removeDivFamily(this)">	
 						<hr>
 					</div>
 				</div>	
