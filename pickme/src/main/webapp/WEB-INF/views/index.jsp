@@ -21,8 +21,8 @@
    
     </script>
 </head>
-<body>
 <jsp:include page="${pageContext.request.contextPath}/WEB-INF/views/common/module/modHeader.jsp"/>
+<body>
 <div class="container">
 	<div class="jumbotron text-center">
 		<h1><strong>Pick</strong>ME</h1>

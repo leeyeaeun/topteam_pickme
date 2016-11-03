@@ -49,5 +49,4 @@ public class ResumeAwardVo {
 				+ ", awardContent=" + awardContent + ", awardHost=" + awardHost + ", awardDate=" + awardDate + "]";
 	}
 	
-	
 }

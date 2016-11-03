@@ -30,8 +30,8 @@ public class ResumeDao {
 	private SqlSessionTemplate sqlSessionFactoryResume;
 	
 	//01_00 이력서입력
-	public int insertResume(ResumeVo resumeVo){
-		return sqlSessionFactoryResume.insert(NS +".insertResume",resumeVo);
+	public int insertResume(ResumeVo resume){
+		return sqlSessionFactoryResume.insert(NS +".insertResume",resume);
 	}
 	//01_01 개인신상
 	public int insertResumePersonal(ResumePersonalVo personal){
@@ -81,6 +81,9 @@ public class ResumeDao {
 	public int insertResumeEtc(ResumeEtcVo etc){
 		return sqlSessionFactoryResume.insert(NS + ".insertResumeEtc", etc);
 	}
+	
+	
+	
 	//02 이력서 리스트
 	public List<ResumeVo> selectResumeList(){
 		return sqlSessionFactoryResume.selectList(NS + ".selectResumeList");
@@ -89,7 +92,6 @@ public class ResumeDao {
 	public ResumeVo selectResumeDetailByResumeCd(String resumeCd){
 		return sqlSessionFactoryResume.selectOne(NS + ".selectResumeDetailByResumeCd", resumeCd);
 	}
-	
 	
 	//이력서 수정
 	

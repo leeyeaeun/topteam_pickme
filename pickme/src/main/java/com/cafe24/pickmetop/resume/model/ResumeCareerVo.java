@@ -1,6 +1,5 @@
 package com.cafe24.pickmetop.resume.model;
 
-
 public class ResumeCareerVo {
 	private String careerCd;
 	private String resumeCd;
@@ -79,6 +78,5 @@ public class ResumeCareerVo {
 				+ careerPeriod + ", careerResign=" + careerResign + ", careerLevel=" + careerLevel
 				+ ", careerDepartment=" + careerDepartment + ", careerTask=" + careerTask + "]";
 	}
-	
 	
 }

@@ -1,5 +1,6 @@
 package com.cafe24.pickmetop.resume.model;
 
+
 public class ResumeFamilyVo {
 	private String familyCd;
 	private String resumeCd;

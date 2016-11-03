@@ -80,12 +80,11 @@ public class ResumeLanguageVo {
 	}
 	@Override
 	public String toString() {
-		return "ResumeLangaugeVo [languageCd=" + languageCd + ", resumeCd=" + resumeCd + ", certificateCd="
+		return "ResumeLanguageVo [languageCd=" + languageCd + ", resumeCd=" + resumeCd + ", certificateCd="
 				+ certificateCd + ", languageName=" + languageName + ", languageTest=" + languageTest
 				+ ", languageGrade=" + languageGrade + ", languageLevel=" + languageLevel + ", languageBegindate="
 				+ languageBegindate + ", languageEnddate=" + languageEnddate + ", languageRegnum=" + languageRegnum
 				+ ", languageHost=" + languageHost + "]";
 	}
 	
-
 }

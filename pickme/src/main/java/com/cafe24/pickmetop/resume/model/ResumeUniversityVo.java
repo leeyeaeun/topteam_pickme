@@ -1,5 +1,6 @@
 package com.cafe24.pickmetop.resume.model;
 
+
 public class ResumeUniversityVo {
 	private String universityCd;
 	private String resumeCd;
@@ -79,5 +80,6 @@ public class ResumeUniversityVo {
 				+ universityMajor + ", universityDmajorminor=" + universityDmajorminor + ", universityDmajorminorName="
 				+ universityDmajorminorName + ", universityCredit=" + universityCredit + "]";
 	}
+	
 	
 }

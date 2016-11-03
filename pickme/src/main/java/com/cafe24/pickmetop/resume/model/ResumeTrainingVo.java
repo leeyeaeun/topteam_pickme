@@ -52,10 +52,9 @@ public class ResumeTrainingVo {
 	}
 	@Override
 	public String toString() {
-		return "ResumeTrainningVo [trainingCd=" + trainingCd + ", resumeCd=" + resumeCd + ", trainingCountry="
+		return "ResumeTrainingVo [trainingCd=" + trainingCd + ", resumeCd=" + resumeCd + ", trainingCountry="
 				+ trainingCountry + ", trainingAcademy=" + trainingAcademy + ", trainingBegindate=" + trainingBegindate
 				+ ", trainingEnddate=" + trainingEnddate + ", trainingContent=" + trainingContent + "]";
 	}
-	
 	
 }

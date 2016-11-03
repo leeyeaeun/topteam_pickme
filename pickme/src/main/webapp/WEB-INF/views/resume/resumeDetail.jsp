@@ -14,27 +14,19 @@
 </head>
 <body>
 	<jsp:include page="../common/module/modHeader.jsp"/>
-	<div class="container">	
-		<table class="table table-striped">
-			<thead>
-				<tr>
-					<th>ID</th>
-					<th>등록일</th>
-					<th>수정일</th>
-				<tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>${resumeDetail.loginId}</td>
-					<td>${resumeDetail.resumeRegdate}</td>
-					<td>${resumeDetail.resumeModidate}</td>
-				</tr>
-			</tbody>
-		</table>
+	<div class="container">
+		<div class="jumbotron">
+		<h1>나의 이력서</h1>
+			<p><strong>Pick Me</strong>는 절대 사용자 동의 없이 입력하신 정보를 외부로 유출,공개하지 않습니다.</p>
+			<p>작성하신 이력서를 편집하여 PDF로 저장하시거나, 출력하실 수 있습니다.</p>
+			<a class="btn btn-primary btn-lg" href="/resumePdf" role="button">PDF</a>
+			<a class="btn btn-primary btn-lg" href="/resumePrint" role="button">프린트하러가기</a>
+		</div>	
 		<div class="row">
-			<div class="col-sm-5">
-				<h3>나의 이력서</h3>
-				${resumeDatail.resumeName}
+			<div class="row col-sm-5">
+				<div><h3>나의 이력서</h3></div>
+				<div><a href="/resumeList">목록보기</a></div>
+				<div><a href="/resumeUpdate">수정하기</a></div>
 			</div>
 		</div>
 		<hr>
@@ -67,10 +59,10 @@
 						<th class="col-sm-3">생년월일</th>
 					</tr>
 					<tr>
-						<td class="col-sm-3">${resumeDatail.personalKorname}</td>
-						<td class="col-sm-3">${resumeDatail.personalEngname}</td>
-						<td class="col-sm-3">${resumeDatail.personalGender}</td>
-						<td class="col-sm-3">${resumeDatail.personalBirthdate}</td>
+						<td class="col-sm-3">${resumeDetail.personalKorname}</td>
+						<td class="col-sm-3">${resumeDetail.personalEngname}</td>
+						<td class="col-sm-3">${resumeDetail.personalGender}</td>
+						<td class="col-sm-3">${resumeDetail.personalBirthdate}</td>
 					</tr>
 					<tr>
 						<th class="col-sm-3">일반전화</th>
@@ -79,10 +71,10 @@
 						<th class="col-sm-3">SNS</th>
 					</tr>
 					<tr>
-						<td class="col-sm-3">${resumeDatail.personalPhone}</td>
-						<td class="col-sm-3">${resumeDatail.personalCellphone}</td>
-						<td class="col-sm-3">${resumeDatail.personalEmail}</td>
-						<td class="col-sm-3">${resumeDatail.personalSns}</td>
+						<td class="col-sm-3">${resumeDetail.personalPhone}</td>
+						<td class="col-sm-3">${resumeDetail.personalCellphone}</td>
+						<td class="col-sm-3">${resumeDetail.personalEmail}</td>
+						<td class="col-sm-3">${resumeDetail.personalSns}</td>
 					</tr>
 					<tr>
 						<th colspan="12">주소</th>
@@ -91,6 +83,25 @@
 						<td colspan="12">${resumeDetail.personalAddr}</td>
 					</tr>
 				</table>
+			</div>
+			<div class="row">
+				<div class="col-sm-12">
+					<h4>고등학교</h4>
+					<table class="table table-striped">
+						<tr>
+							<th class="col-sm-3">학교명</th>
+							<th class="col-sm-3">분류</th>
+							<th class="col-sm-3">입학일자</th>
+							<th class="col-sm-3">졸업일자</th>
+						</tr>
+						<tr>
+							<td class="col-sm-3">${resumeDetail.universityName}</td>
+							<td class="col-sm-3">${resumeDetail.universityCategory}</td>
+							<td class="col-sm-3">${resumeDetail.universityBegindate}</td>
+							<td class="col-sm-3">${resumeDetail.universityEnddate}</td>
+						</tr>	
+					</table>
+				</div>
 			</div>
 		</div>
 	</div>		

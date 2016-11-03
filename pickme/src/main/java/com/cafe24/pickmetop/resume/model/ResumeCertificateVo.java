@@ -1,5 +1,6 @@
 package com.cafe24.pickmetop.resume.model;
 
+
 public class ResumeCertificateVo {
 	private String memberCertificateCd;
 	private String resumeCd;
@@ -72,5 +73,6 @@ public class ResumeCertificateVo {
 				+ certificateBegindate + ", certificateEnddate=" + certificateEnddate + ", certificateRegnum="
 				+ certificateRegnum + "]";
 	}
+	
 	
 }
