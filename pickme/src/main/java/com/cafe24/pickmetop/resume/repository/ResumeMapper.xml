@@ -11,7 +11,7 @@
 			resume_regdate,
 			resume_modidate
 		)VALUES(
-			(SELECT CONCAT('resume_cd_', IFNULL(max(substring(resume.resume_cd, 11)),0)+1) FROM tb_resume resume),
+			(SELECT CONCAT('resume_cd_', LPAD(IFNULL(MAX(substring(resume.resume_cd, 11)),0)+1,4,'0')) AS cdOrder FROM tb_resume resume ORDER BY cdOrder),
 			#{loginId},
 			#{resumeName},
 			now(),
@@ -73,7 +73,7 @@
 			university_dmajorminor_name,
 			university_credit
 		) VALUES 
-		<foreach collection="resumeUniversityVoList" item="item" separator=" , ">
+		<!-- <foreach collection="resumeUniversityVoList" item="item" separator=" , "> -->
 		(
 			(SELECT CONCAT('resume_cd_', max(substring(resume.resume_cd, 11))) FROM tb_resume resume),
 			#{universityName},
@@ -85,7 +85,7 @@
 			#{universityDmajorminorName},
 			#{universityCredit}
 		)
-		</foreach>
+		<!-- </foreach> -->
 	</insert>
 	<!-- 01_04 가족 -->
 	<insert id="insertResumeFamily" parameterType="com.cafe24.pickmetop.resume.model.ResumeFamilyVo">
