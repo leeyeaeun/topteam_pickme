@@ -12,22 +12,21 @@ public class Recruit {
 	String recruitBegindate;
 	String recruitEnddate;
 	MultipartFile recruitJobFile;
-	List<String> jobMidindexCd;
+	List<String> jobMidIndexCd;
 	List<String> recruitJobWorkstatus;
 	List<String> recruitJobJobdetail;
 	List<String> recruitJobEducation;
-	
-	public String getCompanyCd() {
-		return CompanyCd;
-	}
-	public void setCompanyCd(String companyCd) {
-		CompanyCd = companyCd;
-	}
 	public String getCompanyName() {
 		return CompanyName;
 	}
 	public void setCompanyName(String companyName) {
 		CompanyName = companyName;
+	}
+	public String getCompanyCd() {
+		return CompanyCd;
+	}
+	public void setCompanyCd(String companyCd) {
+		CompanyCd = companyCd;
 	}
 	public String getRecruitName() {
 		return recruitName;
@@ -53,11 +52,11 @@ public class Recruit {
 	public void setRecruitJobFile(MultipartFile recruitJobFile) {
 		this.recruitJobFile = recruitJobFile;
 	}
-	public List<String> getJobMidindexCd() {
-		return jobMidindexCd;
+	public List<String> getJobMidIndexCd() {
+		return jobMidIndexCd;
 	}
-	public void setJobMidindexCd(List<String> jobMidindexCd) {
-		this.jobMidindexCd = jobMidindexCd;
+	public void setJobMidIndexCd(List<String> jobMidIndexCd) {
+		this.jobMidIndexCd = jobMidIndexCd;
 	}
 	public List<String> getRecruitJobWorkstatus() {
 		return recruitJobWorkstatus;
@@ -79,11 +78,12 @@ public class Recruit {
 	}
 	@Override
 	public String toString() {
-		return "Recruit [CompanyName=" + CompanyName + ", recruitName=" + recruitName + ", recruitBegindate="
-				+ recruitBegindate + ", recruitEnddate=" + recruitEnddate + ", recruitJobFile=" + recruitJobFile
-				+ ", jobMidindexCd=" + jobMidindexCd + ", recruitJobWorkstatus=" + recruitJobWorkstatus
+		return "Recruit [CompanyName=" + CompanyName + ", CompanyCd=" + CompanyCd + ", recruitName=" + recruitName
+				+ ", recruitBegindate=" + recruitBegindate + ", recruitEnddate=" + recruitEnddate + ", recruitJobFile="
+				+ recruitJobFile + ", jobMidIndexCd=" + jobMidIndexCd + ", recruitJobWorkstatus=" + recruitJobWorkstatus
 				+ ", recruitJobJobdetail=" + recruitJobJobdetail + ", recruitJobEducation=" + recruitJobEducation + "]";
 	}
+	
 	
 	
 }

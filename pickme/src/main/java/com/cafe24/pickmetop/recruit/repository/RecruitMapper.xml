@@ -8,9 +8,9 @@
 		FROM tb_job_topindex
 	</select>
 
-	<!-- JobMidIndex의 code와 이름을 검색 -->
+	<!-- JobMidIndex 검색 -->
 	<select id="getJobMidIndexCd" resultType="com.cafe24.pickmetop.admin.model.JobMidIndexVo">
-		 SELECT job_midindex_cd as jobMidindexCd ,job_midindex_name as jobMidindexName 
+		 SELECT job_midindex_cd as jobMidindexCd ,job_topindex_cd as jobTopIndexCd, job_midindex_name as jobMidindexName 
 		 FROM tb_job_midindex
 	</select>
 	
@@ -53,7 +53,7 @@
 		INSERT INTO tb_recruit_company_job
 			(recruit_job_cd, recruit_company_cd, company_cd, job_midindex_cd, recruit_job_workstatus, recruit_job_jobdetail, recruit_job_education, recruit_job_file)
 		VALUES 
-			(#{recruitJobCd}, #{recruitCompanyCd},#{companyCd}, #{jobMidindexCd},#{recruitJobWorkstatus},#{recruitJobJobdetail},#{recruitJobEducation},'파일이름')
+			(#{recruitJobCd}, #{recruitCompanyCd},#{companyCd}, #{jobMidindexCd},#{recruitJobWorkstatus},#{recruitJobJobdetail},#{recruitJobEducation},#{recruitJobFile})
 	 </insert>
 
 </mapper>

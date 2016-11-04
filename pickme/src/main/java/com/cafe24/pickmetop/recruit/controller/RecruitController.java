@@ -62,7 +62,7 @@ public class RecruitController {
 		model.addAttribute("jobTopIndex", recruitService.getJobTopIndexCd());
 		
 		//db에서 가져온 전체 직무중분류 코드와 직무명리스트를 모델에 담는다
-		model.addAttribute("jobIndex",recruitService.getJobMidIndexCd());
+		model.addAttribute("jobMidIndex",recruitService.getJobMidIndexCd());
 		logger.info("recruitService.getJobMidIndexCd() : {}",recruitService.getJobMidIndexCd());
 		
 		//db에서 가져온 전체 기업명리스트를 모델에 담는다
