@@ -6,20 +6,35 @@ import java.util.Map;
 import javax.annotation.Resource;
 
 import org.mybatis.spring.SqlSessionTemplate;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.cafe24.pickmetop.admin.model.JobMidIndexVo;
 import com.cafe24.pickmetop.admin.model.JobTopIndexVo;
+import com.cafe24.pickmetop.company.model.CompanyInfoVo;
+import com.cafe24.pickmetop.recruit.model.Recruit;
 import com.cafe24.pickmetop.recruit.model.RecruitCompany;
 import com.cafe24.pickmetop.recruit.model.RecruitCompanyJobVo;
+import com.cafe24.pickmetop.recruit.service.RecruitService;
 
 @Repository
 public class RecruitDao {
+	final static Logger logger = LoggerFactory.getLogger(RecruitDao.class);
 	private final String NS = "com.cafe24.pickmetop.recruit.repository.RecruitMapper";
 	@Autowired
 	@Resource(name = "sqlSessionRecruit")
 	private SqlSessionTemplate sqlSessionFactoryRecruit;	
+	
+	public int insertTemporaryCompany(Recruit recruit){
+		return sqlSessionFactoryRecruit.insert(NS+".insertTemporaryCompany",recruit);
+	}
+	
+	//default기업코드 열갯수 
+	public int selectDefaultCd(){
+		return sqlSessionFactoryRecruit.selectOne(NS+".selectDefaultCd");
+	}
 	
 	//전체 직무 대분류
 	public List<JobTopIndexVo> getJopTopIndexCd(){

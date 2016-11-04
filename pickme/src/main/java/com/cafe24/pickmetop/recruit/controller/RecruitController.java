@@ -40,12 +40,19 @@ public class RecruitController {
 			//기업명으로 기업코드를 검색한다
 			String companyCd = recruitService.getCompanyCd(recruit.getCompanyName());
 			recruit.setCompanyCd(companyCd);
-			if(companyCd==null){
-				logger.info("해당기업이 없을때 할 로직넣기/ 기업명 : {}",recruit.getCompanyName());
-			}else{
+			if(companyCd==null){//db내에 입력하고자하는 기업이 없을때 
+				//임의의 코드값을 만든다
+				int a = recruitService.selectDefaultCd() +1;
+				String newConpanyCd = "default" + a;
+				//코드값을 vo에 셋팅한다 
+				recruit.setCompanyCd(newConpanyCd);
+				//기업 table에 임의의 코드값과 화면에서 입력받은 기업명을 insert한다.
+				recruitService.insertTemporaryCompany(recruit);
+				logger.info("recruit.getCompanyCd(): {}",recruit.getCompanyCd());
+			}
 				recruitService.insertRecruitCompany(recruit,session);
 				recruitService.insertRecruitCompanyJob(recruit);	
-			}
+				
 			return "index";
 		//파일타입이 이미지가 아닐경우
 		}else{

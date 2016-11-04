@@ -28,10 +28,17 @@ public class RecruitService {
 	@Autowired
 	RecruitDao recruitDao;
 	String companyCd = "";
+	//final String imgDir = "D:\\git_pickme\\topteam_pickme\\pickme\\src\\main\\webapp\\recruitImgs";
+	final String imgDir = "C:\\Users\\202-09\\Desktop\\PickMe_Workspace\\TeamGit\\topteam_pickme\\pickme\\src\\main\\webapp\\upload\\recruitimg";
+	//임시 기업명 입력
+	public void insertTemporaryCompany(Recruit recruit){
+		recruitDao.insertTemporaryCompany(recruit);
+	}
 	
-	//final String imgDir = "D:\\LeeYeaEun\\imgs"; //예은's Directory
-	final String imgDir = "C:\\Users\\202-09\\Desktop\\PickMe_Workspace\\TeamGit\\topteam_pickme\\pickme\\src\\main\\webapp\\upload\\recruitimg"; //상섭's Directory
-	
+	//임시기업명 개수 
+	public int selectDefaultCd(){
+		return recruitDao.selectDefaultCd();
+	}
 	//직무 대분류 전체
 	public List<JobTopIndexVo> getJobTopIndexCd(){
 		return recruitDao.getJopTopIndexCd();
@@ -97,18 +104,20 @@ public class RecruitService {
 			
 			//file이름 
 			MultipartFile recruitImgs = recruit.getRecruitJobFile();
-			UUID uuid = UUID.randomUUID();
-			String saveFileName = uuid.toString().replace("-", "");
+			String saveFileName = recruit.getRecruitJobFile().getOriginalFilename().substring(0,recruit.getRecruitJobFile().getOriginalFilename().length()-4);
+
+			
 			String ext = recruitImgs.getOriginalFilename().substring(recruitImgs.getOriginalFilename().lastIndexOf(".") + 1);
 			ext = ext.toLowerCase();
+			saveFileName=saveFileName+ "_" + System.currentTimeMillis()+"."+ext;
 			//controller에서 유효성검사하기 
 			String type = recruitImgs.getContentType();
 			logger.info("생성된 파일이름 : {}", saveFileName);
 			
-			recruitCompanyJobVo.setRecruitJobFile(saveFileName);
+			recruitCompanyJobVo.setRecruitJobFile(saveFileName );
 			
 			// file저장
-			String fullFileName = imgDir + "\\" + saveFileName + "." + ext;
+			String fullFileName = imgDir + "\\" + saveFileName ;
 			logger.info("fullFileName : {}", fullFileName);
 			File saveFile = new File(fullFileName);
 			try {
