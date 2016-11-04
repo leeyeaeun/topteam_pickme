@@ -27,6 +27,13 @@ public class CompanyController {
 	public String companyMain(Locale locale, Model model) {
 		return "/companyinfo/companymain";
 	}
+	//면접후기 비승인 리스트(관리자) 맵핑
+	@RequestMapping(value = "/interview/companyInterviewUnreceivedList", method = RequestMethod.GET)
+	public String companyInterviewUnreceivedList(Model model, @RequestParam(value="page", defaultValue="1") int page) {
+		model.addAttribute("page", page);
+		model.addAttribute("interviewUnreceivedMap", companyService.getCompanyInterviewUnreceivedList(page));
+		return "/companyinfo/interview/companyInterviewList";
+	}
 	
 	//기업리뷰 사용자리스트 맵핑
 	@RequestMapping(value = "/review/companyReviewListAllow", method = RequestMethod.GET)

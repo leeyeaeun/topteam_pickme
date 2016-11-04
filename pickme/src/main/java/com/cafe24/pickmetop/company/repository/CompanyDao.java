@@ -1,5 +1,6 @@
 package com.cafe24.pickmetop.company.repository;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -19,7 +20,13 @@ public class CompanyDao {
 	@Autowired
 	@Resource(name = "sqlSessionCompany")
 	private SqlSessionTemplate sqlSessionFactoryCompany;
-	
+/*
+ * ----------------------------------------------------------------------------------------
+ * 
+ * 									   기업리뷰 관련
+ * 
+ * ----------------------------------------------------------------------------------------
+ * */	
 	//기업리뷰 목록(승인)
 	public List<CompanyReviewVo> selectCompanyReviewListByReviewAllow(Map<String, Object> reviewSearchMap){
 		return sqlSessionFactoryCompany.selectList(NS +".selectCompanyReviewListByReviewAllow", reviewSearchMap);
@@ -58,10 +65,23 @@ public class CompanyDao {
 		return sqlSessionFactoryCompany.delete(NS + ".deleteCompanyReview", companyReviewCd);
 	}
 	//기업리뷰 목록 카운트
-	public int selectAllowTotalCount(int reviewAllow){
-		return sqlSessionFactoryCompany.selectOne(NS + ".selectAllowTotalCount", reviewAllow);
+	public int selectAllowTotalCount(String tbName){
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("tbName", tbName);
+		return sqlSessionFactoryCompany.selectOne(NS + ".selectAllowTotalCount", map);
 	}
 	public int selectAllowSearchCount(String jobTopIndexCd){
 		return sqlSessionFactoryCompany.selectOne(NS + ".selectAllowSearchCount", jobTopIndexCd);
+	}
+/*
+ * ----------------------------------------------------------------------------------------
+ * 
+ * 									   면접후기 관련
+ * 
+ * ----------------------------------------------------------------------------------------
+ * */
+	//면접후기 비승인 리스트(관리자)
+	public List<CompanyInterviewVo> selectCompanyInterviewListByInterviewUnreceived(PageHelper pageHelper){
+		return sqlSessionFactoryCompany.selectList(NS + ".selectCompanyInterviewListByInterviewUnreceived", pageHelper);
 	}
 }

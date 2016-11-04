@@ -2,6 +2,11 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.cafe24.pickmetop.company.repository.CompanyMapper">
+<!-- 
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+									기업리뷰 관련
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 
+-->
 	<!-- 기업리뷰사용자 등록 -->
 	<insert id="insertCompanyReview" parameterType="com.cafe24.pickmetop.company.model.CompanyReviewVo">
 		INSERT INTO tb_company_review(
@@ -73,7 +78,7 @@
 	</select>
 	
 	<!-- 기업리뷰 비승인 리스트 -->
-	<select id="selectCompanyReviewListByReviewUnreceived" resultType="com.cafe24.pickmetop.company.model.CompanyReviewVo">
+	<select id="selectCompanyReviewListByReviewUnreceived" parameterType="com.cafe24.pickmetop.commons.PageHelper" resultType="com.cafe24.pickmetop.company.model.CompanyReviewVo">
 		SELECT
 			company_review_cd as companyReviewCd,
 			company_cd as companyCd,
@@ -112,13 +117,21 @@
 	</select>
 	
 	<!-- 기업리뷰 리스트 수 -->
-	<select id="selectAllowTotalCount" parameterType="Integer" resultType="Integer">
+	<!-- <select id="selectAllowTotalCount" parameterType="Integer" resultType="Integer">
         SELECT
             COUNT(*)
         FROM 
         	tb_company_review
         WHERE
         	review_allow = #{reviewAllow}
+    </select> -->
+    <select id="selectAllowTotalCount" parameterType="java.util.Map" resultType="Integer">
+        SELECT
+            COUNT(*)
+        FROM 
+        	${tbName} 
+        WHERE
+        	review_allow = 0
     </select>
     
     <!-- 기업리뷰 분류 리스트 수 -->
@@ -178,4 +191,31 @@
 		WHERE
 			company_review_cd = #{companyReviewCd}
 	</delete>
+<!-- 
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+									기업리뷰 관련 끝
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 
+-->
+
+<!-- 
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+									면접후기 관련 시작
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 
+-->
+<!-- 면접후기 비승인 리스트 -->
+	<select id="selectCompanyInterviewListByInterviewUnreceived" parameterType="com.cafe24.pickmetop.commons.PageHelper" resultType="com.cafe24.pickmetop.company.model.CompanyInterviewVo">
+		SELECT
+			interview_cd as interviewCd,
+			company_cd as companyCd,
+			login_id as loginId,
+			interview_summary as interviewSummary,
+			interview_regdate as interviewRegdate
+		FROM
+			tb_company_interview
+		WHERE
+			interview_allow = 0
+		ORDER BY
+			interview_regdate DESC
+		LIMIT #{startRow}, #{linePerPage}
+	</select>	
 </mapper>
