@@ -569,8 +569,7 @@ var num = 0;
 									</td>
 								</tr>
 								<tr>
-									<th colspan="12">연수내용</td>
-								</tr>
+									<th colspan="12">연수내용</th>
 								<tr>
 									<td colspan="12"><textarea class="form-control col-sm-5" rows="2" id="trainingContent" name="trainingContent" placeholder="연수사항에 대한 간략한 설명"></textarea></td>
 								</tr>

@@ -1,5 +1,7 @@
 package com.cafe24.pickmetop.resume.model;
 
+import java.util.List;
+
 public class ResumeAwardVo {
 	private String awardCd;
 	private String resumeCd;
@@ -7,6 +9,7 @@ public class ResumeAwardVo {
 	private String awardContent;
 	private String awardHost;
 	private String awardDate;
+	private List<ResumeAwardVo> resumeAwardVoList;
 	public String getAwardCd() {
 		return awardCd;
 	}
@@ -43,10 +46,18 @@ public class ResumeAwardVo {
 	public void setAwardDate(String awardDate) {
 		this.awardDate = awardDate;
 	}
+	public List<ResumeAwardVo> getResumeAwardVoList() {
+		return resumeAwardVoList;
+	}
+	public void setResumeAwardVoList(List<ResumeAwardVo> resumeAwardVoList) {
+		this.resumeAwardVoList = resumeAwardVoList;
+	}
 	@Override
 	public String toString() {
 		return "ResumeAwardVo [awardCd=" + awardCd + ", resumeCd=" + resumeCd + ", awardName=" + awardName
-				+ ", awardContent=" + awardContent + ", awardHost=" + awardHost + ", awardDate=" + awardDate + "]";
+				+ ", awardContent=" + awardContent + ", awardHost=" + awardHost + ", awardDate=" + awardDate
+				+ ", resumeAwardVoList=" + resumeAwardVoList + "]";
 	}
+	
 	
 }

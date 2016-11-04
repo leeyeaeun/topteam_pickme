@@ -11,16 +11,7 @@ public class ResumeFamilyVo {
 	private String familyEducation;
 	private String familyJob;
 	private String familyCohabit;
-	
 	private List<ResumeFamilyVo> resumeFamilyVoList;
-	
-	public List<ResumeFamilyVo> getResumeFamilyVoList() {
-		return resumeFamilyVoList;
-	}
-	public void setResumeFamilyVoList(List<ResumeFamilyVo> resumeFamilyVoList) {
-		this.resumeFamilyVoList = resumeFamilyVoList;
-	}
-	
 	public String getFamilyCd() {
 		return familyCd;
 	}
@@ -69,6 +60,12 @@ public class ResumeFamilyVo {
 	public void setFamilyCohabit(String familyCohabit) {
 		this.familyCohabit = familyCohabit;
 	}
+	public List<ResumeFamilyVo> getResumeFamilyVoList() {
+		return resumeFamilyVoList;
+	}
+	public void setResumeFamilyVoList(List<ResumeFamilyVo> resumeFamilyVoList) {
+		this.resumeFamilyVoList = resumeFamilyVoList;
+	}
 	@Override
 	public String toString() {
 		return "ResumeFamilyVo [familyCd=" + familyCd + ", resumeCd=" + resumeCd + ", familyRelation=" + familyRelation
@@ -76,7 +73,5 @@ public class ResumeFamilyVo {
 				+ familyEducation + ", familyJob=" + familyJob + ", familyCohabit=" + familyCohabit
 				+ ", resumeFamilyVoList=" + resumeFamilyVoList + "]";
 	}
-	
-	
 	
 }

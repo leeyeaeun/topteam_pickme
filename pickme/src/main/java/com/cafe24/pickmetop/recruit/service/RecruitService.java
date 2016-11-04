@@ -28,7 +28,9 @@ public class RecruitService {
 	@Autowired
 	RecruitDao recruitDao;
 	String companyCd = "";
-	final String imgDir = "D:\\LeeYeaEun\\imgs";
+	
+	//final String imgDir = "D:\\LeeYeaEun\\imgs"; //예은's Directory
+	final String imgDir = "C:\\Users\\202-09\\Desktop\\PickMe_Workspace\\TeamGit\\topteam_pickme\\pickme\\src\\main\\webapp\\upload\\recruitimg"; //상섭's Directory
 	
 	//직무 대분류 전체
 	public List<JobTopIndexVo> getJobTopIndexCd(){

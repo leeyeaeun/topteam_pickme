@@ -1,5 +1,6 @@
 package com.cafe24.pickmetop.resume.model;
 
+import java.util.List;
 
 public class ResumeClubVo {
 	private String clubCd;
@@ -9,6 +10,7 @@ public class ResumeClubVo {
 	private String clubBegindate;
 	private String clubEnddate;
 	private String clubContent;
+	private List<ResumeClubVo> resumeClubVoList;
 	public String getClubCd() {
 		return clubCd;
 	}
@@ -51,11 +53,17 @@ public class ResumeClubVo {
 	public void setClubContent(String clubContent) {
 		this.clubContent = clubContent;
 	}
+	public List<ResumeClubVo> getResumeClubVoList() {
+		return resumeClubVoList;
+	}
+	public void setResumeClubVoList(List<ResumeClubVo> resumeClubVoList) {
+		this.resumeClubVoList = resumeClubVoList;
+	}
 	@Override
 	public String toString() {
 		return "ResumeClubVo [clubCd=" + clubCd + ", resumeCd=" + resumeCd + ", clubName=" + clubName + ", clubHost="
 				+ clubHost + ", clubBegindate=" + clubBegindate + ", clubEnddate=" + clubEnddate + ", clubContent="
-				+ clubContent + "]";
+				+ clubContent + ", resumeClubVoList=" + resumeClubVoList + "]";
 	}
 	
 }

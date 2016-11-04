@@ -1,5 +1,7 @@
 package com.cafe24.pickmetop.resume.model;
 
+import java.util.List;
+
 public class ResumeCareerVo {
 	private String careerCd;
 	private String resumeCd;
@@ -11,6 +13,7 @@ public class ResumeCareerVo {
 	private String careerLevel;
 	private String careerDepartment;
 	private String careerTask;
+	private List<ResumeCareerVo> resumeCareerVoList;
 	public String getCareerCd() {
 		return careerCd;
 	}
@@ -71,12 +74,19 @@ public class ResumeCareerVo {
 	public void setCareerTask(String careerTask) {
 		this.careerTask = careerTask;
 	}
+	public List<ResumeCareerVo> getResumeCareerVoList() {
+		return resumeCareerVoList;
+	}
+	public void setResumeCareerVoList(List<ResumeCareerVo> resumeCareerVoList) {
+		this.resumeCareerVoList = resumeCareerVoList;
+	}
 	@Override
 	public String toString() {
 		return "ResumeCareerVo [careerCd=" + careerCd + ", resumeCd=" + resumeCd + ", careerCompany=" + careerCompany
 				+ ", careerBegindate=" + careerBegindate + ", careerEnddate=" + careerEnddate + ", careerPeriod="
 				+ careerPeriod + ", careerResign=" + careerResign + ", careerLevel=" + careerLevel
-				+ ", careerDepartment=" + careerDepartment + ", careerTask=" + careerTask + "]";
+				+ ", careerDepartment=" + careerDepartment + ", careerTask=" + careerTask + ", resumeCareerVoList="
+				+ resumeCareerVoList + "]";
 	}
 	
 }

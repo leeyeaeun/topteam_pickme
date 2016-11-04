@@ -1,5 +1,6 @@
 package com.cafe24.pickmetop.resume.model;
 
+import java.util.List;
 
 public class ResumeUniversityVo {
 	private String universityCd;
@@ -12,6 +13,7 @@ public class ResumeUniversityVo {
 	private String universityDmajorminor;
 	private String universityDmajorminorName;
 	private String universityCredit;
+	private List<ResumeUniversityVo> resumeUniversityVoList;
 	public String getUniversityCd() {
 		return universityCd;
 	}
@@ -72,13 +74,20 @@ public class ResumeUniversityVo {
 	public void setUniversityCredit(String universityCredit) {
 		this.universityCredit = universityCredit;
 	}
+	public List<ResumeUniversityVo> getResumeUniversityVoList() {
+		return resumeUniversityVoList;
+	}
+	public void setResumeUniversityVoList(List<ResumeUniversityVo> resumeUniversityVoList) {
+		this.resumeUniversityVoList = resumeUniversityVoList;
+	}
 	@Override
 	public String toString() {
 		return "ResumeUniversityVo [universityCd=" + universityCd + ", resumeCd=" + resumeCd + ", universityName="
 				+ universityName + ", universityCategory=" + universityCategory + ", universityBegindate="
 				+ universityBegindate + ", universityEnddate=" + universityEnddate + ", universityMajor="
 				+ universityMajor + ", universityDmajorminor=" + universityDmajorminor + ", universityDmajorminorName="
-				+ universityDmajorminorName + ", universityCredit=" + universityCredit + "]";
+				+ universityDmajorminorName + ", universityCredit=" + universityCredit + ", resumeUniversityVoList="
+				+ resumeUniversityVoList + "]";
 	}
 	
 }

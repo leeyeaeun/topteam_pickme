@@ -1,5 +1,7 @@
 package com.cafe24.pickmetop.resume.model;
 
+import java.util.List;
+
 public class ResumeLanguageVo {
 	private String languageCd;
 	private String resumeCd;
@@ -12,6 +14,7 @@ public class ResumeLanguageVo {
 	private String languageEnddate;
 	private String languageRegnum;
 	private String languageHost;
+	private List<ResumeLanguageVo> resumeLanguageVoList;
 	public String getLanguageCd() {
 		return languageCd;
 	}
@@ -78,13 +81,19 @@ public class ResumeLanguageVo {
 	public void setLanguageHost(String languageHost) {
 		this.languageHost = languageHost;
 	}
+	public List<ResumeLanguageVo> getResumeLanguageVoList() {
+		return resumeLanguageVoList;
+	}
+	public void setResumeLanguageVoList(List<ResumeLanguageVo> resumeLanguageVoList) {
+		this.resumeLanguageVoList = resumeLanguageVoList;
+	}
 	@Override
 	public String toString() {
 		return "ResumeLanguageVo [languageCd=" + languageCd + ", resumeCd=" + resumeCd + ", certificateCd="
 				+ certificateCd + ", languageName=" + languageName + ", languageTest=" + languageTest
 				+ ", languageGrade=" + languageGrade + ", languageLevel=" + languageLevel + ", languageBegindate="
 				+ languageBegindate + ", languageEnddate=" + languageEnddate + ", languageRegnum=" + languageRegnum
-				+ ", languageHost=" + languageHost + "]";
+				+ ", languageHost=" + languageHost + ", resumeLanguageVoList=" + resumeLanguageVoList + "]";
 	}
 	
 }

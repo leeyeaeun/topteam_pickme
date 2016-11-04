@@ -1,5 +1,6 @@
 package com.cafe24.pickmetop.resume.model;
 
+import java.util.List;
 
 public class ResumeCertificateVo {
 	private String memberCertificateCd;
@@ -11,6 +12,7 @@ public class ResumeCertificateVo {
 	private String certificateBegindate;
 	private String certificateEnddate;
 	private String certificateRegnum;
+	private	List<ResumeCertificateVo> resumeCertificateVoList;
 	public String getMemberCertificateCd() {
 		return memberCertificateCd;
 	}
@@ -65,14 +67,19 @@ public class ResumeCertificateVo {
 	public void setCertificateRegnum(String certificateRegnum) {
 		this.certificateRegnum = certificateRegnum;
 	}
+	public List<ResumeCertificateVo> getResumeCertificateVoList() {
+		return resumeCertificateVoList;
+	}
+	public void setResumeCertificateVoList(List<ResumeCertificateVo> resumeCertificateVoList) {
+		this.resumeCertificateVoList = resumeCertificateVoList;
+	}
 	@Override
 	public String toString() {
 		return "ResumeCertificateVo [memberCertificateCd=" + memberCertificateCd + ", resumeCd=" + resumeCd
 				+ ", certificateCd=" + certificateCd + ", certificateName=" + certificateName + ", certificateGrade="
 				+ certificateGrade + ", certificateHost=" + certificateHost + ", certificateBegindate="
 				+ certificateBegindate + ", certificateEnddate=" + certificateEnddate + ", certificateRegnum="
-				+ certificateRegnum + "]";
+				+ certificateRegnum + ", resumeCertificateVoList=" + resumeCertificateVoList + "]";
 	}
-	
 	
 }

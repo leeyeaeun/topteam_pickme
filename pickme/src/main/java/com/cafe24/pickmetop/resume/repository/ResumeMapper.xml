@@ -11,7 +11,7 @@
 			resume_regdate,
 			resume_modidate
 		)VALUES(
-			(SELECT CONCAT('resume_cd_', max(substring(resume.resume_cd, 11))+1) FROM tb_resume resume),
+			(SELECT CONCAT('resume_cd_', IFNULL(max(substring(resume.resume_cd, 11)),0)+1) FROM tb_resume resume),
 			#{loginId},
 			#{resumeName},
 			now(),
@@ -32,7 +32,7 @@
 			personal_sns,
 			personal_addr
 		) VALUES (
-			(SELECT CONCAT('resume_cd_', max(substring(resume.resume_cd, 11))+1-1) FROM tb_resume resume),
+			(SELECT CONCAT('resume_cd_', max(substring(resume.resume_cd, 11))) FROM tb_resume resume),
 			#{personalKorname},
 			#{personalEngname},
 			#{personalBirthdate},
@@ -53,7 +53,7 @@
 			highschool_begindate,
 			highschool_enddate
 		) VALUES (
-			(SELECT CONCAT('resume_cd_', max(substring(resume.resume_cd, 11))+1-1) FROM tb_resume resume),
+			(SELECT CONCAT('resume_cd_', max(substring(resume.resume_cd, 11))) FROM tb_resume resume),
 			#{highschoolName},
 			#{highschoolCategory},
 			#{highschoolBegindate},
@@ -61,9 +61,7 @@
 		)
 	</insert>
 	<!-- 01_03 대학교 -->
-	<insert id="insertResumeUniversity"  
-			parameterType="com.cafe24.pickmetop.resume.model.ResumeUniversityVo"
-			>
+	<insert id="insertResumeUniversity" parameterType="com.cafe24.pickmetop.resume.model.ResumeUniversityVo">
 		INSERT INTO tb_resume_university(
 			resume_cd,
 			university_name,
@@ -74,8 +72,10 @@
 			university_dmajorminor,
 			university_dmajorminor_name,
 			university_credit
-		) VALUES (
-			(SELECT CONCAT('resume_cd_', max(substring(resume.resume_cd, 11))+1-1) FROM tb_resume resume),
+		) VALUES 
+		<foreach collection="resumeUniversityVoList" item="item" separator=" , ">
+		(
+			(SELECT CONCAT('resume_cd_', max(substring(resume.resume_cd, 11))) FROM tb_resume resume),
 			#{universityName},
 			#{universityCategory},
 			#{universityBegindate},
@@ -85,6 +85,7 @@
 			#{universityDmajorminorName},
 			#{universityCredit}
 		)
+		</foreach>
 	</insert>
 	<!-- 01_04 가족 -->
 	<insert id="insertResumeFamily" parameterType="com.cafe24.pickmetop.resume.model.ResumeFamilyVo">
@@ -96,15 +97,19 @@
 			family_education,
 			family_job,
 			family_cohabit
-		) VALUES (
-			(SELECT CONCAT('resume_cd_', max(substring(resume.resume_cd, 11))+1-1) FROM tb_resume resume),
-			#{familyRelation},
-			#{familyName},
-			#{familyBirthdate},
-			#{familyEducation},
-			#{familyJob},
-			#{familyCohabit}
-		)
+		) VALUES 
+			<foreach collection="resumeFamilyVoList" item="item" separator=" , ">
+			(
+			(SELECT CONCAT('resume_cd_', max(substring(resume.resume_cd, 11))) FROM tb_resume resume),
+			#{item.familyRelation},
+			#{item.familyName},
+			#{item.familyBirthdate},
+			#{item.familyEducation},
+			#{item.familyJob},
+			#{item.familyCohabit}
+			)
+			</foreach>
+		
 	</insert>
 	<!-- 01_05 병역 -->
 	<insert id="insertResumeMilitaryservice" parameterType="com.cafe24.pickmetop.resume.model.ResumeMilitaryserviceVo">
@@ -117,7 +122,7 @@
 			militaryservice_begindate,
 			militaryservice_enddate
 		) VALUES (
-			(SELECT CONCAT('resume_cd_', max(substring(resume.resume_cd, 11))+1-1) FROM tb_resume resume),
+			(SELECT CONCAT('resume_cd_', max(substring(resume.resume_cd, 11))) FROM tb_resume resume),
 			#{militaryserviceState},
 			#{militaryserviceGroup},
 			#{militaryserviceLevel},
@@ -137,7 +142,7 @@
 			certificate_begindate,
 			certificate_enddate
 		) VALUES (
-			(SELECT CONCAT('resume_cd_', max(substring(resume.resume_cd, 11))+1-1) FROM tb_resume resume),
+			(SELECT CONCAT('resume_cd_', max(substring(resume.resume_cd, 11))) FROM tb_resume resume),
 			#{certificateName},
 			#{certificateHost},
 			#{certificateGrade},
@@ -159,7 +164,7 @@
 			career_department,
 			career_task
 		) VALUES (
-			(SELECT CONCAT('resume_cd_', max(substring(resume.resume_cd, 11))+1-1) FROM tb_resume resume),
+			(SELECT CONCAT('resume_cd_', max(substring(resume.resume_cd, 11))) FROM tb_resume resume),
 			#{careerCompany},
 			#{careerBegindate},
 			#{careerEnddate},
@@ -183,7 +188,7 @@
 			language_begindate,
 			language_enddate
 		) VALUES (
-			(SELECT CONCAT('resume_cd_', max(substring(resume.resume_cd, 11))+1-1) FROM tb_resume resume),
+			(SELECT CONCAT('resume_cd_', max(substring(resume.resume_cd, 11))) FROM tb_resume resume),
 			#{languageName},
 			#{languageLevel},
 			#{languageTest},
@@ -203,7 +208,7 @@
 			award_host,
 			award_date
 		) VALUES (
-			(SELECT CONCAT('resume_cd_', max(substring(resume.resume_cd, 11))+1-1) FROM tb_resume resume),
+			(SELECT CONCAT('resume_cd_', max(substring(resume.resume_cd, 11))) FROM tb_resume resume),
 			#{awardName},
 			#{awardContent},
 			#{awardHost},
@@ -220,7 +225,7 @@
 			training_enddate,
 			training_content
 		) VALUES (
-			(SELECT CONCAT('resume_cd_', max(substring(resume.resume_cd, 11))+1-1) FROM tb_resume resume),
+			(SELECT CONCAT('resume_cd_', max(substring(resume.resume_cd, 11))) FROM tb_resume resume),
 			#{trainingCountry},
 			#{trainingAcademy},
 			#{trainingBegindate},
@@ -238,7 +243,7 @@
 			club_enddate,
 			club_content
 		) VALUES (
-			(SELECT CONCAT('resume_cd_', max(substring(resume.resume_cd, 11))+1-1) FROM tb_resume resume),
+			(SELECT CONCAT('resume_cd_', max(substring(resume.resume_cd, 11))) FROM tb_resume resume),
 			#{clubHost},
 			#{clubName},
 			#{clubBegindate},
@@ -255,7 +260,7 @@
 			etc_begindate,
 			etc_enddate
 		) VALUES (
-			(SELECT CONCAT('resume_cd_', max(substring(resume.resume_cd, 11))+1-1) FROM tb_resume resume),
+			(SELECT CONCAT('resume_cd_', max(substring(resume.resume_cd, 11))) FROM tb_resume resume),
 			#{etcTitle},
 			#{etcContent},
 			#{etcBegindate},

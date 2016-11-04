@@ -31,38 +31,38 @@ public class ResumeService {
 	
 	// 01_이력서 입력
 	@Transactional
-	public void addResume(ResumeVo resumeVo, ResumePersonalVo personalVo, ResumeHighschoolVo highschoolVo, ResumeUniversityVo universityVo, 
-			ResumeFamilyVo familyVo, ResumeMilitaryserviceVo militaryserviceVo, ResumeCertificateVo certificateVo, ResumeCareerVo careerVo, 
-			ResumeLanguageVo languageVo, ResumeAwardVo awardVo, ResumeTrainingVo trainingVo, ResumeClubVo clubVo, ResumeEtcVo etcVo){
+	public void addResume(ResumeVo resumeVo, ResumePersonalVo resumePersonalVo, ResumeHighschoolVo resumeHighschoolVo, ResumeUniversityVo resumeUniversityVo, 
+			ResumeFamilyVo resumeFamilyVo, ResumeMilitaryserviceVo resumeMilitaryserviceVo, ResumeCertificateVo resumeCertificateVo, ResumeCareerVo resumeCareerVo, 
+			ResumeLanguageVo resumeLanguageVo, ResumeAwardVo resumeAwardVo, ResumeTrainingVo resumeTrainingVo, ResumeClubVo resumeClubVo, ResumeEtcVo resumeEtcVo){
 		
 		resumeVo.setLoginId("walbatrossw@gmail.com");
 		
 		resumeDao.insertResume(resumeVo);
-		resumeDao.insertResumePersonal(personalVo);
-		resumeDao.insertResumeHighschool(highschoolVo);
-		resumeDao.insertResumeUniversity(universityVo);
-		resumeDao.insertResumeFamily(familyVo);
-		resumeDao.insertResumeMilitaryservice(militaryserviceVo);
-		resumeDao.insertResumeCertificate(certificateVo);
-		resumeDao.insertResumeCareer(careerVo);
-		resumeDao.insertResumeLanguage(languageVo);
-		resumeDao.insertResumeAward(awardVo);
-		resumeDao.insertResumeTraining(trainingVo);
-		resumeDao.insertResumeClub(clubVo);
-		resumeDao.insertResumeEtc(etcVo);
+		resumeDao.insertResumePersonal(resumePersonalVo);
+		resumeDao.insertResumeHighschool(resumeHighschoolVo);
+		resumeDao.insertResumeUniversity(resumeUniversityVo);
+		resumeDao.insertResumeFamily(resumeFamilyVo);
+		resumeDao.insertResumeMilitaryservice(resumeMilitaryserviceVo);
+		resumeDao.insertResumeCertificate(resumeCertificateVo);
+		resumeDao.insertResumeCareer(resumeCareerVo);
+		resumeDao.insertResumeLanguage(resumeLanguageVo);
+		resumeDao.insertResumeAward(resumeAwardVo);
+		resumeDao.insertResumeTraining(resumeTrainingVo);
+		resumeDao.insertResumeClub(resumeClubVo);
+		resumeDao.insertResumeEtc(resumeEtcVo);
 		Logger.info("이력서 입력 : {}", resumeVo.toString());
-		Logger.info("개인신상 입력 : {}", personalVo.toString());
-		Logger.info("고등학교 입력 : {}", highschoolVo.toString());
-		Logger.info("대학교 입력 : {}", universityVo.toString());
-		Logger.info("가족 입력 : {}", familyVo.toString());
-		Logger.info("병역 입력 : {}", militaryserviceVo.toString());
-		Logger.info("자격증 입력 : {}", certificateVo.toString());
-		Logger.info("경력 입력 : {}", careerVo.toString());
-		Logger.info("어학 입력 : {}", languageVo.toString());
-		Logger.info("수상이력 입력 : {}", awardVo.toString());
-		Logger.info("국내외연수 입력 : {}", trainingVo.toString());
-		Logger.info("동아리, 동호회 입력 : {}", clubVo.toString());
-		Logger.info("기타,포트폴리오 입력 : {}", etcVo.toString());
+		Logger.info("개인신상 입력 : {}", resumePersonalVo.toString());
+		Logger.info("고등학교 입력 : {}", resumeHighschoolVo.toString());
+		Logger.info("대학교 입력 : {}", resumeUniversityVo.toString());
+		Logger.info("가족 입력 : {}", resumeFamilyVo.toString());
+		Logger.info("병역 입력 : {}", resumeMilitaryserviceVo.toString());
+		Logger.info("자격증 입력 : {}", resumeCertificateVo.toString());
+		Logger.info("경력 입력 : {}", resumeCareerVo.toString());
+		Logger.info("어학 입력 : {}", resumeLanguageVo.toString());
+		Logger.info("수상이력 입력 : {}", resumeAwardVo.toString());
+		Logger.info("국내외연수 입력 : {}", resumeTrainingVo.toString());
+		Logger.info("동아리, 동호회 입력 : {}", resumeClubVo.toString());
+		Logger.info("기타,포트폴리오 입력 : {}", resumeEtcVo.toString());
 	}
 	
 	// 02_이력서 리스트
