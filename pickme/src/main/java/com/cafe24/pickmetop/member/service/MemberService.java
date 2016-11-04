@@ -16,10 +16,14 @@ public class MemberService {
 	MemberDao memberDao;
 	
 	public void addmemberGeneral(MemberGeneralVo memberGeneralVo){
+		memberGeneralVo.setGeneralLevel(1);
+		memberGeneralVo.setGeneralState(0);
 		 memberDao.insertMemberGeneral(memberGeneralVo);
 		
 		
 	}
+
+
 			
 	
 }

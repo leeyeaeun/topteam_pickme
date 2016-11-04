@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<!DOCTYPE   
 <!doctype html>
 <html lang="kr">
 	<head>
@@ -154,17 +157,25 @@ input {
    padding: 0;
 }
 </style>
+<script>
+	
+
+
+
+</script>
 </head>
 <body>
 
-<form class="signUp" id="signupForm">
+<form action="/memberLinkedInsert" class="signUp" id="signupForm"  method="get" >
+   <div class="container">
+   
    <h1 class="signUpTitle">로그인</h1>
-   <input type="text" class="signUpInput" placeholder="이메일" autofocus required>
-   <input type="password" class="signUpInput" placeholder="비밀번호" required>
+   <input type="text" id="email" name="generalId"  class="signUpInput" placeholder="이메일" required>
+   <input type="password" id="password" name="generalPw"  class="signUpInput" placeholder="비밀번호" required>
   
     <input type="checkbox" id="remember" class="checkbox" checked>
-    
     <label for="remember">자동 로그인</label>
+    </div>
     <br></br>
    <input type="submit" value="로그인" class="signUpButton">
    <br>

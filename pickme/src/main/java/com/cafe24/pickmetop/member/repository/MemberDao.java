@@ -17,12 +17,12 @@ public class MemberDao {
 	@Resource(name="sqlSessionMember")
 	private SqlSessionTemplate sqlSessionFactoryMember;
 	
-	//ÀÏ¹ÝÈ¸¿ø °¡ÀÔ
+	//ï¿½Ï¹ï¿½È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	public int insertMemberGeneral(MemberGeneralVo memberGeneralVo){
 		return sqlSessionFactoryMember.insert(NS+".insertMemberGeneral", memberGeneralVo);
 	
 	}
-	//api ¿¬µ¿È¸¿ø ·Î±×ÀÎ
+	//api ï¿½ï¿½ï¿½ï¿½È¸ï¿½ï¿½ ï¿½Î±ï¿½ï¿½ï¿½
 	public int insertMemberLinked(MemberLinkedVo linke){
 		return sqlSessionFactoryMember.insert(NS+".insertMemberLinked", linke);
 	}

@@ -1,13 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<% if(session.getAttribute("ValidMem") !=null){ %>
-	<jsp:forward page="main.jsp"></jsp:forward>  
-<%} %>  
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE   
 <!doctype html>
 <html lang="kr">
 	<head>
 	<meta charset="UTF-8">
-	<title>회 원 가 입</title>
+	<title>회 원 가입</title>
 
 <style rel="stylesheet">
 body {
@@ -162,13 +161,6 @@ input {
 $(document).ready(function(){
    $('[data-toggle="tooltip"]').tooltip();
 });
-	
-	
-
-
-
-
-
 </script>
 </head>
 

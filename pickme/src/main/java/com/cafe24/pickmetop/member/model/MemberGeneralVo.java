@@ -3,7 +3,9 @@ package com.cafe24.pickmetop.member.model;
 public class MemberGeneralVo {
 	
 	private String generalId;
+	
 	private String generalPw;
+	
 	private String generalNick;
 	private int generalLevel;
 	private String generalDate;
