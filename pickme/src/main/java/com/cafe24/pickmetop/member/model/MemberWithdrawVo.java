@@ -4,45 +4,45 @@ import java.sql.Date;
 
 public class MemberWithdrawVo {
 
-	private String withdraw_cd;
-	private String withdraw_id;
-	private int withdraw_state;
-	private Date withdraw_date;
-	private String general_id;
-	public String getWithdraw_cd() {
-		return withdraw_cd;
+	private String withdrawCd;
+	private String withdrawId;
+	private int withdrawState;
+	private Date withdrawDate;
+	private String generalId;
+	public String getWithdrawCd() {
+		return withdrawCd;
 	}
-	public void setWithdraw_cd(String withdraw_cd) {
-		this.withdraw_cd = withdraw_cd;
+	public void setWithdrawCd(String withdrawCd) {
+		this.withdrawCd = withdrawCd;
 	}
-	public String getWithdraw_id() {
-		return withdraw_id;
+	public String getWithdrawId() {
+		return withdrawId;
 	}
-	public void setWithdraw_id(String withdraw_id) {
-		this.withdraw_id = withdraw_id;
+	public void setWithdrawId(String withdrawId) {
+		this.withdrawId = withdrawId;
 	}
-	public int getWithdraw_state() {
-		return withdraw_state;
+	public int getWithdrawState() {
+		return withdrawState;
 	}
-	public void setWithdraw_state(int withdraw_state) {
-		this.withdraw_state = withdraw_state;
+	public void setWithdrawState(int withdrawState) {
+		this.withdrawState = withdrawState;
 	}
-	public Date getWithdraw_date() {
-		return withdraw_date;
+	public Date getWithdrawDate() {
+		return withdrawDate;
 	}
-	public void setWithdraw_date(Date withdraw_date) {
-		this.withdraw_date = withdraw_date;
+	public void setWithdrawDate(Date withdrawDate) {
+		this.withdrawDate = withdrawDate;
 	}
-	public String getGeneral_id() {
-		return general_id;
+	public String getGeneralId() {
+		return generalId;
 	}
-	public void setGeneral_id(String general_id) {
-		this.general_id = general_id;
+	public void setGeneralId(String generalId) {
+		this.generalId = generalId;
 	}
 	@Override
 	public String toString() {
-		return "MemberWithdrawVo [withdraw_cd=" + withdraw_cd + ", withdraw_id=" + withdraw_id + ", withdraw_state="
-				+ withdraw_state + ", withdraw_date=" + withdraw_date + ", general_id=" + general_id + "]";
+		return "MemberWithdrawVo [withdrawCd=" + withdrawCd + ", withdrawId=" + withdrawId + ", withdrawState="
+				+ withdrawState + ", withdrawDate=" + withdrawDate + ", generalId=" + generalId + "]";
 	}
 	
 	

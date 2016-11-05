@@ -166,7 +166,7 @@ input {
 </head>
 <body>
 
-<form action="/memberLinkedInsert" class="signUp" id="signupForm"  method="get" >
+<form action="/memberLinkedInsert" class="signUp" id="signupForm"  method="post" >
    <div class="container">
    
    <h1 class="signUpTitle">로그인</h1>

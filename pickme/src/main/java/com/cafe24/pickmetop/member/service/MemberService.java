@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.cafe24.pickmetop.member.model.MemberGeneralVo;
+import com.cafe24.pickmetop.member.model.MemberLinkedVo;
 import com.cafe24.pickmetop.member.repository.MemberDao;
 
 @Service
@@ -22,7 +23,10 @@ public class MemberService {
 		
 		
 	}
-
+	public void addmemberLinked(MemberLinkedVo memberLinkedVo){
+		
+		memberDao.insertMemberLinked(memberLinkedVo);
+	}
 
 			
 	

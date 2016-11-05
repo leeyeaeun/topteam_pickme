@@ -23,8 +23,8 @@ public class MemberDao {
 	
 	}
 	//api ����ȸ�� �α���
-	public int insertMemberLinked(MemberLinkedVo linke){
-		return sqlSessionFactoryMember.insert(NS+".insertMemberLinked", linke);
+	public int insertMemberLinked(MemberLinkedVo memberLinkedVo){
+		return sqlSessionFactoryMember.insert(NS+".insertMemberLinked", memberLinkedVo);
 	}
 	
 	public int insertMemberWithdraw(MemberWithdrawVo withdraw){
