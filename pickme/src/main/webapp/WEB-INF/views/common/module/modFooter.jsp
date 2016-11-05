@@ -7,8 +7,8 @@
 <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-<div class="container">
-	<section class="footer">
+<div class="container footer">
+	<section>
 		<div class="text-center">
 	    	<a href="http://blog.anchoreer.com/220470732604" target="_blank">회사소개</a> | <a href="" ng-click="inquiry()">문의하기</a> | <a href="/personalPolicy">개인정보취급방침</a> | <a href="" ng-click="partnership()">제휴/광고</a>
 	    	<div>

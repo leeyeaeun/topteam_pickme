@@ -60,6 +60,10 @@ public class CompanyDao {
 	public int updateCompanyReviewAllow(Map<String, Object> allow){
 		return sqlSessionFactoryCompany.update(NS + ".updateCompanyReviewAllow", allow);
 	}
+	//기업리뷰승인시 평점누적
+	public int updateCompanyInfoTotalRate(Map<String, Object> allow){
+		return sqlSessionFactoryCompany.update(NS + ".updateCompanyInfoTotalRate", allow);
+	}
 	//기업리뷰삭제
 	public int deleteCompanyReview(int companyReviewCd){
 		return sqlSessionFactoryCompany.delete(NS + ".deleteCompanyReview", companyReviewCd);

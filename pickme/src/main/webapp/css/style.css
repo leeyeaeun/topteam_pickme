@@ -20,11 +20,26 @@ body {
 	text-shadow: 0 0 1px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #0080ff, 0 0 70px #0080ff, 0 0 80px #0080ff, 0 0 100px #0080ff, 0 0 150px #0080ff;
 	margin-bottom: 100px;
 }
+/* 기업메인 관련*/
+.companyHeader{
+	width: auto;
+	height: 300px;
+}
+.companyHeader section{
+	max-width: 100%;
+	height: 100%;
+	background: url("/img/company/nightcompany.jpg");
+}
 
 /* footer관련 css*/
+.footer{
+	padding: 0px;
+	width: 100%;
+}
 .footer .text-center{
 	margin-top: 10px;
 	padding-top: 10px;
+	padding-bottom: 10px;
 	background-color: #222222;
 	color: #76919d;	
 }
@@ -84,7 +99,7 @@ body {
 .companyReviewDetail{
 	padding: 25px 30px 25px 50px;
 	
-	background-color: rgba(213,213,213,0.5);
+	/* background-color: rgba(213,213,213,0.5); */
 } 
 
 /*메인화면 section옵션*/
@@ -97,7 +112,7 @@ body {
 
 /*기업리뷰 입력폼*/
 #companyReviewInsertForm{
-	background-color: rgba(213,213,213,0.5);
+	/* background-color: rgba(213,213,213,0.5); */
 	padding: 40px 40px 20px 40px;
 }
 

@@ -81,6 +81,7 @@ public class CompanyService {
 		Map<String, Object> allow = new HashMap<String, Object>();
 		allow.put("loginId", "admin");
 		allow.put("companyReviewCd", companyReviewCd);
+		companyDao.updateCompanyInfoTotalRate(allow);
 		return companyDao.updateCompanyReviewAllow(allow);
 	}
 	//기업리뷰 상세보기

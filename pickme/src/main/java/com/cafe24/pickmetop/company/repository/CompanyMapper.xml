@@ -184,6 +184,18 @@
 		WHERE
 			company_review_cd = #{companyReviewCd}
 	</update>
+	
+	<update id="updateCompanyInfoTotalRate" parameterType="java.util.Map">
+		UPDATE
+			tb_company_info 
+		SET
+			company_total_rate = (SELECT a.total 
+								FROM (SELECT (c.company_total_rate + r.review_rate) as total from tb_company_info c, tb_company_review r
+							      where r.company_review_cd = #{companyReviewCd} AND c.company_cd = r.company_cd ) a)
+										
+		WHERE company_cd = (SELECT company_cd FROM tb_company_review  WHERE company_review_cd = #{companyReviewCd})
+	</update>
+	
 	<!-- 기업리뷰 삭제처리 -->
 	<delete id="deleteCompanyReview" parameterType="Integer">
 		DELETE FROM

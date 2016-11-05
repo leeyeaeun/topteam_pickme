@@ -19,8 +19,8 @@
 <body>
 	<div class="container">
 		<div class="table-responsive">
-			<table class="table">
-				<thead>
+			<table class="table table-bordered">
+				<thead class=text-center">
 					<tr>
 						<th>승인대기번호</th>
 						<th>기업코드</th>
