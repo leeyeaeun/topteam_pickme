@@ -4,68 +4,70 @@ import java.sql.Date;
 
 public class MemberWorkstateVo {
 	
-	private String withdraw_cd;
-	private String company_cd;
-	private String login_id;
-	private String workstate_state;
-	private Date workstate_begindate;
-	private Date workstate_enddate;
-	private String workstate_regdate;
-	private String workstate_modidate;
-	public String getWithdraw_cd() {
-		return withdraw_cd;
+	private String withdrawCd;
+	private String companyCd;
+	private String loginId;
+	private String workstateState;
+	private Date workstateBegindate;
+	private Date workstateEnddate;
+	private String workstateRegdate;
+	private String workstateModidate;
+	public String getWithdrawCd() {
+		return withdrawCd;
 	}
-	public void setWithdraw_cd(String withdraw_cd) {
-		this.withdraw_cd = withdraw_cd;
+	public void setWithdrawCd(String withdrawCd) {
+		this.withdrawCd = withdrawCd;
 	}
-	public String getCompany_cd() {
-		return company_cd;
+	public String getCompanyCd() {
+		return companyCd;
 	}
-	public void setCompany_cd(String company_cd) {
-		this.company_cd = company_cd;
+	public void setCompanyCd(String companyCd) {
+		this.companyCd = companyCd;
 	}
-	public String getLogin_id() {
-		return login_id;
+	public String getLoginId() {
+		return loginId;
 	}
-	public void setLogin_id(String login_id) {
-		this.login_id = login_id;
+	public void setLoginId(String loginId) {
+		this.loginId = loginId;
 	}
-	public String getWorkstate_state() {
-		return workstate_state;
+	public String getWorkstateState() {
+		return workstateState;
 	}
-	public void setWorkstate_state(String workstate_state) {
-		this.workstate_state = workstate_state;
+	public void setWorkstateState(String workstateState) {
+		this.workstateState = workstateState;
 	}
-	public Date getWorkstate_begindate() {
-		return workstate_begindate;
+	public Date getWorkstateBegindate() {
+		return workstateBegindate;
 	}
-	public void setWorkstate_begindate(Date workstate_begindate) {
-		this.workstate_begindate = workstate_begindate;
+	public void setWorkstateBegindate(Date workstateBegindate) {
+		this.workstateBegindate = workstateBegindate;
 	}
-	public Date getWorkstate_enddate() {
-		return workstate_enddate;
+	public Date getWorkstateEnddate() {
+		return workstateEnddate;
 	}
-	public void setWorkstate_enddate(Date workstate_enddate) {
-		this.workstate_enddate = workstate_enddate;
+	public void setWorkstateEnddate(Date workstateEnddate) {
+		this.workstateEnddate = workstateEnddate;
 	}
-	public String getWorkstate_regdate() {
-		return workstate_regdate;
+	public String getWorkstateRegdate() {
+		return workstateRegdate;
 	}
-	public void setWorkstate_regdate(String workstate_regdate) {
-		this.workstate_regdate = workstate_regdate;
+	public void setWorkstateRegdate(String workstateRegdate) {
+		this.workstateRegdate = workstateRegdate;
 	}
-	public String getWorkstate_modidate() {
-		return workstate_modidate;
+	public String getWorkstateModidate() {
+		return workstateModidate;
 	}
-	public void setWorkstate_modidate(String workstate_modidate) {
-		this.workstate_modidate = workstate_modidate;
+	public void setWorkstateModidate(String workstateModidate) {
+		this.workstateModidate = workstateModidate;
 	}
 	@Override
 	public String toString() {
-		return "MemberWorkstateVo [withdraw_cd=" + withdraw_cd + ", company_cd=" + company_cd + ", login_id=" + login_id
-				+ ", workstate_state=" + workstate_state + ", workstate_begindate=" + workstate_begindate
-				+ ", workstate_enddate=" + workstate_enddate + ", workstate_regdate=" + workstate_regdate
-				+ ", workstate_modidate=" + workstate_modidate + "]";
+		return "MemberWorkstateVo [withdrawCd=" + withdrawCd + ", companyCd=" + companyCd + ", loginId=" + loginId
+				+ ", workstateState=" + workstateState + ", workstateBegindate=" + workstateBegindate
+				+ ", workstateEnddate=" + workstateEnddate + ", workstateRegdate=" + workstateRegdate
+				+ ", workstateModidate=" + workstateModidate + "]";
 	}
+	
+	
 	
 }
