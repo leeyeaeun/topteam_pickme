@@ -33,7 +33,12 @@
 				<tbody>
 					<c:forEach var="companyReviewList" items="${reviewUnreceivedMap.reviewListUnreceived}" varStatus="i">
 						<tr class="tablehover" onClick="location.href='/review/companyReviewDetail?companyReviewCd=${companyReviewList.companyReviewCd}'">
-							<td>${i.count }</td>
+							<c:if test="${page > 1}">
+								<td>${i.count + (page-1) * 5}</td>
+							</c:if>
+							<c:if test="${page <= 1}">
+								<td>${i.count}</td>
+							</c:if>
 							<td>${companyReviewList.companyCd }</td>
 							<td>${companyReviewList.loginId }</td>
 							<td>${companyReviewList.reviewComment }</td>
@@ -43,25 +48,25 @@
 					</c:forEach>
 				</tbody>
 			</table>	
-			<!-- 페이징 -->
-			<div class="text-center">
-				<ul class="pager">
-					<c:if test="${page > 1}">
-						<li class="previous"><a href="/review/companyReviewUnreceivedList?page=${page-1}">이전</a><li>
+		</div>
+		<!-- 페이징 -->
+		<div>
+			<ul class="pager">
+				<c:if test="${page > 1}">
+					<li class="previous"><a href="/review/companyReviewUnreceivedList?page=${page-1}">이전</a><li>
+				</c:if>
+				<c:forEach var="i" begin="${reviewUnreceivedMap.startPage }" end="${reviewUnreceivedMap.endPage }">
+					<c:if test="${page == i}">
+						<li><a href="/review/companyReviewUnreceivedList?page=${i }">${i }</a><li>
 					</c:if>
-					<c:forEach var="i" begin="${reviewUnreceivedMap.startPage }" end="${reviewUnreceivedMap.endPage }">
-						<c:if test="${page == i}">
-							<li><a href="/review/companyReviewUnreceivedList?page=${i }">${i }</a><li>
-						</c:if>
-						<c:if test="${page != i}">
-							<li><a href="/review/companyReviewUnreceivedList?page=${i }">${i }</a></li>
-						</c:if>
-					</c:forEach>
-					<c:if test="${page < reviewUnreceivedMap.endPage}">
-						<li class="next"><a href="/review/companyReviewUnreceivedList?page=${page+1}">다음</a></li>
+					<c:if test="${page != i}">
+						<li><a href="/review/companyReviewUnreceivedList?page=${i }">${i }</a></li>
 					</c:if>
-				</ul>
-			</div>
+				</c:forEach>
+				<c:if test="${page < reviewUnreceivedMap.endPage}">
+					<li class="next"><a href="/review/companyReviewUnreceivedList?page=${page+1}">다음</a></li>
+				</c:if>
+			</ul>
 		</div>
 	</div>
 </body>

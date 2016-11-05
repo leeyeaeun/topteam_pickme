@@ -32,7 +32,9 @@ public class CompanyService {
 		//비승인목록 페이지 처리
 		PageHelper pageHelper = new PageHelper(page,MAX_LINE_COUNT);
 		//승인상태값 0로 비승인상태인것만 갯수를 얻어와서 마지막페이지 SET
-		pageHelper.setLastPage(companyDao.selectAllowTotalCount("tb_company_interview"),MAX_LINE_COUNT);
+		String tbName = "tb_company_interview";
+		String tbColumn = "interview_allow";
+		pageHelper.setLastPage(companyDao.selectAllowTotalCount(tbName, tbColumn, 0),MAX_LINE_COUNT);
 		Map<String, Object> interviewUnreceivedMap = new HashMap<String, Object>();
 		interviewUnreceivedMap.put("startPage", pageHelper.startPage(page, MAX_PAGE_COUNT));
 		interviewUnreceivedMap.put("endPage", pageHelper.endPage());
@@ -49,9 +51,11 @@ public class CompanyService {
 	public Map<String, Object> getCompanyReviewAllowList(int page, String jobTopIndexCd){
 		//승인목록 페이지 처리
 		PageHelper pageHelper = new PageHelper(page,MAX_LINE_COUNT);
+		String tbName = "tb_company_review";
+		String tbColumn = "review_allow";
 		//승인상태값 1로 승인상태인것만 갯수를 얻어와서 마지막페이지 SET
 		if(jobTopIndexCd.equals("")){
-			pageHelper.setLastPage(companyDao.selectAllowTotalCount("tb_company_review"),MAX_LINE_COUNT);
+			pageHelper.setLastPage(companyDao.selectAllowTotalCount(tbName, tbColumn, 1),MAX_LINE_COUNT);
 		}else{
 			pageHelper.setLastPage(companyDao.selectAllowSearchCount(jobTopIndexCd),MAX_LINE_COUNT);
 		}
@@ -88,8 +92,10 @@ public class CompanyService {
 	public Map<String, Object> getCompanyReviewUnreceivedList(int page){
 		//비승인목록 페이지 처리
 		PageHelper pageHelper = new PageHelper(page,MAX_LINE_COUNT);
+		String tbName = "tb_company_review";
+		String tbColumn = "review_allow";
 		//승인상태값 0로 비승인상태인것만 갯수를 얻어와서 마지막페이지 SET
-		pageHelper.setLastPage(companyDao.selectAllowTotalCount("tb_company_review"),MAX_LINE_COUNT);
+		pageHelper.setLastPage(companyDao.selectAllowTotalCount(tbName, tbColumn, 0),MAX_LINE_COUNT);
 		Map<String, Object> reviewUnreceivedMap = new HashMap<String, Object>();
 		reviewUnreceivedMap.put("startPage", pageHelper.startPage(page, MAX_PAGE_COUNT));
 		reviewUnreceivedMap.put("endPage", pageHelper.endPage());

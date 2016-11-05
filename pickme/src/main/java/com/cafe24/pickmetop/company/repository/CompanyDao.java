@@ -65,10 +65,12 @@ public class CompanyDao {
 		return sqlSessionFactoryCompany.delete(NS + ".deleteCompanyReview", companyReviewCd);
 	}
 	//기업리뷰 목록 카운트
-	public int selectAllowTotalCount(String tbName){
-		Map<String, String> map = new HashMap<String, String>();
-		map.put("tbName", tbName);
-		return sqlSessionFactoryCompany.selectOne(NS + ".selectAllowTotalCount", map);
+	public int selectAllowTotalCount(String tbName, String tbColumn, int allow){
+		Map<String, Object> sqlMap = new HashMap<String, Object>();
+		sqlMap.put("tbName", tbName);
+		sqlMap.put("tbColumn", tbColumn);
+		sqlMap.put("allow", allow);
+		return sqlSessionFactoryCompany.selectOne(NS + ".selectAllowTotalCount", sqlMap);
 	}
 	public int selectAllowSearchCount(String jobTopIndexCd){
 		return sqlSessionFactoryCompany.selectOne(NS + ".selectAllowSearchCount", jobTopIndexCd);

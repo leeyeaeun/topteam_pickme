@@ -23,10 +23,7 @@
 </head>
 <jsp:include page="${pageContext.request.contextPath}/WEB-INF/views/common/module/modHeader.jsp"/>
 <body>
-<div class="container">
-	<div class="jumbotron text-center">
-		<h1><strong>Pick</strong>ME</h1>
-	</div>
+<div class="container main">
 	 <header id="myCarousel" class="carousel slide">
         <!-- Indicators -->
         <ol class="carousel-indicators">
@@ -40,6 +37,9 @@
             <div class="item active">
                 <div id="section1" class="container-fluid">
 					<div align="center">
+						<div class="topName">
+							<strong>Pick</strong>ME
+						</div>
 						<h1>채용달력</h1>
 						<p>실시간 채용정보는 물론<br>나에게 딱 맞는 공고도 <br> 추천받을 수 있어요! </p>
 					</div>

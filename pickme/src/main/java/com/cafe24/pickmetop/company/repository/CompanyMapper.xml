@@ -131,7 +131,7 @@
         FROM 
         	${tbName} 
         WHERE
-        	review_allow = 0
+        	${tbColumn} = #{allow}
     </select>
     
     <!-- 기업리뷰 분류 리스트 수 -->

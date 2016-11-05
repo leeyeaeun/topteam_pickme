@@ -5,6 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script>
+	
 	/* $(document).ready(function(){
 		//분류로 검색
 		const $jobTopIndex = $('#jobTopIndex');
@@ -38,7 +39,12 @@
 				<tbody>
 					<c:forEach var="companyInterviewList" items="${interviewUnreceivedMap.interviewListUnreceived}" varStatus="i">
 						<tr class="tablehover">
-							<td>${i.count }</td>
+							<c:if test="${page > 1}">
+								<td>${i.count + (page-1) * 5}</td>
+							</c:if>
+							<c:if test="${page <= 1}">
+								<td>${i.count}</td>
+							</c:if>
 							<td>${companyInterviewList.companyCd }</td>
 							<td>${companyInterviewList.loginId }</td>
 							<td>${companyInterviewList.interviewSummary }</td>
