@@ -18,9 +18,12 @@
 <jsp:include page="${pageContext.request.contextPath}/WEB-INF/views/common/module/modHeader.jsp"/>
 <body>
 	<div class="container">
+		<div class="jumbotron text-center">
+			<h1>기업리뷰 미승인 리스트</h1>
+		</div>
 		<div class="table-responsive">
 			<table class="table table-bordered">
-				<thead class=text-center">
+				<thead class="text-center">
 					<tr>
 						<th>승인대기번호</th>
 						<th>기업코드</th>

@@ -25,6 +25,7 @@ public class CompanyController {
 	//기업메인 맵핑
 	@RequestMapping(value = "/companyInfo", method = RequestMethod.GET)
 	public String companyMain(Locale locale, Model model) {
+		model.addAttribute("companyTotalRateList", companyService.getCompanyTotalRateTop());
 		return "/companyinfo/companymain";
 	}
 	//면접후기 비승인 리스트(관리자) 맵핑

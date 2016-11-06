@@ -24,6 +24,9 @@
 <jsp:include page="${pageContext.request.contextPath}/WEB-INF/views/common/module/modHeader.jsp"/>
 <body>
 	<div class="container">
+		<div class="jumbotron text-center">
+			<h1>면접후기 미승인 리스트</h1>
+		</div>
 		<div class="table-responsive">
 			<table class="table">
 				<thead>

@@ -19,6 +19,8 @@ public class CompanyInfoVo {
 	private String companyRegister;
 	private String companyModidate;
 	private String companyModify;
+	private int companyTotalRate;
+	
 	public String getCompanyCd() {
 		return companyCd;
 	}
@@ -109,6 +111,12 @@ public class CompanyInfoVo {
 	public void setCompanyModify(String companyModify) {
 		this.companyModify = companyModify;
 	}
+	public int getCompanyTotalRate() {
+		return companyTotalRate;
+	}
+	public void setCompanyTotalRate(int companyTotalRate) {
+		this.companyTotalRate = companyTotalRate;
+	}
 	@Override
 	public String toString() {
 		return "CompanyInfoVo [companyCd=" + companyCd + ", industryMidindexCd=" + industryMidindexCd
@@ -116,8 +124,11 @@ public class CompanyInfoVo {
 				+ ", companyBirthdate=" + companyBirthdate + ", companySales=" + companySales + ", companyCeo="
 				+ companyCeo + ", companyZipcode=" + companyZipcode + ", companyAddr=" + companyAddr + ", companyPhone="
 				+ companyPhone + ", companyRegdate=" + companyRegdate + ", companyRegister=" + companyRegister
-				+ ", companyModidate=" + companyModidate + ", companyModify=" + companyModify + "]";
+				+ ", companyModidate=" + companyModidate + ", companyModify=" + companyModify + ", companyTotalRate="
+				+ companyTotalRate + "]";
 	}
+	
+	
 	
 	
 }
